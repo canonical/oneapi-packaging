@@ -1,0 +1,10 @@
+FROM oneapi-compiler-build
+
+COPY scripts/build_compiler.sh /build_compiler.sh
+
+RUN git clone -b sycl https://github.com/intel/llvm.git 
+WORKDIR /llvm
+RUN /build_compiler.sh
+
+ENV PATH=$PATH:/llvm/build/bin
+ENV LD_LIBRARY_PATH=/llvm/build/lib/:$LD_LIBRARY_PATH
