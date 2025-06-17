@@ -7,8 +7,16 @@ docker build -t oneapi-compiler -f Dockerfile.compiler .
 Build sample progrem
 ---
 
-export PATH=$PWD/build/bin:$PATH
-export LD_LIBRARY_PATH=$PWD/build/lib/:$LD_LIBRARY_PATH
+cd samples
+docker run -v $PWD:/src -it oneapi-compiler bash
 
+cd /src/
+
+# sample.cpp
 clang++ -fsycl sample.cpp -o simple-sycl-app
+
+# mandelbrot
+cd mandelbrot
+CXXFLAGS=-isystem\ /src/common/ cmake .
+make
 
