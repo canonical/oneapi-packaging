@@ -2,6 +2,7 @@ Build docker image
 ---
 
 docker build -t oneapi-compiler-build -f Dockerfile.build .
+
 docker build -t oneapi-compiler -f Dockerfile.compiler .
 
 Build sample progrem
@@ -12,10 +13,10 @@ docker run -v $PWD:/src -it oneapi-compiler bash
 
 cd /src/
 
-# sample.cpp
+#### sample.cpp
 clang++ -fsycl sample.cpp -o simple-sycl-app
 
-# mandelbrot
+#### mandelbrot
 cd mandelbrot
 CXXFLAGS=-isystem\ /src/common/ cmake .
 make
