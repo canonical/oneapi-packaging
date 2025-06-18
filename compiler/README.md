@@ -5,7 +5,7 @@ docker build -t oneapi-compiler-build -f Dockerfile.build .
 
 docker build -t oneapi-compiler -f Dockerfile.compiler .
 
-Build sample progrem
+Build samples
 ---
 
 cd samples
