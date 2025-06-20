@@ -1,4 +1,4 @@
-# Validation using upstream packages
+# Validation of oneAPI packages
 
 ## System Requirements
 
@@ -44,4 +44,10 @@ $ sycl-ls
 
 Code samples come from the [2025.1 release of oneAPI-samples](https://github.com/oneapi-src/oneAPI-samples/tree/2025.1.0). The samples assume the upstream packages are being used. To validate against PPA packages you should update the name of the compiler in the build scripts.
 
-Only a subset of the code samples from the `oneAPI-samples` repo are coped in to this repo for now as we focus on validating just the compiler on Intel hardware.
+Only a subset of the code samples from the `oneAPI-samples` repo are copied in to this repo for now as we focus on validating just the compiler and oneDPL library. While there are many samples that can be used for testing and validation, the following have been tested on both Intel Core Ultra (Arrow Lake) and Battlemage discrete GPUs running Ubuntu 25.04. See the README in each for build and usage instructions, and keep in mind that these examples are designed to work with the proprietary compiler from Intel (if testing from the PPA you may need to update things like the name of the compiler).
+
+1. [Compiler only: Vector addition](2025.1/DirectProgramming/C++SYCL/DenseLinearAlgebra/vector-add/)
+    - Implementations based on buffer and unified shared memory (USM)
+2. [Compiler only: Matrix multiply](2025.1/DirectProgramming/C++SYCL/DenseLinearAlgebra/matrix_mul/)
+3. [Compiler + oneDPL: various algorithms](2025.1/DirectProgramming/C++SYCL/Jupyter/oneapi-essentials-training/07_oneDPL_Library/)
+    - Various algorithms (sorting, iterating, etc) based on simple, buffer-based, and unified shared memory (USM) implementations
