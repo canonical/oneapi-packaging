@@ -1,0 +1,107 @@
+Source: intel-compute-runtime
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian OpenCL Maintainers <pkg-opencl-devel@lists.alioth.debian.org>
+Uploaders:
+ Timo Aaltonen <tjaalton@debian.org>,
+ Andreas Beckmann <anbe@debian.org>,
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ libigc2,
+ libigdfcl2-dev,
+ libigdgmm-dev (>= 21.2.1),
+ libva-dev,
+ libze-dev (>= 1.17.6),
+ pkgconf,
+Rules-Requires-Root: no
+Standards-Version: 4.6.1
+Homepage: https://github.com/intel/compute-runtime
+Vcs-Browser: https://salsa.debian.org/opencl-team/intel-compute-runtime
+Vcs-Git: https://salsa.debian.org/opencl-team/intel-compute-runtime.git
+
+Package: intel-opencl-icd
+Architecture: any-amd64
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libigc2 (>= ${igc:Upstream-Version}),
+ libigc2 (<< ${igc:Upstream-Version}+~),
+ libigc2+llvm${igc:LLVM-Version},
+ libigdfcl2 (>= ${igc:Upstream-Version}),
+ libigdfcl2 (<< ${igc:Upstream-Version}+~),
+ libigdfcl2+llvm${igc:LLVM-Version},
+ ocl-icd-libopencl1,
+Recommends:
+ intel-opencl-icd-legacy
+Breaks:
+ intel-opencl
+Replaces:
+ intel-opencl
+Provides:
+ opencl-icd
+Description: Intel graphics compute runtime for OpenCL
+ The Intel(R) Graphics Compute Runtime for OpenCL(TM) is an open source
+ project to converge Intel's development efforts on OpenCL(TM) compute
+ stacks supporting the GEN graphics hardware architecture.
+ .
+ Supported platforms - OpenCL 3.0, Production:
+  - DG1
+  - Intel Core Processors with Xe LP (Gen12) GPU (Tiger Lake, Rocket Lake)
+  - Intel Core Processors with Xe (Gen12.2) GPU (Alder Lake)
+  - Intel Core Processors with Xe LPG GPU (Meteor Lake, Arrow Lake)
+  - Intel Core Processors with Xe LPGPLUS GPU (Arrow Lake)
+  - Intel Core Processors with Xe HPG GPU (DG2)
+  - Intel Core Processors with Xe HPC GPU (Ponte Vecchio)
+  - Intel Core Processors with Xe2 LPG GPU (Lunar Lake)
+  - Intel Core Processors with Xe2 HPG GPU (Battlemage)
+
+Package: intel-ocloc
+Architecture: any-amd64
+Depends: ${shlibs:Depends}, ${misc:Depends},
+Recommends: intel-ocloc-legacy
+Breaks: intel-opencl-icd (<< 23.26.26690.22-1)
+Replaces: intel-opencl-icd (<< 23.26.26690.22-1)
+Description: Tool for managing Intel Compute GPU device binary format
+ ocloc is a tool for managing Intel Compute GPU device binary format.
+ It can be used for generation as well as manipulation of such binary files.
+
+Package: intel-ocloc-dev
+Architecture: any-amd64
+Depends: ${shlibs:Depends}, ${misc:Depends},
+Breaks: intel-opencl-icd (<< 23.26.26690.22-1)
+Replaces: intel-opencl-icd (<< 23.26.26690.22-1)
+Description: Tool for managing Intel Compute GPU device binary format -- devel files
+ ocloc is a tool for managing Intel Compute GPU device binary format.
+ It can be used for generation as well as manipulation of such binary files.
+ .
+ This package includes the development headers for intel-ocloc.
+
+Package: libze-intel-gpu1
+Architecture: any-amd64
+Depends: ${shlibs:Depends}, ${misc:Depends},
+Recommends: libze-intel-gpu-legacy1-1
+Breaks: intel-opencl-icd (<< 23.26.26690.22-1)
+Replaces: intel-opencl-icd (<< 23.26.26690.22-1)
+Description: Intel oneAPI L0 support implementation for Intel GPUs -- shared library
+ Implementation for the Intel GPUs of the oneAPI L0 specification - which
+ provides direct-to-metal interfaces to offload accelerator devices. Its
+ programming interface can be tailored to any device needs and can be
+ adapted to support broader set of languages features such as function
+ pointers, virtual functions, unified memory, and I/O capabilities.
+ .
+ This package contains the shared library.
+
+Package: libze-intel-gpu-dev
+Architecture: any-amd64
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libze-intel-gpu1 (= ${binary:Version}),
+Description: Intel oneAPI L0 support implementation for Intel GPUs -- devel files
+ Implementation for the Intel GPUs of the oneAPI L0 specification - which
+ provides direct-to-metal interfaces to offload accelerator devices. Its
+ programming interface can be tailored to any device needs and can be
+ adapted to support broader set of languages features such as function
+ pointers, virtual functions, unified memory, and I/O capabilities.
+ .
+ This package contains the development headers for libze-intel-gpu1.

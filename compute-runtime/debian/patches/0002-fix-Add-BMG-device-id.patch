@@ -1,0 +1,59 @@
+From e2ed6cab2894da506e2cfedbe72ff849f9d3861d Mon Sep 17 00:00:00 2001
+From: Filip Hazubski <filip.hazubski@intel.com>
+Date: Fri, 28 Mar 2025 12:07:37 +0000
+Subject: [PATCH] fix: Add BMG device id
+
+Add device ID: 0xE211
+
+Signed-off-by: Filip Hazubski <filip.hazubski@intel.com>
+---
+ .../xe2_hpg_core/bmg/linux/dll/device_id_tests_bmg.cpp         | 3 ++-
+ shared/source/dll/devices/devices_base.inl                     | 1 +
+ .../xe2_hpg_core/bmg/definitions/device_ids_configs_bmg.h      | 2 +-
+ 3 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/opencl/test/unit_test/xe2_hpg_core/bmg/linux/dll/device_id_tests_bmg.cpp b/opencl/test/unit_test/xe2_hpg_core/bmg/linux/dll/device_id_tests_bmg.cpp
+index 5d52d0c003..f6dd936d75 100644
+--- a/opencl/test/unit_test/xe2_hpg_core/bmg/linux/dll/device_id_tests_bmg.cpp
++++ b/opencl/test/unit_test/xe2_hpg_core/bmg/linux/dll/device_id_tests_bmg.cpp
+@@ -10,12 +10,13 @@
+ using namespace NEO;
+ 
+ TEST_F(DeviceIdTests, GivenBmgSupportedDeviceIdThenDeviceDescriptorTableExists) {
+-    std::array<DeviceDescriptor, 8> expectedDescriptors = {{
++    std::array<DeviceDescriptor, 9> expectedDescriptors = {{
+         {0xE202, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
+         {0xE20B, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
+         {0xE20C, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
+         {0xE20D, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
+         {0xE210, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
++        {0xE211, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
+         {0xE212, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
+         {0xE215, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
+         {0xE216, &BmgHwConfig::hwInfo, &BmgHwConfig::setupHardwareInfo},
+diff --git a/shared/source/dll/devices/devices_base.inl b/shared/source/dll/devices/devices_base.inl
+index e8a229e084..93a74a9700 100644
+--- a/shared/source/dll/devices/devices_base.inl
++++ b/shared/source/dll/devices/devices_base.inl
+@@ -12,6 +12,7 @@ DEVICE(0xE20B, BmgHwConfig)
+ DEVICE(0xE20C, BmgHwConfig)
+ DEVICE(0xE20D, BmgHwConfig)
+ DEVICE(0xE210, BmgHwConfig)
++DEVICE(0xE211, BmgHwConfig)
+ DEVICE(0xE212, BmgHwConfig)
+ DEVICE(0xE215, BmgHwConfig)
+ DEVICE(0xE216, BmgHwConfig)
+diff --git a/shared/source/xe2_hpg_core/bmg/definitions/device_ids_configs_bmg.h b/shared/source/xe2_hpg_core/bmg/definitions/device_ids_configs_bmg.h
+index 775168dc77..0d5a87fc79 100644
+--- a/shared/source/xe2_hpg_core/bmg/definitions/device_ids_configs_bmg.h
++++ b/shared/source/xe2_hpg_core/bmg/definitions/device_ids_configs_bmg.h
+@@ -10,5 +10,5 @@
+ #include <vector>
+ 
+ namespace NEO {
+-const std::vector<unsigned short> bmgG21DeviceIds{0xE202, 0xE20B, 0xE20C, 0xE20D, 0xE210, 0xE212, 0xE215, 0xE216};
++const std::vector<unsigned short> bmgG21DeviceIds{0xE202, 0xE20B, 0xE20C, 0xE20D, 0xE210, 0xE211, 0xE212, 0xE215, 0xE216};
+ } // namespace NEO
+-- 
+2.48.1
+
