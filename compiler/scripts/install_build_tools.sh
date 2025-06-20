@@ -27,7 +27,8 @@ apt update && apt install -yqq \
       libhwloc-dev \
       libzstd-dev \
       time \
-      libze-dev
+      libze-dev \
+      mold
 
 # To obtain latest release of spriv-tool.
 # Same as what's done in SPRIV-LLVM-TRANSLATOR:
