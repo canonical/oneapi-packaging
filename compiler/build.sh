@@ -24,7 +24,7 @@ cp -rf parallel-hashmap build/_deps/parallel-hashmap-src
 python3 ./buildbot/configure.py \
          --l0-headers /usr/include/level_zero/ \
          --l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
-         --cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=4" \
+         --cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=16" \
          --disable-jit \
          --cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
          --cmake-opt="-DLLVM_BUILD_LLVM_DYLIB:BOOL=ON" \

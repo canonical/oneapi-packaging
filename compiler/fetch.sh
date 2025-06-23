@@ -44,6 +44,7 @@ cd ${SRC_FOLDER}
 rm .gitignore
 
 patch -p1 < ../sycl-0001-ubuntu-sauce.patch
+patch -p1 < ../sycl-0002-clang-SYCL-Disable-float128-device-mode-diagnostic.patch
 
 cd unified-runtime
 patch -p1 < ../../ur-0001-fix-opencl-lib.patch
