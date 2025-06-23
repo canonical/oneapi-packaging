@@ -5,7 +5,7 @@ SRC_FOLDER=${PWD}/llvm-${VERSION}
 
 # sycl compiler (llvm)
 if [ ! -d "${SRC_FOLDER}" ]; then
-    git clone -b v${VERSION} https://github.com/intel/llvm.git ${SRC_FOLDER}
+    git clone -b v${VERSION} --depth 1 https://github.com/intel/llvm.git ${SRC_FOLDER}
 fi
 
 # unified runtime
