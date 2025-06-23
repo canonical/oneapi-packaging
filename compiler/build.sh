@@ -4,7 +4,7 @@
 (cd unified-memory-framework/ && cmake -DUMF_BUILD_CUDA_PROVIDER=OFF -DUMF_BUILD_TESTS=OFF . && make && make install)
 
 # build and install level-zero v1.21.9
-(cd level-zero/ && cmake . && make && make install)
+(cd level-zero/ && cmake -DCMAKE_INSTALL_PREFIX=/usr/ . && make && make install)
 
 # SPIRV-Headers (the one in Ubuntu does not work) : 
 (cd SPIRV-Headers/ && cmake -DCMAKE_INSTALL_PREFIX=/usr/ . && make && make install)
@@ -18,8 +18,8 @@ cp -rf parallel-hashmap build/_deps/parallel-hashmap-src
 #--cmake-opt="-DLLVM_USE_LINKER=mold" \
 #--cmake-opt="-DUR_OPENCL_ICD_LOADER_LIBRARY=OpenCL" \
 python3 ./buildbot/configure.py \
-         --l0-headers /usr/local/include/level_zero/ \
-         --l0-loader /usr/local/lib/libze_loader.so \
+         --l0-headers /usr/include/level_zero/ \
+         --l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
          --cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=4" \
          --disable-jit \
          --cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
