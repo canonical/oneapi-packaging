@@ -16,7 +16,9 @@ git clone -b v0.11.10 https://github.com/oneapi-src/unified-runtime.git ${SRC_FO
 
 # level-zero v1.21.9
 git clone -b v1.21.9 https://github.com/oneapi-src/level-zero.git ${SRC_FOLDER}/level-zero/
- 
+
+# compute runtime (24.39.31294.12)
+
 # SPIRV-Headers (the one in Ubuntu does not work) :
 git clone -b vulkan-sdk-1.4.313.0 https://github.com/KhronosGroup/SPIRV-Headers.git ${SRC_FOLDER}/SPIRV-Headers
 
