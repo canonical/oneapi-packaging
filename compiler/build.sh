@@ -25,12 +25,9 @@ python3 ./buildbot/configure.py \
          --l0-headers /usr/include/level_zero/ \
          --l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
          --cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=16" \
-         --disable-jit \
-         --cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
-         --cmake-opt="-DLLVM_BUILD_LLVM_DYLIB:BOOL=ON" \
          --cmake-opt="-DSYCL_UR_USE_FETCH_CONTENT=OFF" \
-         --cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=$PWD/vc-intrinsics" \
          --cmake-opt="-DFETCHCONTENT_FULLY_DISCONNECTED=ON" \
+         --cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=$PWD/vc-intrinsics" \
          --cmake-opt="-DSYCL_UR_SOURCE_DIR=$PWD/unified-runtime" \
          --cmake-opt="-DUR_OPENCL_INCLUDE_DIR=/usr/include/" \
          --cmake-opt="-DUR_USE_EXTERNAL_UMF=ON" \
@@ -38,5 +35,6 @@ python3 ./buildbot/configure.py \
          --cmake-opt="-DOpenCL_INCLUDE_DIR=/usr/include/" \
          --cmake-opt="-DBOOST_MP11_SOURCE_DIR=$PWD/mp11-boost" \
          --cmake-opt="-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/" \
+         --disable-jit
 
 python3 ./buildbot/compile.py
