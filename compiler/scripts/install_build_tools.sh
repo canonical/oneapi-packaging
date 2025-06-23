@@ -34,6 +34,7 @@ apt update && apt install -yqq \
       spirv-headers \
       opencl-headers \
       ocl-icd-libopencl1 \
+      libboost1.88-dev \
       pkg-config
 
 # To obtain latest release of spriv-tool.

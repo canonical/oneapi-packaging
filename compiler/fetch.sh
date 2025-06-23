@@ -21,6 +21,7 @@ git clone -b v0.10.0 https://github.com/oneapi-src/unified-memory-framework.git 
 git clone -b v1.19.2 https://github.com/oneapi-src/level-zero.git ${SRC_FOLDER}/level-zero/
 
 # compute runtime (24.39.31294.12)
+git clone -b 24.39.31294.12 https://github.com/intel/compute-runtime.git ${SRC_FOLDER}/compute-runtime/
 
 # SPIRV-Headers (the one in Ubuntu does not work) :
 git clone -b vulkan-sdk-1.4.313.0 https://github.com/KhronosGroup/SPIRV-Headers.git ${SRC_FOLDER}/SPIRV-Headers
@@ -38,9 +39,12 @@ git clone -b boost-1.88.0 https://github.com/boostorg/mp11.git ${SRC_FOLDER}/mp1
 git clone -b dpcpp_staging https://github.com/intel/vc-intrinsics.git ${SRC_FOLDER}/vc-intrinsics
 
 cp build.sh ${SRC_FOLDER}
+
 cd ${SRC_FOLDER}
+rm .gitignore
 
-rm ${SRC_FOLDER}/.gitignore
+patch -p1 < ../sycl-0001-ubuntu-sauce.patch
 
-
+cd ${SRC_FOLDER}/unified-runtime
+patch -p1 < ../../ur-0001-fix-opencl-lib.patch
 
