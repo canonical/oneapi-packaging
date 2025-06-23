@@ -8,14 +8,17 @@ if [ ! -d "${SRC_FOLDER}" ]; then
     git clone -b v${VERSION} https://github.com/intel/llvm.git ${SRC_FOLDER}
 fi
 
-# UMF tag v0.11.2
-git clone -b v0.12.0-dev3 https://github.com/oneapi-src/unified-memory-framework.git ${SRC_FOLDER}/unified-memory-framework/
+# unified runtime
+# the compiler at v6.1.0 requires unified runtime v0.11.8
+git clone -b v0.11.8 https://github.com/oneapi-src/unified-runtime.git ${SRC_FOLDER}/unified-runtime
 
-# unified runtime (on v6.1.0), unified runtime is not bundled into the compiler
-git clone -b v0.11.10 https://github.com/oneapi-src/unified-runtime.git ${SRC_FOLDER}/unified-runtime
+# UMF tag v0.10.0, this is required by UR v0.11.8
+# (TODO : bump into v0.12.0-dev3)
+git clone -b v0.10.0 https://github.com/oneapi-src/unified-memory-framework.git ${SRC_FOLDER}/unified-memory-framework/
 
-# level-zero v1.21.9
-git clone -b v1.21.9 https://github.com/oneapi-src/level-zero.git ${SRC_FOLDER}/level-zero/
+# level-zero v1.19.2 (required by UMF v0.10.0)
+# TODO : bump to v1.21.9
+git clone -b v1.19.2 https://github.com/oneapi-src/level-zero.git ${SRC_FOLDER}/level-zero/
 
 # compute runtime (24.39.31294.12)
 
@@ -32,8 +35,12 @@ git clone -b v2.0.0 https://github.com/greg7mdp/parallel-hashmap.git  ${SRC_FOLD
 git clone -b boost-1.88.0 https://github.com/boostorg/mp11.git ${SRC_FOLDER}/mp11-boost
 
 # vc-intrinsics
+git clone -b dpcpp_staging https://github.com/intel/vc-intrinsics.git ${SRC_FOLDER}/vc-intrinsics
 
 cp build.sh ${SRC_FOLDER}
 cd ${SRC_FOLDER}
+
+rm ${SRC_FOLDER}/.gitignore
+
 
 
