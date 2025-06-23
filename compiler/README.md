@@ -17,7 +17,7 @@ cd /src/
 clang++ -fsycl sample.cpp -o simple-sycl-app
 
 #### mandelbrot
-cd mandelbrot
-CXXFLAGS=-isystem\ /src/common/ cmake .
+cd mandelbrot<br>
+CXXFLAGS=-isystem\ /src/common/ cmake .<br>
 make
 
