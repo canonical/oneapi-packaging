@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VERSION=6.1.0
-SRC_FOLDER=llvm-${VERSION}
+SRC_FOLDER=${PWD}/llvm-${VERSION}
 
 # sycl compiler (llvm)
 if [ ! -d "${SRC_FOLDER}" ]; then
@@ -45,6 +45,7 @@ rm .gitignore
 
 patch -p1 < ../sycl-0001-ubuntu-sauce.patch
 
-cd ${SRC_FOLDER}/unified-runtime
+cd unified-runtime
 patch -p1 < ../../ur-0001-fix-opencl-lib.patch
 
+cd ${SRC_FOLDER}
