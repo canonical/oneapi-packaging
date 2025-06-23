@@ -20,7 +20,8 @@ git clone -b v0.10.0 https://github.com/oneapi-src/unified-memory-framework.git 
 # TODO : bump to v1.21.9
 git clone -b v1.19.2 https://github.com/oneapi-src/level-zero.git ${SRC_FOLDER}/level-zero/
 
-# compute runtime (24.39.31294.12)
+# compute runtime (24.39.31294.12), required by unified runtime (UR)
+# unified runtimes only needs level-zero headers that are part of the compute-runtime (level_zero/include)
 git clone -b 24.39.31294.12 https://github.com/intel/compute-runtime.git ${SRC_FOLDER}/compute-runtime/
 
 # SPIRV-Headers (the one in Ubuntu does not work) :
