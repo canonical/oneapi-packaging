@@ -1,0 +1,2 @@
+usr/lib/llvm-dpcpp-20/bin/clang-20 usr/bin/clang-dpcpp
+usr/lib/llvm-dpcpp-20/bin/clang-20 usr/bin/icpx

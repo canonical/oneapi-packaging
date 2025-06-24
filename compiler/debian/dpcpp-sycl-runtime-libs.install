@@ -1,2 +1,2 @@
-src/build/install/lib/libur_* 	/usr/lib/llvm-dpcpp/lib/
-src/build/install/lib/libxpti* 	/usr/lib/llvm-dpcpp/lib/
+src/build/install/lib/libur_* 	/usr/lib/llvm-dpcpp-20/lib/
+src/build/install/lib/libxpti* 	/usr/lib/llvm-dpcpp-20/lib/

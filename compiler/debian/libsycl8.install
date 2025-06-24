@@ -1,1 +1,1 @@
-src/build/install/lib/libsycl.so.8* /usr/lib/llvm-dpcpp/
+src/build/install/lib/libsycl.so.8* /usr/lib/llvm-dpcpp-20/lib/

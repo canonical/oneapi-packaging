@@ -1,1 +1,1 @@
-src/build/install/lib/libclang.so.* 	/usr/lib/llvm-dpcpp/lib/
+src/build/install/lib/libclang.so.* 	/usr/lib/llvm-dpcpp-20/lib/
