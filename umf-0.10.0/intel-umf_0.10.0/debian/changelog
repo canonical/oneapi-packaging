@@ -1,0 +1,11 @@
+intel-umf (0.10.0-0ubuntu1~25.04~ppa2) plucky; urgency=medium
+
+  * Cleanup package to prepare for upload to PPA.
+
+ -- Will French <will.french@canonical.com>  Tue, 24 Jun 2025 17:13:23 -0500
+
+intel-umf (0.10.0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
+
+  * v0.10.0
+
+ -- Hector Cao <hector.cao@canonical.com>  Tue, 24 Jun 2025 11:32:58 +0000
