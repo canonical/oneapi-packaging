@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+#INSTALL_DIR=debian/usr/include/emhash
+
+%:
+	dh $@
+
+override_dh_auto_build:
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DPHMAP_BUILD_EXAMPLES=OFF \
+		-DPHMAP_BUILD_TESTS=OFF
