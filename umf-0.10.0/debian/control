@@ -1,0 +1,40 @@
+Source: intel-umf
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 11),
+ cmake,
+ make,
+ gcc,
+ libhwloc-dev,
+ libgtest-dev,
+ libze-dev,
+Standards-Version: 4.3.0
+Homepage: https://github.com/oneapi-src/unified-memory-framework
+
+Package: libumf-dev
+Architecture: amd64
+Section: libdevel
+Depends:
+ libumf0 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Intel Unified Memory Framework development files
+  The Unified Memory Framework (UMF) is a library for constructing allocators
+  and memory pools. It also contains broadly useful abstractions and utilities
+  for memory management. UMF allows users to manage multiple memory pools
+  characterized by different attributes, allowing certain allocation types to
+  be isolated from others and allocated using different hardware resources as
+  required.
+
+Package: libumf0
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Intel Unified Memory Framework
+  The Unified Memory Framework (UMF) is a library for constructing allocators
+  and memory pools. It also contains broadly useful abstractions and utilities
+  for memory management. UMF allows users to manage multiple memory pools
+  characterized by different attributes, allowing certain allocation types to
+  be isolated from others and allocated using different hardware resources as
+  required.
