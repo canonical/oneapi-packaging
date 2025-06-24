@@ -1,7 +1,7 @@
 
-CXX = icpx
+CXX = clang++
 
-SYCL_CXXFLAGS = -std=c++17 -fsycl -g -o
+SYCL_CXXFLAGS = $(CXXFLAGS) -std=c++17 -fsycl -g -o
 SYCL_LDFLAGS = 
 SYCL_EXE_NAME = matrix_mul_dpc
 SYCL_SOURCES = src/matrix_mul_sycl.cpp
