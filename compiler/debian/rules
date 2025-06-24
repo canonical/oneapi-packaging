@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+export LLVM_TOOL_SPIRV_HEADERS_BUILD=/usr/include/SPIRV/
+export OpenCL_HEADERS=/usr/include/CL/
+export OpenCL_LIBRARY_SRC=/usr/lib/x86_64-linux-gnu/intel-opencl/libigdrcl.so
+export UR_BUILD_XPTI_LIBS=${CURDIR}/xpti/build
+export LEVEL_ZERO_INCLUDE_DIR=/usr/include/level_zero
+export LEVEL_ZERO_LIBRARY=/usr/lib/x86_64-linux-gnu/
+export EMHASH_SYS_LOC=/usr/include/emhash/
+export LLVMGenXIntrinsics_SOURCE_DIR=${CURDIR}/vc-intrinsics/
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	mkdir ${UR_BUILD_XPTI_LIBS}
+	cd ${UR_BUILD_XPTI_LIBS} && cmake .. && make -j`nproc` && sudo make install
+	python3 ${CURDIR}/buildbot/configure.py --shared-libs --libcxx-include=/usr/include/ --libcxx-library=/usr/lib/x86_64-linux-gnu/ -t Release
+
+override_dh_auto_build:
+	python3 ${CURDIR}/buildbot/compile.py -j`nproc`
+
+override_dh_auto_install:
+	# Install binaries to debian/tmp/usr
+	cd build && DESTDIR=$(CURDIR)/debian/tmp ninja install
+
+override_dh_clean:
+	rm -rf ${UR_BUILD_XPTI_LIBS}
+	dh_clean

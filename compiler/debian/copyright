@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: DPC++
+Source: https://github.com/intel/llvm
+
+Files: *
+Copyright: 2020-2025, Intel Corporation
+License: Apache-2.0
