@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+#INSTALL_DIR=debian/usr/include/emhash
+
+%:
+	dh $@
+
+override_dh_auto_build:
+
+#override_dh_auto_install:
+#	# manually install headers
+#	mkdir -p ${INSTALL_DIR}
+#	cp -r *.hpp ${INSTALL_DIR}
+#	cp -r *.h ${INSTALL_DIR}
+
+#override_dh_auto_clean:
+#	rm -rf ${INSTALL_DIR}
+#	dh_clean
