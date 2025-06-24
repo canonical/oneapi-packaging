@@ -4,7 +4,7 @@
 (cd unified-memory-framework/ && cmake -DUMF_BUILD_LIBUMF_POOL_DISJOINT=ON -DUMF_LEVEL_ZERO_INCLUDE_DIR=/usr/include/level_zero -DUMF_BUILD_CUDA_PROVIDER=OFF -DUMF_BUILD_TESTS=OFF . && make && make install)
 
 # build and install level-zero v1.21.9
-(cd level-zero/ && cmake -DCMAKE_INSTALL_PREFIX=/usr/ . && make && make install)
+#(cd level-zero/ && cmake -DCMAKE_INSTALL_PREFIX=/usr/ . && make && make install)
 
 rm -rf build
 mkdir -p build/_deps/
