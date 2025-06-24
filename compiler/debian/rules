@@ -1,9 +1,18 @@
 #!/usr/bin/make -f
 
+PKG_VERSION := $(shell dpkg-parsechangelog | awk '/^Version:/ {print $$2}')
+LLVM_VERSION := 21
+
 %:
 	dh $@
 
-override_dh_auto_configure:
+stamps/configure: stamps/preconfigure
+	:
+
+stamps/preconfigure:
+	:
+
+override_dh_auto_configure: stamps/configure
 	python3 ${CURDIR}/buildbot/configure.py \
 		--l0-headers /usr/include/level_zero/ \
 		--l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
@@ -28,6 +37,11 @@ override_dh_auto_build:
 override_dh_auto_install:
 	# Install binaries to debian/tmp/usr
 	cd build && DESTDIR=$(CURDIR)/debian/tmp ninja install
+
+# TODO
+override_dh_shlibdeps:
+	:
+	#dh_shlibdeps -ldebian/tmp/src/build/install/lib/ --dpkg-shlibdeps-params=--ignore-missing-info
 
 override_dh_clean:
 	rm -rf ${UR_BUILD_XPTI_LIBS}

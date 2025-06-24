@@ -1,0 +1,2 @@
+src/build/install/bin/clang* usr/lib/llvm-dpcpp-20/bin/
+src/build/install/bin/sycl-* usr/lib/llvm-dpcpp-20/bin/

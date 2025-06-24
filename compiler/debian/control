@@ -30,8 +30,40 @@ Build-Conflicts: oprofile
 Standards-Version: 4.7.0
 Homepage: https://github.com/intel/llvm
 
-Package: dpcpp
-Architecture: any
+Package: clang-dpcpp-20
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Intel DPC++ Compiler
+ A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+
+Package: libclang-dpcpp20
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Intel DPC++ Compiler
+ A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+
+Package: libsycl8
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Intel DPC++ Compiler
+ A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+
+Package: libsycl-dev
+Architecture: amd64
+Depends:
+ libsycl8 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Intel DPC++ Compiler
+ A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+
+Package: dpcpp-sycl-runtime-libs
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Intel DPC++ Compiler
+ A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+
+Package: llvm-dpcpp
+Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Intel DPC++ Compiler
  A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
