@@ -24,9 +24,6 @@ git clone -b v1.19.2 https://github.com/oneapi-src/level-zero.git ${SRC_FOLDER}/
 # unified runtimes only needs level-zero headers that are part of the compute-runtime (level_zero/include)
 git clone -b 24.39.31294.12 https://github.com/intel/compute-runtime.git ${SRC_FOLDER}/compute-runtime/
 
-# SPIRV-Headers (the one in Ubuntu does not work) :
-git clone -b vulkan-sdk-1.4.313.0 https://github.com/KhronosGroup/SPIRV-Headers.git ${SRC_FOLDER}/SPIRV-Headers
-
 # emhash
 git clone https://github.com/ktprime/emhash ${SRC_FOLDER}/emhash
 

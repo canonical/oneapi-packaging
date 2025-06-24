@@ -6,9 +6,6 @@
 # build and install level-zero v1.21.9
 (cd level-zero/ && cmake -DCMAKE_INSTALL_PREFIX=/usr/ . && make && make install)
 
-# SPIRV-Headers (the one in Ubuntu does not work) : 
-(cd SPIRV-Headers/ && cmake -DCMAKE_INSTALL_PREFIX=/usr/ . && make && make install)
-
 rm -rf build
 mkdir -p build/_deps/
 
