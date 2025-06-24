@@ -75,6 +75,14 @@ export PATH=/home/ubuntu/oneapi-build/bin:$PATH
 export LD_LIBRARY_PATH=/home/ubuntu/oneapi-build/lib:$LD_LIBRARY_PATH
 ```
 
+### Clone repo
+
+If you have not done so already on the host:
+
+```bash
+git clone -b develop/kobuk https://github.com/canonical/oneapi-packaging.git
+```
+
 ### Simple SYCL app
 
 This first example hard-codes the type of device, so in order to run successfully `sycl-ls` should show a `HD Graphics NEO` device type. You can also modify the device type manually and re-build as this is a very simple application.
