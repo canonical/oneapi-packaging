@@ -1,21 +1,26 @@
 #!/usr/bin/make -f
 
-export LLVM_TOOL_SPIRV_HEADERS_BUILD=/usr/include/SPIRV/
-export OpenCL_HEADERS=/usr/include/CL/
-export OpenCL_LIBRARY_SRC=/usr/lib/x86_64-linux-gnu/intel-opencl/libigdrcl.so
-export UR_BUILD_XPTI_LIBS=${CURDIR}/xpti/build
-export LEVEL_ZERO_INCLUDE_DIR=/usr/include/level_zero
-export LEVEL_ZERO_LIBRARY=/usr/lib/x86_64-linux-gnu/
-export EMHASH_SYS_LOC=/usr/include/emhash/
-export LLVMGenXIntrinsics_SOURCE_DIR=${CURDIR}/vc-intrinsics/
-
 %:
 	dh $@
 
 override_dh_auto_configure:
-	mkdir ${UR_BUILD_XPTI_LIBS}
-	cd ${UR_BUILD_XPTI_LIBS} && cmake .. && make -j`nproc` && sudo make install
-	python3 ${CURDIR}/buildbot/configure.py --shared-libs --libcxx-include=/usr/include/ --libcxx-library=/usr/lib/x86_64-linux-gnu/ -t Release
+	python3 ${CURDIR}/buildbot/configure.py \
+		--l0-headers /usr/include/level_zero/ \
+		--l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
+		--cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=16" \
+		--disable-jit \
+		--cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
+		--cmake-opt="-DLLVM_BUILD_LLVM_DYLIB:BOOL=ON" \
+		--cmake-opt="-DSYCL_UR_USE_FETCH_CONTENT=OFF" \
+		--cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=${CURDIR}/vc-intrinsics" \
+		--cmake-opt="-DFETCHCONTENT_FULLY_DISCONNECTED=ON" \
+		--cmake-opt="-DSYCL_UR_SOURCE_DIR=${CURDIR}/unified-runtime" \
+		--cmake-opt="-DUR_OPENCL_INCLUDE_DIR=/usr/include/" \
+		--cmake-opt="-DUR_USE_EXTERNAL_UMF=ON" \
+		--cmake-opt="-DUR_COMPUTE_RUNTIME_REPO=${CURDIR}/compute-runtime" \
+		--cmake-opt="-DOpenCL_INCLUDE_DIR=/usr/include/" \
+		--cmake-opt="-DBOOST_MP11_SOURCE_DIR=${CURDIR}/mp11-boost" \
+		--cmake-opt="-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/" \
 
 override_dh_auto_build:
 	python3 ${CURDIR}/buildbot/compile.py -j`nproc`

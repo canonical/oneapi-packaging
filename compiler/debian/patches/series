@@ -1,0 +1,3 @@
+sycl-0001-ubuntu-sauce.patch
+sycl-0002-clang-SYCL-Disable-float128-device-mode-diagnostic.patch
+ur-0001-fix-opencl-lib.patch

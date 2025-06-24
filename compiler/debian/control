@@ -1,24 +1,33 @@
 Source: dpcpp
 Section: devel
 Priority: optional
+Rules-Requires-Root: no
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-Build-Depends: debhelper (>= 12), 
- cmake, 
- ninja-build, 
- python3, python3-pip, 
- libedit-dev, libxml2-dev, 
- libz3-dev, 
- libz-dev, 
- libtinfo-dev, 
- libncurses5-dev, 
- libncursesw5-dev,
- spirv-headers,
- ocl-icd-opencl-dev,
- spirv-tools,
- emhash-headers,
- parallel-hashmap-headers,
- intel-vc-intrinsics-dev,
-Standards-Version: 4.5.0
+Build-Depends:
+    debhelper (>= 12),
+    cmake,
+    ninja-build,
+    python3,
+    python3-pip,
+    libedit-dev,
+    libxml2-dev,
+    libz3-dev,
+    libz-dev,
+    libtinfo-dev,
+    libncurses5-dev,
+    libncursesw5-dev,
+    libze-dev,
+    libze-intel-gpu-dev,
+    mold,
+    spirv-tools,
+    spirv-headers,
+    opencl-headers,
+    ocl-icd-opencl-dev,
+    libboost1.88-dev,
+    libzstd-dev,
+    pkg-config,
+Build-Conflicts: oprofile
+Standards-Version: 4.7.0
 Homepage: https://github.com/intel/llvm
 
 Package: dpcpp
