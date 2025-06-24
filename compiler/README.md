@@ -104,7 +104,7 @@ sudo apt install -y ocl-icd-opencl-dev
 Now build and run:
 
 ```bash
-cd /home/ubuntu/oneapi-packaging/compiler/samples/mandebrot
+cd /home/ubuntu/oneapi-packaging/compiler/samples/mandelbrot
 CXXFLAGS="-isystem /home/ubuntu/oneapi-packaging/compiler/samples/common" cmake .
 make
 cd src
@@ -141,4 +141,5 @@ make cpu-gpu
 ```bash
 cd /home/ubuntu/oneapi-packaging/validation/2025.1/DirectProgramming/C++SYCL/DenseLinearAlgebra/matrix_mul
 CXXFLAGS="-isystem /home/ubuntu/oneapi-packaging/compiler/samples/common" make all
+./matrix_mul_dpc
 ```
