@@ -1,0 +1,11 @@
+# binary and source package build artifacts
+*.build
+*.buildinfo
+*.changes
+*.deb
+*.xz
+*.dsc
+*.gz
+*.upload
+**/debian/files
+.pc

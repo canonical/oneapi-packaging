@@ -1,3 +1,9 @@
+intel-umf (0.10.0-0ubuntu1~25.04~ppa3) plucky; urgency=medium
+
+  * Force include orig tarball in dpkg-buildpackage.
+
+ -- Will French <will.french@canonical.com>  Tue, 24 Jun 2025 20:49:22 -0500
+
 intel-umf (0.10.0-0ubuntu1~25.04~ppa2) plucky; urgency=medium
 
   * Cleanup package to prepare for upload to PPA.
