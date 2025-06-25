@@ -1,4 +1,1 @@
-usr/lib/@DEB_HOST_MULTIARCH@/libur_adapter_level_zero.so.0 usr/lib/llvm-dpcpp-20/lib/libur_adapter_level_zero.so.0.11.10
-usr/lib/@DEB_HOST_MULTIARCH@/libur_adapter_opencl.so.0 usr/lib/llvm-dpcpp-20/lib/libur_adapter_opencl.so.0.11.10
-usr/lib/@DEB_HOST_MULTIARCH@/libur_loader.so.0 usr/lib/llvm-dpcpp-20/lib/libur_loader.so.0.11.10
-usr/lib/@DEB_HOST_MULTIARCH@/libxptifw.so usr/lib/llvm-dpcpp-20/lib/libxptifw.so
+usr/lib/llvm-dpcpp-20/lib/libur_loader.so.0 usr/lib/@DEB_HOST_MULTIARCH@/libur_loader.so.0

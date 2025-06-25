@@ -1,4 +1,4 @@
-Source: dpcpp
+Source: intel-dpcpp
 Section: devel
 Priority: optional
 Rules-Requires-Root: no
@@ -16,6 +16,7 @@ Build-Depends:
     libtinfo-dev,
     libncurses5-dev,
     libncursesw5-dev,
+    libumf-dev,
     libze-dev,
     libze-intel-gpu-dev,
     mold,
@@ -34,7 +35,9 @@ Package: clang-dpcpp-20
 Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Intel DPC++ Compiler
- A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+ The DPC++ is a LLVM-based compiler project that implements compiler and runtime
+ support for the SYCL language.
+ This package delivers the compiler binary clang-dpcpp.
 
 Package: libclang-dpcpp20
 Architecture: amd64
@@ -51,7 +54,10 @@ Description: Intel DPC++ Compiler
 
 Package: libsycl8
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ dpcpp-sycl-runtime-libs
 Description: Intel DPC++ Compiler
  A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
 
