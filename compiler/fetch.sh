@@ -24,10 +24,10 @@ git clone -b v0.10.0 https://github.com/oneapi-src/unified-memory-framework.git 
 # unified runtimes only needs level-zero headers that are part of the compute-runtime (level_zero/include)
 git clone -b 24.39.31294.12 https://github.com/intel/compute-runtime.git ${SRC_FOLDER}/compute-runtime/
 
-# emhash
+# emhash (required by xptifw)
 git clone https://github.com/ktprime/emhash ${SRC_FOLDER}/emhash
 
-# parallel-hashmap
+# parallel-hashmap (required by xptifw)
 git clone -b v2.0.0 https://github.com/greg7mdp/parallel-hashmap.git  ${SRC_FOLDER}/parallel-hashmap
 
 # mp11-boost
