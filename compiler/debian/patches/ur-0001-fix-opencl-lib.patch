@@ -4,13 +4,13 @@ Date: Mon, 23 Jun 2025 17:46:08 +0000
 Subject: [PATCH] fix opencl lib
 
 ---
- source/adapters/opencl/CMakeLists.txt | 5 +++++
+ vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt | 5 +++++
  1 file changed, 5 insertions(+)
 
-diff --git a/source/adapters/opencl/CMakeLists.txt b/source/adapters/opencl/CMakeLists.txt
+diff --git a/vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt b/vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt
 index e091012b..b717f770 100644
---- a/source/adapters/opencl/CMakeLists.txt
-+++ b/source/adapters/opencl/CMakeLists.txt
+--- a/vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt
++++ b/vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt
 @@ -65,6 +65,11 @@ else()
      )
  endif()

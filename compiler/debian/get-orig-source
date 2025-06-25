@@ -1,0 +1,27 @@
+#!/bin/bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+# Script usage:
+# get-orig-source --upstream-version <version>
+
+# $1 should hold the value --upstream-version
+# $2 should hold the upstream version
+UPSTREAM_VERSION=$2
+
+PKG_SOURCE_NAME=intel-dpcpp
+PKG_FOLDER=${PKG_SOURCE_NAME}-${UPSTREAM_VERSION}
+PKG_ORIG_NAME=${PKG_SOURCE_NAME}_${UPSTREAM_VERSION}.orig.tar.gz
+
+uupdate -f --verbose "$@"
+
+# vendoring go dependencies
+set -e
+
+CUR_DIR=$PWD
+WORK_DIR=$(mktemp -d)
+DEST_DIR=${CUR_DIR}/../
+
+echo ${PKG_FOLDER}
+
+${CUR_DIR}/../${PKG_FOLDER}/debian/vendor.sh ${UPSTREAM_VERSION}

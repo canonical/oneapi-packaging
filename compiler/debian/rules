@@ -10,7 +10,12 @@ stamps/configure: stamps/preconfigure
 	:
 
 stamps/preconfigure:
-	:
+	rm -rf build
+	mkdir -p build/_deps/
+	cp -rf vendor/emhash build/_deps/emhash-headers-src
+	cp -rf vendor/parallel-hashmap build/_deps/parallel-hashmap-src
+	mkdir -p build/content-exp-headers/
+	cp -rf vendor/compute-runtime/level_zero/ build/content-exp-headers/
 
 override_dh_auto_configure: stamps/configure
 	python3 ${CURDIR}/buildbot/configure.py \
@@ -21,14 +26,13 @@ override_dh_auto_configure: stamps/configure
 		--cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
 		--cmake-opt="-DLLVM_BUILD_LLVM_DYLIB:BOOL=ON" \
 		--cmake-opt="-DSYCL_UR_USE_FETCH_CONTENT=OFF" \
-		--cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=${CURDIR}/vc-intrinsics" \
+		--cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=${CURDIR}/vendor/vc-intrinsics" \
 		--cmake-opt="-DFETCHCONTENT_FULLY_DISCONNECTED=ON" \
-		--cmake-opt="-DSYCL_UR_SOURCE_DIR=${CURDIR}/unified-runtime" \
+		--cmake-opt="-DSYCL_UR_SOURCE_DIR=${CURDIR}/vendor/unified-runtime" \
 		--cmake-opt="-DUR_OPENCL_INCLUDE_DIR=/usr/include/" \
 		--cmake-opt="-DUR_USE_EXTERNAL_UMF=ON" \
-		--cmake-opt="-DUR_COMPUTE_RUNTIME_REPO=${CURDIR}/compute-runtime" \
 		--cmake-opt="-DOpenCL_INCLUDE_DIR=/usr/include/" \
-		--cmake-opt="-DBOOST_MP11_SOURCE_DIR=${CURDIR}/mp11-boost" \
+		--cmake-opt="-DBOOST_MP11_SOURCE_DIR=${CURDIR}/vendor/mp11-boost" \
 		--cmake-opt="-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/" \
 
 override_dh_auto_build:
