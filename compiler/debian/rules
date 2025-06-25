@@ -18,6 +18,9 @@ stamps/preconfigure:
 	cp -rf vendor/compute-runtime/level_zero/ build/content-exp-headers/
 
 override_dh_auto_configure: stamps/configure
+	# l0-headers -> equivalent to cmake option "-DLEVEL_ZERO_INCLUDE_DIR"
+	# l0-loader -> equivalent to cmake option "-DLEVEL_ZERO_LIBRARY"
+	# set both l0-headers & l0-loader to tell the compiler to use system libze 
 	python3 ${CURDIR}/buildbot/configure.py \
 		--l0-headers /usr/include/level_zero/ \
 		--l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
