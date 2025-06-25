@@ -1,2 +1,3 @@
 usr/lib/llvm-dpcpp-20/bin/clang-20 usr/bin/clang-dpcpp
 usr/lib/llvm-dpcpp-20/bin/clang-20 usr/bin/icpx
+usr/lib/llvm-dpcpp-20/bin/spirv-to-ir-wrapper usr/bin/spirv-to-ir-wrapper

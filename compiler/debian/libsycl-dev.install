@@ -1,0 +1,10 @@
+src/build/install/include/sycl/ /usr/lib/llvm-dpcpp-20/include/
+src/build/install/include/syclcompat/ /usr/lib/llvm-dpcpp-20/include/
+src/build/install/include/xpti/ /usr/lib/llvm-dpcpp-20/include/
+src/build/install/include/ur_api.h /usr/lib/llvm-dpcpp-20/include/
+src/build/install/include/ur_ddi.h /usr/lib/llvm-dpcpp-20/include/
+src/build/install/include/ur_print.h /usr/lib/llvm-dpcpp-20/include/
+src/build/install/include/ur_print.hpp /usr/lib/llvm-dpcpp-20/include/
+src/build/install/include/ur_api_funcs.def /usr/lib/llvm-dpcpp-20/include/
+src/build/install/lib/libsycl.so /usr/lib/llvm-dpcpp-20/lib/
+src/build/install/lib/libsycl-devicelib-host.a /usr/lib/llvm-dpcpp-20/lib/
