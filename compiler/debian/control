@@ -19,7 +19,6 @@ Build-Depends:
     libumf-dev,
     libze-dev,
     libze-intel-gpu-dev,
-    mold,
     spirv-tools,
     spirv-headers,
     opencl-headers,
