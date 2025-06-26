@@ -56,24 +56,6 @@ override_dh_shlibdeps:
 	:
 	#dh_shlibdeps -ldebian/tmp/src/build/install/lib/ --dpkg-shlibdeps-params=--ignore-missing-info
 
-#
-# dwz: ...: Too many DIEs, not optimizing
-# TODO:
-# dwz: debian/libclang-dpcpp20/usr/lib/llvm-dpcpp-20/lib/libclang.so.20.0.0git: Too many DIEs, not optimizing
-# dh_dwz: error: dwz -- debian/libclang-dpcpp20/usr/lib/llvm-dpcpp-20/lib/libclang.so.20.0.0git returned exit code 1
-# dwz: debian/llvm-dpcpp/usr/lib/llvm-dpcpp-20/bin/bugpoint: Too many DIEs, not optimizing
-# dwz: debian/clang-dpcpp-20/usr/lib/llvm-dpcpp-20/bin/clang-check: Too many DIEs, not optimizing
-# dwz: debian/llvm-dpcpp/usr/lib/llvm-dpcpp-20/bin/diagtool: Too many DIEs, not optimizing
-# dwz: debian/clang-dpcpp-20/usr/lib/llvm-dpcpp-20/bin/clang-extdef-mapping: Too many DIEs, not optimizing
-# dwz: debian/llvm-dpcpp/usr/lib/llvm-dpcpp-20/bin/dsymutil: Too many DIEs, not optimizing
-# dwz: debian/llvm-dpcpp/usr/lib/llvm-dpcpp-20/bin/llc: Too many DIEs, not optimizing
-# dwz: debian/llvm-dpcpp/usr/lib/llvm-dpcpp-20/bin/lli: Too many DIEs, not optimizing
-# dwz: debian/clang-dpcpp-20/usr/lib/llvm-dpcpp-20/bin/clang-installapi: Too many DIEs, not optimizing
-# dwz: debian/clang-dpcpp-20/usr/lib/llvm-dpcpp-20/bin/clang-linker-wrapper: Too many DIEs, not optimizing
-# dwz: debian/clang-dpcpp-20/usr/lib/llvm-dpcpp-20/bin/clang-nvlink-wrapper: Too many DIEs, not optimizing
-override_dh_dwz:
-	:
-
 override_dh_clean:
 	rm -rf ${UR_BUILD_XPTI_LIBS}
 	dh_clean
