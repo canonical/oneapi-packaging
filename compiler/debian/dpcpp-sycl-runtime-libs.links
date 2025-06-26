@@ -1,1 +1,1 @@
-usr/lib/llvm-dpcpp-20/lib/libur_loader.so.0 usr/lib/@DEB_HOST_MULTIARCH@/libur_loader.so.0
+usr/lib/llvm-dpcpp-20/lib/libur_loader.so.0 usr/lib/x86_64-linux-gnu/libur_loader.so.0
