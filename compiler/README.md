@@ -170,6 +170,13 @@ lrwxrwxrwx  1 ubuntu ubuntu        24 Jun 26 22:40 intel-dpcpp_6.1.0.orig.tar.xz
 
 The folder `intel-dpcpp-6.1.0` should contain the upstream source code and debian folder. You can build the debian packages out of it.
 
+#### Install the PPA
+```
+sudo add-apt-repository ppa:kobuk-team/oneapi-staging
+sudo apt update
+```
+This provides libumf-dev, which is needed for the build steps
+
 #### Build the debian packages
 
 Go to the `intel-dpcpp-6.1.0` folder and build the packages from there:
