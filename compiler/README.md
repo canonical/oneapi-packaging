@@ -143,3 +143,41 @@ cd /home/ubuntu/oneapi-packaging/validation/2025.1/DirectProgramming/C++SYCL/Den
 CXXFLAGS="-isystem /home/ubuntu/oneapi-packaging/compiler/samples/common" make all
 ./matrix_mul_dpc
 ```
+
+
+### Build the debian package
+
+#### Create the source code
+
+```
+$ cd compiler
+$ uscan --force-download
+```
+
+After this, you will have a bunch of files populated at the parent folder of the `compiler` folder:
+
+This is an example of the files:
+
+```
+drwxrwxr-x 39 ubuntu ubuntu      4096 Jun 27 15:46 intel-dpcpp-6.1.0
+-rw-rw-r--  1 ubuntu ubuntu 150423784 Jun 26 22:34 intel-dpcpp-6.1.0.tar.xz
+-rw-rw-r--  1 ubuntu ubuntu      6328 Jun 26 22:40 intel-dpcpp_6.1.0-0ubuntu1.debian.tar.xz
+-rw-rw-r--  1 ubuntu ubuntu       214 Jun 26 22:40 intel-dpcpp_6.1.0-0ubuntu1.dsc
+-rw-rw-r--  1 ubuntu ubuntu      6328 Jun 26 22:40 intel-dpcpp_6.1.0-0ubuntu1~25.10~ppa5.debian.tar.xz
+-rw-rw-r--  1 ubuntu ubuntu  14903564 Jun 26 22:41 intel-dpcpp_6.1.0.orig-vendor.tar.gz
+lrwxrwxrwx  1 ubuntu ubuntu        24 Jun 26 22:40 intel-dpcpp_6.1.0.orig.tar.xz -> intel-dpcpp-6.1.0.tar.xz
+```
+
+The folder `intel-dpcpp-6.1.0` should contain the upstream source code and debian folder. You can build the debian packages out of it.
+
+#### Build the debian packages
+
+Go to the `intel-dpcpp-6.1.0` folder and build the packages from there:
+
+```
+$ apt build-dep ./
+$ debuild -us -uc -b
+```
+
+
+
