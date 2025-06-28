@@ -1,3 +1,17 @@
+intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa7) plucky; urgency=medium
+
+  * Version bump because there was already a ppa6 updated
+
+ -- Shane McKee <shane.mckee@canonical.com>  Fri, 27 Jun 2025 16:53:48 -0700
+
+intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa6) plucky; urgency=medium
+
+  * Change some install paths to fix build failure
+  * [rules] Disabled LTO to prevent OOM
+  * [rules] Limit parallel builds to prevent OOM
+
+ -- Shane McKee <shane.mckee@canonical.com>  Fri, 27 Jun 2025 16:42:21 -0700
+
 intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa5) plucky; urgency=medium
 
   * Add some links file

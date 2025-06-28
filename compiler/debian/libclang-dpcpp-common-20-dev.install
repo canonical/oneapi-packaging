@@ -1,8 +1,8 @@
-src/build/install/lib/clang/20/include/*.h /usr/lib/llvm-dpcpp-20/lib/clang/20/include/
-src/build/install/lib/clang/20/include/module.modulemap /usr/lib/llvm-dpcpp-20/lib/clang/20/include/
-src/build/install/lib/clang/20/include/ppc_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/ppc_wrappers/
-src/build/install/lib/clang/20/include/openmp_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/openmp_wrappers/
-src/build/install/lib/clang/20/include/cuda_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/cuda_wrappers/
-src/build/install/lib/clang/20/include/llvm_libc_wrappers/*.h /usr/lib/llvm-dpcpp-20/lib/clang/20/include/llvm_libc_wrappers/
-src/build/install/lib/clang/20/include/llvm_offload_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/llvm_offload_wrappers/
-src/build/install/lib/clang/20/include/zos_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/zos_wrappers/
+build/install/lib/clang/20/include/*.h /usr/lib/llvm-dpcpp-20/lib/clang/20/include/
+build/install/lib/clang/20/include/module.modulemap /usr/lib/llvm-dpcpp-20/lib/clang/20/include/
+build/install/lib/clang/20/include/ppc_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/ppc_wrappers/
+build/install/lib/clang/20/include/openmp_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/openmp_wrappers/
+build/install/lib/clang/20/include/cuda_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/cuda_wrappers/
+build/install/lib/clang/20/include/llvm_libc_wrappers/*.h /usr/lib/llvm-dpcpp-20/lib/clang/20/include/llvm_libc_wrappers/
+build/install/lib/clang/20/include/llvm_offload_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/llvm_offload_wrappers/
+build/install/lib/clang/20/include/zos_wrappers/ /usr/lib/llvm-dpcpp-20/lib/clang/20/include/zos_wrappers/
