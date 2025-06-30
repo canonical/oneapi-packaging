@@ -1,3 +1,9 @@
+intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa8) plucky; urgency=medium
+
+  * Better install file paths to use installed files
+
+ -- Hector Cao <hector.cao@canonical.com>  Mon, 30 Jun 2025 07:16:30 +0000
+
 intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa7) plucky; urgency=medium
 
   * Version bump because there was already a ppa6 updated
