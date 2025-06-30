@@ -1,3 +1,9 @@
+intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa12) plucky; urgency=medium
+
+  * Set install folder to debian/tmp/install/
+
+ -- Hector Cao <hector.cao@canonical.com>  Tue, 01 Jul 2025 15:42:44 +0000
+
 intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa7) plucky; urgency=medium
 
   * Version bump because there was already a ppa6 updated

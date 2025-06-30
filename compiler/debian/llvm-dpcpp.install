@@ -1,9 +1,9 @@
-build/install/bin/llvm-* usr/lib/llvm-dpcpp-20/bin/
-build/install/bin/append-file usr/lib/llvm-dpcpp-20/bin/
-build/bin/bugpoint usr/lib/llvm-dpcpp-20/bin/
-build/bin/diagtool usr/lib/llvm-dpcpp-20/bin/
-build/bin/dsymutil usr/lib/llvm-dpcpp-20/bin/
-build/install/bin/file-table-tform usr/lib/llvm-dpcpp-20/bin/
-build/install/bin/llc usr/lib/llvm-dpcpp-20/bin/
-build/bin/lli usr/lib/llvm-dpcpp-20/bin/
+install/bin/llvm-* usr/lib/llvm-dpcpp-20/bin/
+install/bin/append-file usr/lib/llvm-dpcpp-20/bin/
+install/bin/bugpoint usr/lib/llvm-dpcpp-20/bin/
+install/bin/diagtool usr/lib/llvm-dpcpp-20/bin/
+install/bin/dsymutil usr/lib/llvm-dpcpp-20/bin/
+install/bin/file-table-tform usr/lib/llvm-dpcpp-20/bin/
+install/bin/llc usr/lib/llvm-dpcpp-20/bin/
+install/bin/lli usr/lib/llvm-dpcpp-20/bin/
 

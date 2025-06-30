@@ -28,14 +28,16 @@ stamps/preconfigure:
 	cp -rf vendor/compute-runtime/level_zero/ build/content-exp-headers/
 
 override_dh_auto_configure: stamps/configure
-	python3 ${CURDIR}/buildbot/configure.py \
+	# override CMAKE_INSTALL_PREFIX to install files to debian/tmp/
+	python3 $(CURDIR)/buildbot/configure.py \
 		--l0-headers /usr/include/level_zero/ \
 		--l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
 		--disable-jit \
 		--cmake-opt="-DLLVM_ENABLE_LTO=OFF" \
 		--cmake-opt="-DCMAKE_BUILD_TYPE=Release" \
+		--cmake-opt="-DCMAKE_INSTALL_PREFIX=${CURDIR}/debian/tmp/install/" \
 		--cmake-opt="-DBOOTSTRAP_CMAKE_BUILD_TYPE=RelWithDebInfo" \
-		--cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=16" \
+		--cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=2" \
 		--cmake-opt="-DCLANG_DEFAULT_LINKER=ld" \
 		--cmake-opt="-DCLANG_DEFAULT_RTLIB=libgcc" \
 		--cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
@@ -55,7 +57,7 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	# Install binaries to debian/tmp/usr
-	cd build && DESTDIR=$(CURDIR)/debian/tmp ninja install
+	cd build && ninja install
 
 # TODO
 override_dh_shlibdeps:
