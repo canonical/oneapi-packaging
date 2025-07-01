@@ -2,6 +2,7 @@
 *.build
 *.buildinfo
 *.changes
+*.ddeb
 *.deb
 *.xz
 *.dsc
@@ -9,3 +10,4 @@
 *.upload
 **/debian/files
 .pc
+intel-dpcpp-6.1.0

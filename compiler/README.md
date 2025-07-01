@@ -172,7 +172,7 @@ The folder `intel-dpcpp-6.1.0` should contain the upstream source code and debia
 
 #### Install the PPA
 ```
-sudo add-apt-repository ppa:kobuk-team/oneapi-staging
+sudo add-apt-repository ppa:kobuk-team/oneapi
 sudo apt update
 ```
 This provides libumf-dev, which is needed for the build steps
@@ -182,9 +182,21 @@ This provides libumf-dev, which is needed for the build steps
 Go to the `intel-dpcpp-6.1.0` folder and build the packages from there:
 
 ```
-$ apt build-dep ./
+$ sudo apt build-dep ./
 $ debuild -us -uc -b
 ```
+
+Alternatively, to build with `sbuild` (set up instructions can be found [here](https://wiki.ubuntu.com/SimpleSbuild)):
+
+```
+cd oneapi-packaging/intel-dpcpp-6.1.0
+sudo apt build-dep ./
+# Needed to support the PPA, assumes you have already created a plucky schroot
+sbuild-apt plucky-amd64 apt-get install ca-certificates
+sbuild --no-run-lintian --extra-repository="deb [trusted=yes] https://ppa.launchpadcontent.net/kobuk-team/oneapi/ubuntu plucky main" --build-path=""
+```
+
+This avoids running `lintian` for now as it takes a very long time to run. The final option is important as it forces `sbuild` to use a different build path for each build. Otherwise, each build will share a build directory, which can result in strange errors.
 
 
 
