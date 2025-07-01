@@ -29,7 +29,6 @@ git clone -b dpcpp_staging --depth=1 https://github.com/intel/vc-intrinsics.git 
 git clone -b 24.39.31294.12 https://github.com/intel/compute-runtime.git vendor/compute-runtime/
 
 tar -C vendor --exclude-vcs --sort=name \
-    --mtime=@0 \
     --owner=0 --group=0 --numeric-owner --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime\
 ,delete=ctime \
     -zcf ../intel-dpcpp_$PKG_VERSION.orig-vendor.tar.gz .
