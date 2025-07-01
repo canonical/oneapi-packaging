@@ -1,3 +1,9 @@
+onedpl (2022.9.0-0ubuntu1~25.10~ppa3) plucky; urgency=medium
+
+  * Force include orig tarball in dpkg-buildpackage. 
+
+ -- Will French <will.french@canonical.com>  Tue, 01 Jul 2025 17:13:45 -0500
+
 onedpl (2022.9.0-0ubuntu1~25.10~ppa2) plucky; urgency=medium
 
   * Prepare package for upload to PPA.
