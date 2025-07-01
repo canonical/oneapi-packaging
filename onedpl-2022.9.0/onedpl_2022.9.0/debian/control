@@ -1,0 +1,22 @@
+Source: onedpl
+Section: devel
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ libtbb-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/uxlfoundation/oneDPL
+
+Package: onedpl-headers
+Architecture: amd64
+Section: libdevel
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: oneAPI DPC++ Library (oneDPL)
+  oneDPL is part of the UXL Foundation and is an implementation of the oneAPI
+  specification for the oneDPL component. oneDPL works with the Intel® oneAPI 
+  DPC++/C++ Compiler to provide high-productivity APIs to developers, which can
+  minimize Data Parallel C++ (DPC++) programming efforts across devices for high
+  performance parallel applications.
