@@ -35,7 +35,7 @@ override_dh_auto_configure: stamps/configure
 		--disable-jit \
 		--cmake-opt="-DLLVM_ENABLE_LTO=OFF" \
 		--cmake-opt="-DCMAKE_BUILD_TYPE=Release" \
-		--cmake-opt="-DCMAKE_INSTALL_PREFIX=" \
+		--cmake-opt="-DCMAKE_INSTALL_PREFIX=${CURDIR}/debian/tmp/install/" \
 		--cmake-opt="-DBOOTSTRAP_CMAKE_BUILD_TYPE=RelWithDebInfo" \
 		--cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=2" \
 		--cmake-opt="-DCLANG_DEFAULT_LINKER=ld" \
@@ -57,7 +57,7 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	# Install binaries to debian/tmp/usr
-	cd build && DESTDIR=$(CURDIR)/debian/tmp ninja install
+	cd build && ninja install
 
 # TODO
 override_dh_shlibdeps:
