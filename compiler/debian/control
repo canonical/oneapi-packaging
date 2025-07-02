@@ -32,7 +32,11 @@ Homepage: https://github.com/intel/llvm
 
 Package: clang-dpcpp-20
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ libsycl-dev,
+ libclang-dpcpp-common-20-dev,
+ ${shlibs:Depends},
+ ${misc:Depends}
 Description: Intel DPC++ Compiler
  The DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL language.
@@ -40,7 +44,10 @@ Description: Intel DPC++ Compiler
 
 Package: libclang-dpcpp20
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ libclang-dpcpp-common-20-dev,
+ ${shlibs:Depends},
+ ${misc:Depends}
 Description: Intel DPC++ Compiler
  A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
 
@@ -70,7 +77,10 @@ Description: Intel DPC++ Compiler
 
 Package: dpcpp-sycl-runtime-libs
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ libclang-dpcpp20,
+ ${shlibs:Depends},
+ ${misc:Depends}
 Description: Intel DPC++ Compiler
  A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
 
