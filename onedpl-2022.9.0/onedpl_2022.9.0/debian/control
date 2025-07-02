@@ -15,8 +15,8 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
 Description: oneAPI DPC++ Library (oneDPL)
-  oneDPL is part of the UXL Foundation and is an implementation of the oneAPI
-  specification for the oneDPL component. oneDPL works with the Intel® oneAPI 
-  DPC++/C++ Compiler to provide high-productivity APIs to developers, which can
-  minimize Data Parallel C++ (DPC++) programming efforts across devices for high
-  performance parallel applications.
+ oneDPL is part of the UXL Foundation and is an implementation of the oneAPI
+ specification for the oneDPL component. oneDPL works with the Intel® oneAPI
+ DPC++/C++ Compiler to provide high-productivity APIs to developers, which can
+ minimize Data Parallel C++ (DPC++) programming efforts across devices for high
+ performance parallel applications.

@@ -11,6 +11,8 @@ override_dh_auto_configure:
 
 override_dh_auto_test:
 
-override_dh_build:
-	dh_auto_build
-	#cd ${CURDIR}/examples/convex_hull/build && make
+override_dh_auto_install:
+	dh_auto_install
+	cmake -DSKIP_HEADERS_SUBDIR=TRUE -DOUTPUT_DIR=${CURDIR}/debian/tmp/ -P cmake/scripts/generate_config.cmake
+	mv ${CURDIR}/debian/tmp/dpl.pc ${CURDIR}/debian/tmp/onedpl-headers.pc
+	chmod -x ${CURDIR}/debian/tmp/onedpl-headers.pc

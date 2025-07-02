@@ -1,1 +1,4 @@
 include/oneapi/* usr/include/oneapi
+oneDPLConfig.cmake usr/share/onedpl-headers
+oneDPLConfigVersion.cmake usr/share/onedpl-headers
+onedpl-headers.pc usr/share/pkgconfig
