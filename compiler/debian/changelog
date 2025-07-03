@@ -1,3 +1,15 @@
+intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa16) plucky; urgency=medium
+
+  * dpcpp-sycl-runtime-libs: add links to level-zero and opencl .so's.
+
+ -- Will French <will.french@canonical.com>  Thu, 03 Jul 2025 18:52:01 +0000
+
+intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa15) plucky; urgency=medium
+
+  * dpcpp: disable cpp driver mode for sym links that use cpp suffix.
+
+ -- Will French <will.french@canonical.com>  Thu, 03 Jul 2025 17:09:53 +0000
+
 intel-dpcpp (6.1.0-0ubuntu1~25.10~ppa14) plucky; urgency=medium
 
   * libsycl-dev : install CL headers

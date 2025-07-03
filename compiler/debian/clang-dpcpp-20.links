@@ -1,6 +1,5 @@
-# TODO : understand why we cannot have compiler name that ends with cpp
-# if that is the case, the compilation will generate an ASCII file
-# instead of ELF binary
-#usr/lib/llvm-dpcpp-20/bin/clang-20 usr/bin/clang-dpcpp
-usr/lib/llvm-dpcpp-20/bin/clang-20 usr/bin/icpx
+usr/lib/llvm-dpcpp-20/bin/clang usr/bin/clang-dpcpp
+usr/lib/llvm-dpcpp-20/bin/clang++ usr/bin/clang++-dpcpp
+usr/lib/llvm-dpcpp-20/bin/clang-cpp usr/bin/clang-cpp-dpcpp
+usr/lib/llvm-dpcpp-20/bin/clang-cl usr/bin/clang-cl-dpcpp
 usr/lib/llvm-dpcpp-20/bin/spirv-to-ir-wrapper usr/bin/spirv-to-ir-wrapper
