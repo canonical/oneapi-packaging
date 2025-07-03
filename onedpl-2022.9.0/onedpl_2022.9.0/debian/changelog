@@ -1,3 +1,9 @@
+onedpl (2022.9.0-0ubuntu1~25.10~ppa5) plucky; urgency=medium
+
+  * Update cmake file install path to standard location.
+
+ -- Will French <will.french@canonical.com>  Thu, 03 Jul 2025 08:53:02 -0500
+
 onedpl (2022.9.0-0ubuntu1~25.10~ppa4) plucky; urgency=medium
 
   * Install cmake files.
