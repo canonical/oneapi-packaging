@@ -1,5 +1,5 @@
 
-CXX = clang++
+CXX = clang++-dpcpp
 
 SYCL_CXXFLAGS = $(CXXFLAGS) -std=c++17 -fsycl -g -o
 SYCL_LDFLAGS = 
