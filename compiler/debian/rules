@@ -24,8 +24,11 @@ stamps/preconfigure:
 	mkdir -p build/_deps/
 	cp -rf vendor/emhash build/_deps/emhash-headers-src
 	cp -rf vendor/parallel-hashmap build/_deps/parallel-hashmap-src
-	mkdir -p build/content-exp-headers/
-	cp -rf vendor/compute-runtime/level_zero/ build/content-exp-headers/
+	# copy compute runtime level zero headers
+	# it is used by unified-runtime
+	# (e.g., unified-runtime/source/adapters/level_zero/)
+	mkdir -p build/content-exp-headers/level_zero
+	cp -rf vendor/compute-runtime/level_zero/include/ build/content-exp-headers/level_zero/
 
 override_dh_auto_configure: stamps/configure
 	# override CMAKE_INSTALL_PREFIX to install files to debian/tmp/
