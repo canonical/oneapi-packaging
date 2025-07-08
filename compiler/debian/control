@@ -13,9 +13,7 @@ Build-Depends:
     libxml2-dev,
     libz3-dev,
     libz-dev,
-    libtinfo-dev,
-    libncurses5-dev,
-    libncursesw5-dev,
+    libncurses-dev,
     libumf-dev,
     libze-dev,
     libze-intel-gpu-dev,
@@ -25,7 +23,7 @@ Build-Depends:
     ocl-icd-opencl-dev,
     libboost1.88-dev,
     libzstd-dev,
-    pkg-config,
+    pkgconf,
 Build-Conflicts: oprofile
 Standards-Version: 4.7.0
 Homepage: https://github.com/intel/llvm
@@ -33,30 +31,39 @@ Homepage: https://github.com/intel/llvm
 Package: clang-dpcpp-20
 Architecture: amd64
 Depends:
- libsycl-dev,
- libclang-dpcpp-common-20-dev,
  ${shlibs:Depends},
- ${misc:Depends}
-Description: Intel DPC++ Compiler
- The DPC++ is a LLVM-based compiler project that implements compiler and runtime
- support for the SYCL language.
+ ${misc:Depends},
+ libsycl-dev,
+ libclang-dpcpp-common-20-dev
+Description: Intel DPC++ compiler
+ DPC++ is a LLVM-based compiler project that implements compiler and runtime
+ support for the SYCL* language.
+ .
  This package delivers the compiler binary clang-dpcpp.
 
 Package: libclang-dpcpp20
 Architecture: amd64
 Depends:
- libclang-dpcpp-common-20-dev,
  ${shlibs:Depends},
- ${misc:Depends}
-Description: Intel DPC++ Compiler
- A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+ ${misc:Depends},
+ libclang-dpcpp-common-20-dev
+Description: Clang library for the DPC++ compiler
+ DPC++ is a LLVM-based compiler project that implements compiler and runtime
+ support for the SYCL* language.
+ .
+ This package contains the Clang library for DPC++.
 
 Package: libclang-dpcpp-common-20-dev
 Architecture: amd64
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Intel DPC++ Compiler
- A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+Depends:
+ ${misc:Depends}
+Description: Clang library for the DPC++ compiler - Development package
+ DPC++ is a LLVM-based compiler project that implements compiler and runtime
+ support for the SYCL* language.
+ .
+ This package contains the Clang header files.
+
 
 Package: libsycl8
 Architecture: amd64
@@ -64,28 +71,44 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  dpcpp-sycl-runtime-libs
-Description: Intel DPC++ Compiler
- A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+Description: SYCL* language library
+ DPC++ is a LLVM-based compiler project that implements compiler and runtime
+ support for the SYCL* language.
+ .
+ This package contains the SYCL* library.
 
 Package: libsycl-dev
 Architecture: amd64
 Depends:
- libsycl8 (= ${binary:Version}),
  ${misc:Depends},
-Description: Intel DPC++ Compiler
- A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+ libsycl8 (= ${binary:Version})
+Description: SYCL* language library - Development package
+ DPC++ is a LLVM-based compiler project that implements compiler and runtime
+ support for the SYCL* language.
+ .
+ This package contains the SYCL* header files.
 
 Package: dpcpp-sycl-runtime-libs
 Architecture: amd64
 Depends:
- libclang-dpcpp20,
  ${shlibs:Depends},
- ${misc:Depends}
-Description: Intel DPC++ Compiler
- A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+ ${misc:Depends},
+ libclang-dpcpp20
+Description: DPC++ SYCL* runtime libraries
+ DPC++ is a LLVM-based compiler project that implements compiler and runtime
+ support for the SYCL* language.
+ .
+ This package contains runtime library adapters for interacting with various
+ acceleration backends (e.g. level-zero, OpenCL) through the SYCL* programs
+ compiled with the DPC++ compiler.
 
 Package: llvm-dpcpp
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Intel DPC++ Compiler
- A Clang/LLVM-based compiler with SYCL support for heterogeneous computing.
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: DPC++ LLVM tools
+ DPC++ is a LLVM-based compiler project that implements compiler and runtime
+ support for the SYCL* language.
+ .
+ This package delivers various tools and commands provided by LLVM.

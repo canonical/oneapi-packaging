@@ -1,0 +1,5 @@
+# triggered by binary data files in llvm/test
+binary-with-bad-dynamic-table
+unpack-message-for-orig
+elf-error
+source-contains-prebuilt-windows-binary
