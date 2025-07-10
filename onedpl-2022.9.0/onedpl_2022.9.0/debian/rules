@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	#dh_auto_configure -- \
+	#	-DCMAKE_BUILD_TYPE=Release \
+	#	-DCMAKE_INSTALL_PREFIX=/usr
+	#cd ${CURDIR}/examples/convex_hull && mkdir build && cd build && cmake ..
+
+override_dh_auto_test:
+
+override_dh_auto_install:
+	dh_auto_install
+	cmake -DSKIP_HEADERS_SUBDIR=TRUE -DOUTPUT_DIR=${CURDIR}/debian/tmp/ -P cmake/scripts/generate_config.cmake
+	mv ${CURDIR}/debian/tmp/dpl.pc ${CURDIR}/debian/tmp/onedpl-headers.pc
+	chmod -x ${CURDIR}/debian/tmp/onedpl-headers.pc

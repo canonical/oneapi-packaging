@@ -1,0 +1,28 @@
+From aa69dcc3f8a48fc4b139f40be83306488915fefd Mon Sep 17 00:00:00 2001
+From: Hector Cao <hector.cao@canonical.com>
+Date: Mon, 23 Jun 2025 17:46:08 +0000
+Subject: [PATCH] fix opencl lib
+
+---
+ vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt b/vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt
+index e091012b..b717f770 100644
+--- a/vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt
++++ b/vendor/unified-runtime/source/adapters/opencl/CMakeLists.txt
+@@ -65,6 +65,11 @@ else()
+     )
+ endif()
+ 
++find_package(OpenCL QUIET)
++if(OpenCL_FOUND)
++       set(UR_OPENCL_ICD_LOADER_LIBRARY OpenCL::OpenCL)
++endif()
++
+ # The OpenCL target can be set manually on upstream cmake to avoid using
+ # find_package().
+ if(UR_OPENCL_ICD_LOADER_LIBRARY)
+-- 
+2.43.0
+

@@ -1,0 +1,3 @@
+install/bin/clang* usr/lib/llvm-dpcpp-20/bin/
+install/bin/sycl-* usr/lib/llvm-dpcpp-20/bin/
+install/bin/spirv-to-ir-wrapper usr/lib/llvm-dpcpp-20/bin/

@@ -1,0 +1,29 @@
+onedpl (2022.9.0-0ubuntu1~25.10~ppa5) plucky; urgency=medium
+
+  * Update cmake file install path to standard location.
+
+ -- Will French <will.french@canonical.com>  Thu, 03 Jul 2025 08:53:02 -0500
+
+onedpl (2022.9.0-0ubuntu1~25.10~ppa4) plucky; urgency=medium
+
+  * Install cmake files.
+
+ -- Will French <will.french@canonical.com>  Wed, 02 Jul 2025 09:36:05 -0500
+
+onedpl (2022.9.0-0ubuntu1~25.10~ppa3) plucky; urgency=medium
+
+  * Force include orig tarball in dpkg-buildpackage. 
+
+ -- Will French <will.french@canonical.com>  Tue, 01 Jul 2025 17:13:45 -0500
+
+onedpl (2022.9.0-0ubuntu1~25.10~ppa2) plucky; urgency=medium
+
+  * Prepare package for upload to PPA.
+
+ -- Will French <will.french@canonical.com>  Tue, 01 Jul 2025 17:01:17 -0500
+
+onedpl (2022.9.0-0ubuntu1~25.10~ppa1) questing; urgency=medium
+
+  * Initial release
+
+ -- Shane McKee <shane.mckee@canonical.com>  Mon, 16 Jun 2025 09:52:31 -0700

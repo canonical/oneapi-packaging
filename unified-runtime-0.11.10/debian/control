@@ -1,0 +1,27 @@
+Source: intel-unified-runtime
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 11),
+ cmake,
+ make,
+ gcc,
+ python3-apt,
+Standards-Version: 4.3.0
+Homepage: https://github.com/intel/level-zero-raytracing-support
+
+Package: unified-runtime
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Intel Unified Runtime
+  This project contains the following:
+  API specification in YaML
+  API programming guide in RST
+  Loader and a null adapter implementation (partially generated)
+  Example applications
+  API C/C++ header files (generated)
+  API Python module (generated)
+  Sample C++ wrapper (generated)
+  Sample C/C++ import library (generated)

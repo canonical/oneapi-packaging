@@ -1,0 +1,5 @@
+sycl-0001-ubuntu-sauce.patch
+sycl-0002-clang-SYCL-Disable-float128-device-mode-diagnostic.patch
+ur-0001-fix-opencl-lib.patch
+ur-0002-does-not-copy-level-zero-loader-headers-around.patch
+clang-0001-remove-cpp-driver-suffix.patch

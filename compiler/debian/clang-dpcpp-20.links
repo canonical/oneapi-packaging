@@ -1,0 +1,5 @@
+usr/lib/llvm-dpcpp-20/bin/clang usr/bin/clang-dpcpp
+usr/lib/llvm-dpcpp-20/bin/clang++ usr/bin/clang++-dpcpp
+usr/lib/llvm-dpcpp-20/bin/clang-cpp usr/bin/clang-cpp-dpcpp
+usr/lib/llvm-dpcpp-20/bin/clang-cl usr/bin/clang-cl-dpcpp
+usr/lib/llvm-dpcpp-20/bin/spirv-to-ir-wrapper usr/bin/spirv-to-ir-wrapper

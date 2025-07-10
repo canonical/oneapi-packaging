@@ -1,0 +1,8 @@
+{
+   [false-positive] Double check locking pattern in trackingOpenIpcHandle
+   drd:ConflictingAccess
+   fun:trackingOpenIpcHandle
+   fun:umfMemoryProviderOpenIPCHandle
+   fun:umfOpenIPCHandle
+   ...
+}

@@ -1,0 +1,18 @@
+Source: parallel-hashmap
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 11),
+ cmake,
+ make,
+ gcc,
+Standards-Version: 4.3.0
+Homepage: https://github.com/greg7mdp/parallel-hashmap.git
+
+Package: parallel-hashmap-headers
+Architecture: amd64
+Section: libdevel
+Depends:
+ ${misc:Depends},
+Description: The Parallel Hashmap
+ This repository aims to provide a set of excellent hash map implementations, as well as a btree alternative to std::map and std::set

@@ -1,0 +1,4 @@
+usr/include/*
+usr/lib/*/libumf*.so
+usr/lib/*/cmake/*
+usr/share/*

@@ -2,10 +2,9 @@
 
 ## Debian packaging
 
-This repo contains Debian package definitions for components from the [oneAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html) published to the following PPAs:
+This repo contains Debian package definitions for components from the [oneAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html) published to the following PPA:
 
-- Staging: [ppa/kobuk-team/oneapi-staging](https://launchpad.net/~kobuk-team/+archive/ubuntu/oneapi-staging)
-- Production: :soon:
+- [ppa:kobuk-team/oneapi](https://launchpad.net/~kobuk-team/+archive/ubuntu/oneapi)
 
 ## Repo structure
 

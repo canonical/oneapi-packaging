@@ -1,0 +1,1 @@
+install/lib/libsycl.so.8* /usr/lib/llvm-dpcpp-20/lib/

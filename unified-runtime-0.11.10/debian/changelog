@@ -1,0 +1,11 @@
+intel-unified-runtime (0.11.10-0ubuntu1~25.10~ppa2) questing; urgency=medium
+
+  * Add python3-apt
+
+ -- Shane McKee <shane.mckee@canonical.com>  Tue, 17 Jun 2025 23:48:10 -0700
+
+intel-unified-runtime (0.11.10-0ubuntu1~25.10~ppa1) questing; urgency=medium
+
+  * Initial packaging
+
+ -- Shane McKee <shane.mckee@canonical.com>  Mon, 16 Jun 2025 09:52:31 -0700

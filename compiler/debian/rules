@@ -1,0 +1,73 @@
+#!/usr/bin/make -f
+
+PKG_VERSION := $(shell dpkg-parsechangelog | awk '/^Version:/ {print $$2}')
+LLVM_VERSION := 21
+
+# TODO: Enbable build with debug symbols
+# Removing these lines causes the build to require large RAM and disk space
+export DEB_CFLAGS_MAINT_STRIP = -g -O2
+export DEB_CXXFLAGS_MAINT_STRIP = -g -O2
+
+# Reduce memory usage during linking
+export DEB_BUILD_MAINT_OPTIONS=optimize=-lto
+
+include /usr/share/dpkg/buildflags.mk
+
+%:
+	dh $@
+
+stamps/configure: stamps/preconfigure
+	:
+
+stamps/preconfigure:
+	rm -rf build
+	mkdir -p build/_deps/
+	cp -rf vendor/emhash build/_deps/emhash-headers-src
+	cp -rf vendor/parallel-hashmap build/_deps/parallel-hashmap-src
+	# copy compute runtime level zero headers
+	# it is used by unified-runtime
+	# (e.g., unified-runtime/source/adapters/level_zero/)
+	mkdir -p build/content-exp-headers/level_zero
+	cp -rf vendor/compute-runtime/level_zero/include/ build/content-exp-headers/level_zero/
+
+override_dh_auto_configure: stamps/configure
+	# override CMAKE_INSTALL_PREFIX to install files to debian/tmp/
+	python3 $(CURDIR)/buildbot/configure.py \
+		--l0-headers /usr/include/level_zero/ \
+		--l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
+		--disable-jit \
+		--cmake-opt="-DLLVM_ENABLE_LTO=OFF" \
+		--cmake-opt="-DCMAKE_BUILD_TYPE=Release" \
+		--cmake-opt="-DCMAKE_INSTALL_PREFIX=${CURDIR}/debian/tmp/install/" \
+		--cmake-opt="-DBOOTSTRAP_CMAKE_BUILD_TYPE=RelWithDebInfo" \
+		--cmake-opt="-DLLVM_PARALLEL_LINK_JOBS=2" \
+		--cmake-opt="-DCLANG_DEFAULT_LINKER=ld" \
+		--cmake-opt="-DCLANG_DEFAULT_RTLIB=libgcc" \
+		--cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
+		--cmake-opt="-DLLVM_BUILD_LLVM_DYLIB:BOOL=ON" \
+		--cmake-opt="-DSYCL_UR_USE_FETCH_CONTENT=OFF" \
+		--cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=${CURDIR}/vendor/vc-intrinsics" \
+		--cmake-opt="-DFETCHCONTENT_FULLY_DISCONNECTED=ON" \
+		--cmake-opt="-DSYCL_UR_SOURCE_DIR=${CURDIR}/vendor/unified-runtime" \
+		--cmake-opt="-DUR_OPENCL_INCLUDE_DIR=/usr/include/" \
+		--cmake-opt="-DUR_USE_EXTERNAL_UMF=ON" \
+		--cmake-opt="-DOpenCL_INCLUDE_DIR=/usr/include/" \
+		--cmake-opt="-DBOOST_MP11_SOURCE_DIR=${CURDIR}/vendor/mp11-boost" \
+		--cmake-opt="-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/" \
+
+override_dh_auto_build:
+	python3 ${CURDIR}/buildbot/compile.py -j`nproc`
+
+override_dh_auto_install:
+	# Install binaries to debian/tmp/usr
+	cd build && ninja install
+
+# TODO: Enable build with debug symbols
+#       For now, this disables building .ddeb packages
+override_dh_strip:
+	dh_strip --no-automatic-dbgsym
+
+override_dh_clean:
+	rm -rf ${UR_BUILD_XPTI_LIBS}
+	rm -rf build
+	dh_clean
