@@ -48,7 +48,7 @@ Now shell in and build the compiler. The first command assumes you are using a P
 
 ```bash
 multipass shell plucky
-git clone -b develop/kobuk https://github.com/canonical/oneapi-packaging.git
+git clone https://github.com/canonical/oneapi-packaging.git
 cd oneapi-packaging/compiler
 ./fetch.sh
 sudo ./scripts/install_build_tools.sh
@@ -80,7 +80,7 @@ export LD_LIBRARY_PATH=/home/ubuntu/oneapi-build/lib:$LD_LIBRARY_PATH
 If you have not done so already on the host:
 
 ```bash
-git clone -b develop/kobuk https://github.com/canonical/oneapi-packaging.git
+git clone https://github.com/canonical/oneapi-packaging.git
 ```
 
 ### Simple SYCL app
