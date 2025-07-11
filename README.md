@@ -37,7 +37,7 @@ sudo apt install onedpl-headers
 Applications written in SYCL* C++ can be compiled using the `clang++-dpcpp` command. For example:
 
 ```bash
-clang++ -fsycl sample.cpp -o simple-sycl-app
+clang++-dpcpp -fsycl sample.cpp -o simple-sycl-app
 ./simple-sycl-app
 ```
 
