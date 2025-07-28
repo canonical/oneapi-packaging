@@ -1,0 +1,34 @@
+Source: unified-runtime
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ python3-apt
+Standards-Version: 4.6.2
+Homepage: https://github.com/oneapi-src/unified-runtime
+
+Package: libur-loader0
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: oneAPI Unified Runtime
+ The objective of the oneAPI Unified Runtime is to provide a unified
+ interface to device agnostic runtimes such as DPC++ across a wide variety
+ of software platforms.
+ .
+ This package delivers the Unified Runtime library.
+
+Package: libur-loader-dev
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libur-loader0 (= ${binary:Version})
+Description: oneAPI Unified Runtime
+ The objective of the oneAPI Unified Runtime is to provide a unified
+ interface to device agnostic runtimes such as DPC++ across a wide variety
+ of software platforms.
+ .
+ This package delivers the Unified Runtime headers and cmake files.

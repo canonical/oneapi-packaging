@@ -1,0 +1,5 @@
+usr/include
+usr/lib/x86_64-linux-gnu/libur_common.a
+usr/lib/x86_64-linux-gnu/libur_loader.so
+usr/lib/x86_64-linux-gnu/pkgconfig/libur_loader.pc
+usr/lib/cmake /usr/lib/x86_64-linux-gnu
