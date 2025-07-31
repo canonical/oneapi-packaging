@@ -4,7 +4,13 @@ Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Build-Depends: debhelper-compat (= 13),
  cmake,
- python3-apt
+ git,
+ python3-apt,
+ libze-dev,
+ libze-intel-gpu-dev,
+ opencl-headers,
+ ocl-icd-opencl-dev,
+ libumf-dev
 Standards-Version: 4.6.2
 Homepage: https://github.com/oneapi-src/unified-runtime
 
@@ -12,7 +18,7 @@ Package: libur-loader0
 Architecture: amd64
 Depends:
  ${misc:Depends},
- ${shlibs:Depends}
+ ${shlibs:Depends},
 Description: oneAPI Unified Runtime
  The objective of the oneAPI Unified Runtime is to provide a unified
  interface to device agnostic runtimes such as DPC++ across a wide variety
@@ -32,3 +38,54 @@ Description: oneAPI Unified Runtime
  of software platforms.
  .
  This package delivers the Unified Runtime headers and cmake files.
+
+Package: libur-adapter-level-zero0
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: oneAPI Unified Runtime
+ The objective of the oneAPI Unified Runtime is to provide a unified
+ interface to device agnostic runtimes such as DPC++ across a wide variety
+ of software platforms.
+ .
+ This package delivers the Unified Runtime Level-Zero adapter.
+
+Package: libur-adapter-level-zero-dev
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libur-adapter-level-zero0 (= ${binary:Version})
+Description: oneAPI Unified Runtime
+ The objective of the oneAPI Unified Runtime is to provide a unified
+ interface to device agnostic runtimes such as DPC++ across a wide variety
+ of software platforms.
+ .
+ This package delivers a symbolic link for the Unified Runtime Level-Zero
+ adapter.
+
+Package: libur-adapter-opencl0
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: oneAPI Unified Runtime
+ The objective of the oneAPI Unified Runtime is to provide a unified
+ interface to device agnostic runtimes such as DPC++ across a wide variety
+ of software platforms.
+ .
+ This package delivers the Unified Runtime OpenCL adapter.
+
+Package: libur-adapter-opencl-dev
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libur-adapter-level-zero0 (= ${binary:Version})
+Description: oneAPI Unified Runtime
+ The objective of the oneAPI Unified Runtime is to provide a unified
+ interface to device agnostic runtimes such as DPC++ across a wide variety
+ of software platforms.
+ .
+ This package delivers a symbolic link for the Unified Runtime OpenCL adapter.

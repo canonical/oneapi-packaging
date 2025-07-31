@@ -1,1 +1,3 @@
 libur-0001-pkgconfig-lib-path.patch
+l0-adapter-0001-remove-deprecated-cmake-pattern.patch
+l0-adapter-0002-delete-cmakelists-from-level-zero-headers.patch

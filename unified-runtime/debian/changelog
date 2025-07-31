@@ -1,3 +1,9 @@
+unified-runtime (0.11.8-0ubuntu1~25.04~ppa2) plucky; urgency=medium
+
+  * Build adapters for level-zero and OpenCL.
+
+ -- Will French <will.french@canonical.com>  Wed, 30 Jul 2025 17:11:12 -0500
+
 unified-runtime (0.11.8-0ubuntu1~25.04~ppa1) plucky; urgency=medium
 
   * Initial release.

@@ -4,6 +4,18 @@
 	dh $@ --builddir build --buildsystem=cmake
 
 override_dh_auto_configure:
+	# TODO: overcome need to disable FETCHCONTENT_FULLY_DISCONNECTED
+	#       This is needed for now to enable the experimental headers
+	#       for level zero to be installed into the source tree.
+	#       Without these experimental headers, the build fails.
 	dh_auto_configure -- -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DUR_BUILD_TESTS=OFF
+		-DFETCHCONTENT_FULLY_DISCONNECTED=OFF \
+		-DUR_BUILD_TESTS=OFF \
+		-DUR_BUILD_ADAPTER_L0=ON \
+		-DUR_BUILD_ADAPTER_OPENCL=ON \
+		-DUR_LEVEL_ZERO_LOADER_LIBRARY=/usr/lib/x86_64-linux-gnu/libze_loader.so \
+		-DUR_LEVEL_ZERO_INCLUDE_DIR=/usr/include \
+		-DUR_OPENCL_ICD_LOADER_LIBRARY=/usr/lib/x86_64-linux-gnu/libOpenCL.so \
+		-DUR_OPENCL_INCLUDE_DIR=/usr/include \
+		-DUR_USE_EXTERNAL_UMF=ON

@@ -1,0 +1,19 @@
+Description: Remove deprecated FetchContent_Populate
+ Prefer FetchContent_MakeAvailable as the modern alternative.
+Author: Will French <will.french@canonical.com>
+Last-Update: 2025-07-30
+---
+--- unified-runtime-0.11.8.orig/cmake/FetchLevelZero.cmake
++++ unified-runtime-0.11.8/cmake/FetchLevelZero.cmake
+@@ -106,10 +106,7 @@ endif()
+ include(FetchContent)
+ # Sparse fetch only the dir with level zero headers for experimental features to avoid pulling in the entire compute-runtime.
+ FetchContentSparse_Declare(exp-headers ${UR_COMPUTE_RUNTIME_REPO} "${UR_COMPUTE_RUNTIME_TAG}" "level_zero/include")
+-FetchContent_GetProperties(exp-headers)
+-if(NOT exp-headers_POPULATED)
+-  FetchContent_Populate(exp-headers)
+-endif()
++FetchContent_MakeAvailable(exp-headers)
+ add_library(ComputeRuntimeLevelZero-Headers INTERFACE)
+ set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${exp-headers_SOURCE_DIR}/../..")
+ message(STATUS "Level Zero Adapter: Using Level Zero headers from ${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}")
