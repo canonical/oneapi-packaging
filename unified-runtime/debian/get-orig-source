@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Script usage:
+# get-orig-source --upstream-version <version>
+
+# $1 should hold the value --upstream-version
+# $2 should hold the upstream version
+UPSTREAM_VERSION=$2
+
+uupdate -f --verbose "$@"
+
+set -e
+
+"${PWD}"/debian/vendor.sh "${UPSTREAM_VERSION}"
