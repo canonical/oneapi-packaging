@@ -1,5 +1,5 @@
-emhash (0.0.1-0ubuntu1~25.10~ppa1) questing; urgency=medium
+emhash (0.0+git20250614.b7ff314-0ubuntu1~25.04~ppa1) plucky; urgency=medium
 
-  * Initial packaging
+  * Initial release.
 
- -- Shane McKee <shane.mckee@canonical.com>  Mon, 16 Jun 2025 09:52:31 -0700
+ -- Will French <will.french@canonical.com>  Thu, 31 Jul 2025 15:22:04 -0500

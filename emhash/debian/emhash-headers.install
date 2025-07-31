@@ -1,2 +1,2 @@
-*.h usr/include/emhash
 *.hpp usr/include/emhash
+*.h usr/include/emhash
