@@ -1,3 +1,15 @@
+emhash (0.0+git20250614.b7ff314-0ubuntu1~25.04~ppa3) plucky; urgency=medium
+
+  * Bump version to enable new upload to LP.
+
+ -- Will French <will.french@canonical.com>  Fri, 01 Aug 2025 11:24:24 -0500
+
+emhash (0.0+git20250614.b7ff314-0ubuntu1~25.04~ppa2) plucky; urgency=medium
+
+  * Change binary package name: -headers to -dev 
+
+ -- Will French <will.french@canonical.com>  Fri, 01 Aug 2025 10:52:19 -0500
+
 emhash (0.0+git20250614.b7ff314-0ubuntu1~25.04~ppa1) plucky; urgency=medium
 
   * Initial release.
