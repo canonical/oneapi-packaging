@@ -1,0 +1,10 @@
+# Not redistributing because of referal to external jquery
+#benchmark
+#css
+#html
+#index.html
+LICENSE
+README.md
+phmap.natvis
+phmap_gdb.py
+phmap_lldb.py

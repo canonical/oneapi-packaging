@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+PHMAP_BUILD_TESTS = OFF
+ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
+	PHMAP_BUILD_TESTS = ON
+endif
+
+PHMAP_BUILD_EXAMPLES = ON
+ifeq "$(DEB_HOST_ARCH)" "i386"
+	PHMAP_BUILD_EXAMPLES = OFF
+endif
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DPHMAP_BUILD_TESTS=$(PHMAP_BUILD_TESTS) -DPHMAP_GTEST_LIBS='gmock_main -lgmock -lgtest' -DPHMAP_MASTER_PROJECT=ON -DPHMAP_BUILD_EXAMPLES=$(PHMAP_BUILD_EXAMPLES)
+
+execute_before_dh_fixperms:
+	find debian -name "*.cc" | xargs -r chmod -x

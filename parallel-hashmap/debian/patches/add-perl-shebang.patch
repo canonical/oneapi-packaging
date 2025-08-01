@@ -1,0 +1,7 @@
+--- a/examples/llil_utils/gen-llil.pl
++++ b/examples/llil_utils/gen-llil.pl
+@@ -1,3 +1,4 @@
++#!/usr/bin/perl
+ # gen-llil.pl
+ # Crude program to generate a big LLiL test file to use in benchmarks
+ # On Windows running:
