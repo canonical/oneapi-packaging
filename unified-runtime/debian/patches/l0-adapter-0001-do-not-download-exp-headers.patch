@@ -1,0 +1,33 @@
+Description: Do not download experimental headers.
+ Downloading files from Launchpad builds is not permitted,
+ so instead we vendor the experimental level-zero headers.
+ This patch disables the sparse checkout of the exerimental
+ headers that normally occurs through CMake.
+Author: Will French <will.french@canonical.com>
+Last-Update: 2025-07-31
+---
+--- unified-runtime-0.11.8.orig/cmake/FetchLevelZero.cmake
++++ unified-runtime-0.11.8/cmake/FetchLevelZero.cmake
+@@ -103,15 +103,15 @@ endif()
+ if (UR_COMPUTE_RUNTIME_TAG STREQUAL "")
+ set(UR_COMPUTE_RUNTIME_TAG 24.39.31294.12)
+ endif()
+-include(FetchContent)
++#include(FetchContent)
+ # Sparse fetch only the dir with level zero headers for experimental features to avoid pulling in the entire compute-runtime.
+-FetchContentSparse_Declare(exp-headers ${UR_COMPUTE_RUNTIME_REPO} "${UR_COMPUTE_RUNTIME_TAG}" "level_zero/include")
+-FetchContent_GetProperties(exp-headers)
+-if(NOT exp-headers_POPULATED)
+-  FetchContent_Populate(exp-headers)
+-endif()
++#FetchContentSparse_Declare(exp-headers ${UR_COMPUTE_RUNTIME_REPO} "${UR_COMPUTE_RUNTIME_TAG}" "level_zero/include")
++#FetchContent_GetProperties(exp-headers)
++#if(NOT exp-headers_POPULATED)
++#  FetchContent_Populate(exp-headers)
++#endif()
+ add_library(ComputeRuntimeLevelZero-Headers INTERFACE)
+-set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${exp-headers_SOURCE_DIR}/../..")
++set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${CMAKE_CURRENT_BINARY_DIR}/../../../vendor")
+ message(STATUS "Level Zero Adapter: Using Level Zero headers from ${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}")
+ target_include_directories(ComputeRuntimeLevelZero-Headers
+     INTERFACE "$<BUILD_INTERFACE:${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}>"

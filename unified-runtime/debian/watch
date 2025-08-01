@@ -1,0 +1,7 @@
+version=4
+# Note, the uversionmangle is a hack to append -0 to the upstream version
+# to allow the vendor orig tarball to be included in the upload with
+# the experimental level-zero headers. This hack should be removed once
+# we package a new upstream version.
+opts="mode=git,pgpmode=none,uversionmangle=s/$/-0/" \
+https://github.com/oneapi-src/unified-runtime refs/tags/v(\d[\d.][\d.]*) debian debian/get-orig-source

@@ -1,0 +1,29 @@
+unified-runtime (0.11.8-0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
+
+  * Bump upstream version to allow upload of vendor source to LP.
+
+ -- Will French <will.french@canonical.com>  Thu, 31 Jul 2025 14:23:29 -0500
+
+unified-runtime (0.11.8-0ubuntu1~25.04~ppa4) plucky; urgency=medium
+
+  * Bump version to re-trigger LP build.
+
+ -- Will French <will.french@canonical.com>  Thu, 31 Jul 2025 13:12:45 -0500
+
+unified-runtime (0.11.8-0ubuntu1~25.04~ppa3) plucky; urgency=medium
+
+  * Vendor experimental level-zero headers.
+
+ -- Will French <will.french@canonical.com>  Thu, 31 Jul 2025 11:04:05 -0500
+
+unified-runtime (0.11.8-0ubuntu1~25.04~ppa2) plucky; urgency=medium
+
+  * Build adapters for level-zero and OpenCL.
+
+ -- Will French <will.french@canonical.com>  Wed, 30 Jul 2025 17:11:12 -0500
+
+unified-runtime (0.11.8-0ubuntu1~25.04~ppa1) plucky; urgency=medium
+
+  * Initial release.
+
+ -- Will French <will.french@canonical.com>  Mon, 28 Jul 2025 12:02:17 -0500

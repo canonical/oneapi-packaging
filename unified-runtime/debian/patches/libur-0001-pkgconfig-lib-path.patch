@@ -1,0 +1,16 @@
+Description: Append x86_64-linux-gnu to pkgconfig lib path.
+ This fixes the pkgconfig search path so that libur can be found
+ by build tools, e.g. the DPC++ compiler.
+Author: Will French <will.french@canonical.com>
+Last-Update: 2025-07-28
+---
+--- unified-runtime-0.11.8.orig/source/loader/libur_loader.pc.in
++++ unified-runtime-0.11.8/source/loader/libur_loader.pc.in
+@@ -1,6 +1,6 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ includedir=${prefix}/include
+-libdir=${prefix}/lib
++libdir=${prefix}/lib/x86_64-linux-gnu
+ 
+ 
+ Name: Unified Runtime Loader
