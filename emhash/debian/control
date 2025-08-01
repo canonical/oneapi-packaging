@@ -1,17 +1,17 @@
 Source: emhash
-Section: libs
+Section: devel
 Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-Build-Depends: debhelper (>= 11),
- cmake,
- make,
- gcc,
-Standards-Version: 4.3.0
-Homepage: https://github.com/oneapi-src/unified-memory-framework
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://github.com/ktprime/emhash
 
-Package: emhash-headers
+Package: emhash-dev
 Architecture: amd64
 Section: libdevel
 Depends:
  ${misc:Depends},
-Description: emhash - Fast and memory efficient open addressing C++ flat hash table/map
+ ${shlibs:Depends},
+Description: Fast and memory-efficient C++ flat hash map/set
+ Header files for C++ providing fast and memory-efficient
+ open-addressing with flat hash table/map.
