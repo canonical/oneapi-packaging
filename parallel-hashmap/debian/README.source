@@ -1,0 +1,5 @@
+Removed jquery-flot from source tree that is not relevant for the function
+of the package but supports the inspection of the benchmarks shipping
+with the source tree.
+
+ -- Steffen Moeller <moeller@debian.org>  Sat, 01 Oct 2022 00:00:18 +0200
