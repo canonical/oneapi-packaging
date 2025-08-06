@@ -1,0 +1,123 @@
+intel-vc-intrinsics (0.19.0+really.dpcpp-staging.git20241211.2d78d5-0ubuntu1~25.04~ppa1) plucky; urgency=medium
+
+  * Release from dpcpp_staging upstream branch.
+
+ -- Will French <will.french@canonical.com>  Wed, 06 Aug 2025 15:13:05 -0500
+
+intel-vc-intrinsics (0.19.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 06 Aug 2024 09:21:45 +0300
+
+intel-vc-intrinsics (0.18.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 08 Apr 2024 19:04:59 +0300
+
+intel-vc-intrinsics (0.13.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 11 Aug 2023 10:04:51 +0300
+
+intel-vc-intrinsics (0.11.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 24 Jan 2023 19:25:18 +0200
+
+intel-vc-intrinsics (0.8.1-1) unstable; urgency=medium
+
+  [ Andreas Beckmann ]
+  * Mark as Multi-Arch: same.
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 08 Nov 2022 12:47:10 +0200
+
+intel-vc-intrinsics (0.7.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 29 Sep 2022 13:05:08 +0300
+
+intel-vc-intrinsics (0.5.0-3) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 21 Sep 2022 12:09:34 +0300
+
+intel-vc-intrinsics (0.5.0-2) experimental; urgency=medium
+
+  * Provide a versioned virtual package.
+  * Build with llvm-14.  (Closes: #1012329)
+  * Update Lintian overrides.
+  * Upload to experimental.
+
+ -- Andreas Beckmann <anbe@debian.org>  Sat, 20 Aug 2022 01:52:24 +0200
+
+intel-vc-intrinsics (0.5.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 15 Aug 2022 16:38:06 +0300
+
+intel-vc-intrinsics (0.4.2-2) unstable; urgency=medium
+
+  [ Andreas Beckmann ]
+  * Switch back to llvm-11.  (Closes: #1012183)
+  * Bump Standards-Version to 4.6.1, no changes needed.
+  * Update Lintian overrides.
+  * Add myself to Uploaders.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Andreas Beckmann <anbe@debian.org>  Fri, 03 Jun 2022 22:55:58 +0200
+
+intel-vc-intrinsics (0.4.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * 0001-add-PVCXT_A0-platfrom.patch: Dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 12 May 2022 14:42:49 +0300
+
+intel-vc-intrinsics (0.1.0-3) unstable; urgency=medium
+
+  * 0001-add-PVCXT_A0-platfrom.patch: Add support for PVCXT_A0, fix i-g-
+    c build.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 08 Apr 2022 10:20:59 +0300
+
+intel-vc-intrinsics (0.1.0-2) unstable; urgency=medium
+
+  * Build with llvm-12 for intel-graphics-compiler.
+  * control: Add Conflicts/Provides/Replaces: intel-vc-intrinsics-x.y-
+    dev, also Provides intel-vc-intrinsics-12-dev.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 05 Apr 2022 16:04:48 +0300
+
+intel-vc-intrinsics (0.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * rules: Check llvm version from build-deps.
+  * watch: Updated.
+  * control: Bump policy to 4.6.0.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 23 Feb 2022 15:19:44 +0200
+
+intel-vc-intrinsics (0+git20210816-2) unstable; urgency=medium
+
+  * control, rules: Build with llvm-13.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 17 Nov 2021 11:10:35 +0200
+
+intel-vc-intrinsics (0+git20210816-1) unstable; urgency=medium
+
+  * Initial release (Closes: #992254)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 02 Sep 2021 20:41:23 +0300
