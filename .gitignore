@@ -10,7 +10,9 @@
 *.upload
 **/debian/files
 .pc
+# upstream source
 intel-dpcpp-6.1.0
 unified-runtime-*
 unified-runtime/vendor
 emhash-0*
+intel-vc-intrinsics-0.19.0*

@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+LLVM_VERSION	 = $(shell sed -n -r '/^Build/,/^$$/s/.*llvm-([0-9]+)-dev.*/\1/p' debian/control)
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_INSTALL_INCLUDEDIR=/usr/include/llvm-$(LLVM_VERSION)/ \
+		-DLLVM_DIR=/usr/lib/llvm-$(LLVM_VERSION)/lib/cmake/llvm
+
+override_dh_gencontrol:
+	dh_gencontrol -- \
+		-V'llvm:Version=$(LLVM_VERSION)'
+
+
+gentarball:
+	tar --transform 's,^,$(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)/,' \
+		--exclude 'debian' --exclude-vcs \
+		-cJf ../$(DEB_SOURCE)_$(DEB_VERSION_UPSTREAM).orig.tar.xz .
