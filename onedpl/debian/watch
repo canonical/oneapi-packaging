@@ -1,0 +1,5 @@
+version=4
+opts="mode=git,pgpmode=none" \
+https://github.com/uxlfoundation/oneDPL.git refs/tags/oneDPL-(\d+\.\d+\.\d+)-release debian uupdate
+
+

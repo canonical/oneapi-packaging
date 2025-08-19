@@ -1,9 +1,0 @@
-# -------- CMake --------
-build/*
-examples/*/build
-# -------- IDE --------
-.vscode/*
-.vs/*
-out/*
-CMakeSettings.json
-*.bmp
