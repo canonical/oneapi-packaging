@@ -1,0 +1,5 @@
+intel-compute-runtime-exp-headers (24.39.31294.12-0ubuntu1~25.10~ppa1) plucky; urgency=medium
+
+  * Initial release.
+
+ -- Will French <will.french@canonical.com>  Thu, 21 Aug 2025 12:29:13 -0500
