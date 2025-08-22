@@ -16,26 +16,13 @@ include /usr/share/dpkg/buildflags.mk
 %:
 	dh $@
 
-stamps/configure: stamps/preconfigure
-	:
-
-stamps/preconfigure:
-	rm -rf build
-	mkdir -p build/_deps/
-	cp -rf vendor/emhash build/_deps/emhash-headers-src
-	cp -rf vendor/parallel-hashmap build/_deps/parallel-hashmap-src
-	# copy compute runtime level zero headers
-	# it is used by unified-runtime
-	# (e.g., unified-runtime/source/adapters/level_zero/)
-	mkdir -p build/content-exp-headers/level_zero
-	cp -rf vendor/compute-runtime/level_zero/include/ build/content-exp-headers/level_zero/
-
-override_dh_auto_configure: stamps/configure
+override_dh_auto_configure:
 	# override CMAKE_INSTALL_PREFIX to install files to debian/tmp/
 	python3 $(CURDIR)/buildbot/configure.py \
 		--l0-headers /usr/include/level_zero/ \
 		--l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
 		--disable-jit \
+		--shared-libs \
 		--cmake-opt="-DLLVM_ENABLE_LTO=OFF" \
 		--cmake-opt="-DCMAKE_BUILD_TYPE=Release" \
 		--cmake-opt="-DCMAKE_INSTALL_PREFIX=${CURDIR}/debian/tmp/install/" \
@@ -46,13 +33,10 @@ override_dh_auto_configure: stamps/configure
 		--cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
 		--cmake-opt="-DLLVM_BUILD_LLVM_DYLIB:BOOL=ON" \
 		--cmake-opt="-DSYCL_UR_USE_FETCH_CONTENT=OFF" \
-		--cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=${CURDIR}/vendor/vc-intrinsics" \
 		--cmake-opt="-DFETCHCONTENT_FULLY_DISCONNECTED=ON" \
-		--cmake-opt="-DSYCL_UR_SOURCE_DIR=${CURDIR}/vendor/unified-runtime" \
 		--cmake-opt="-DUR_OPENCL_INCLUDE_DIR=/usr/include/" \
 		--cmake-opt="-DUR_USE_EXTERNAL_UMF=ON" \
 		--cmake-opt="-DOpenCL_INCLUDE_DIR=/usr/include/" \
-		--cmake-opt="-DBOOST_MP11_SOURCE_DIR=${CURDIR}/vendor/mp11-boost" \
 		--cmake-opt="-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/" \
 
 override_dh_auto_build:

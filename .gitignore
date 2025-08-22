@@ -11,10 +11,11 @@
 **/debian/files
 .pc
 # upstream source
-intel-dpcpp-6.1.0
+intel-dpcpp-*
 unified-runtime-*
 unified-runtime/vendor
-emhash-0*
-intel-vc-intrinsics-0.19.0*
-intel-umf_0.10.0*
+emhash-*
+vc-intrinsics-*
+intel-umf*
 onedpl_2022.9.0*
+intel-compute-runtime-exp-headers-2*

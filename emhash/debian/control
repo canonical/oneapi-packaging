@@ -2,7 +2,9 @@ Source: emhash
 Section: devel
 Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-Build-Depends: debhelper-compat (= 13)
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake
 Standards-Version: 4.6.2
 Homepage: https://github.com/ktprime/emhash
 
@@ -11,7 +13,7 @@ Architecture: amd64
 Section: libdevel
 Depends:
  ${misc:Depends},
- ${shlibs:Depends},
+ ${shlibs:Depends}
 Description: Fast and memory-efficient C++ flat hash map/set
  Header files for C++ providing fast and memory-efficient
  open-addressing with flat hash table/map.

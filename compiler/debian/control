@@ -21,9 +21,12 @@ Build-Depends:
     spirv-headers,
     opencl-headers,
     ocl-icd-opencl-dev,
-    libboost1.88-dev,
     libzstd-dev,
     pkgconf,
+    emhash-dev,
+    libumf-dev,
+    intel-vc-intrinsics-dev,
+    libparallel-hashmap-dev
 Build-Conflicts: oprofile
 Standards-Version: 4.7.0
 Homepage: https://github.com/intel/llvm

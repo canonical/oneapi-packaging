@@ -4,11 +4,11 @@ Description: Remove cpp driver suffix.
  mode CPP (preprocessor only). This will allow us to use the desired
  dpcpp suffix naming in the compiler sym links.
 Author: Will French <will.french@canonical.com>
-Last-Update: 2025-07-03
+Last-Update: 2025-08-22
 ---
---- intel-dpcpp-6.1.0.orig/clang/lib/Driver/ToolChain.cpp
-+++ intel-dpcpp-6.1.0/clang/lib/Driver/ToolChain.cpp
-@@ -383,7 +383,6 @@ static const DriverSuffix *FindDriverSuf
+--- intel-dpcpp-6.2.0.orig/clang/lib/Driver/ToolChain.cpp
++++ intel-dpcpp-6.2.0/clang/lib/Driver/ToolChain.cpp
+@@ -423,7 +423,6 @@ static const DriverSuffix *FindDriverSuf
        {"clang-gcc", nullptr},
        {"clang-cl", "--driver-mode=cl"},
        {"cc", nullptr},
