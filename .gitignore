@@ -11,7 +11,7 @@
 **/debian/files
 .pc
 # upstream source
-intel-dpcpp-6.1.0
+intel-dpcpp-*
 unified-runtime-*
 unified-runtime/vendor
 emhash-*

@@ -193,7 +193,7 @@ cd oneapi-packaging/intel-dpcpp-6.1.0
 sudo apt build-dep ./
 # Needed to support the PPA, assumes you have already created a plucky schroot
 sbuild-apt plucky-amd64 apt-get install ca-certificates
-sbuild --no-run-lintian --extra-repository="deb [trusted=yes] https://ppa.launchpadcontent.net/kobuk-team/oneapi/ubuntu plucky main" --build-path=""
+sbuild -c plucky-amd64 --dist=plucky --no-run-lintian --extra-repository="deb [trusted=yes] https://ppa.launchpadcontent.net/kobuk-team/oneapi/ubuntu plucky main" --build-path=""
 ```
 
 This avoids running `lintian` for now as it takes a very long time to run. The final option is important as it forces `sbuild` to use a different build path for each build. Otherwise, each build will share a build directory, which can result in strange errors.
