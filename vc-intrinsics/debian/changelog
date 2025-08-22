@@ -1,3 +1,9 @@
+intel-vc-intrinsics (0.22.0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
+
+  * Bump version to 0.22.0.
+
+ -- Will French <will.french@canonical.com>  Fri, 22 Aug 2025 10:14:19 -0500
+
 intel-vc-intrinsics (0.19.0+really.dpcpp-staging.git20241211.2d78d5-0ubuntu1~25.04~ppa2) plucky; urgency=medium
 
   * Update copyright file to cover script that builds the orig tarball.
