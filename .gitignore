@@ -14,7 +14,7 @@
 intel-dpcpp-6.1.0
 unified-runtime-*
 unified-runtime/vendor
-emhash-0*
+emhash-*
 vc-intrinsics-*
 intel-umf*
 onedpl_2022.9.0*
