@@ -2,17 +2,10 @@ From d6d2dfca261a46c66efecbb297b0a997d347f0d2 Mon Sep 17 00:00:00 2001
 From: Hector Cao <hector.cao@canonical.com>
 Date: Mon, 23 Jun 2025 13:08:19 +0000
 Subject: [PATCH] ubuntu sauce
-
+Last-Update: 2025-08-22
 ---
- opencl/CMakeLists.txt                        | 47 +++-----------------
- sycl/cmake/modules/FetchUnifiedRuntime.cmake |  5 ---
- sycl/tools/sycl-ls/CMakeLists.txt            |  1 -
- 3 files changed, 6 insertions(+), 47 deletions(-)
-
-diff --git a/opencl/CMakeLists.txt b/opencl/CMakeLists.txt
-index 808fc98c6bcc..825f3e2973e4 100644
---- a/opencl/CMakeLists.txt
-+++ b/opencl/CMakeLists.txt
+--- intel-dpcpp-6.2.0.orig/opencl/CMakeLists.txt
++++ intel-dpcpp-6.2.0/opencl/CMakeLists.txt
 @@ -23,29 +23,12 @@ set(OCL_LOADER_REPO
  set(OCL_HEADERS_TAG 542d7a8f65ecfd88b38de35d8b10aa67b36b33b2)
  set(OCL_LOADER_TAG 804b6f040503c47148bee535230070da6b857ae4)
@@ -75,12 +68,10 @@ index 808fc98c6bcc..825f3e2973e4 100644
 +add_library(OpenCL-ICD ALIAS OpenCL::OpenCL)
  
  add_subdirectory(opencl-aot)
-diff --git a/sycl/cmake/modules/FetchUnifiedRuntime.cmake b/sycl/cmake/modules/FetchUnifiedRuntime.cmake
-index e9d52c5b23da..c06103fe1fb5 100644
---- a/sycl/cmake/modules/FetchUnifiedRuntime.cmake
-+++ b/sycl/cmake/modules/FetchUnifiedRuntime.cmake
-@@ -292,8 +292,3 @@ if("native_cpu" IN_LIST SYCL_ENABLE_BACKENDS)
-     Some valid SYCL programs may not build or may have low performance.")
+--- intel-dpcpp-6.2.0.orig/sycl/cmake/modules/FetchUnifiedRuntime.cmake
++++ intel-dpcpp-6.2.0/sycl/cmake/modules/FetchUnifiedRuntime.cmake
+@@ -428,8 +428,3 @@ if(CMAKE_SYSTEM_NAME STREQUAL Windows)
+       DESTINATION "bin" COMPONENT unified-memory-framework)
    endif()
  endif()
 -
@@ -88,11 +79,9 @@ index e9d52c5b23da..c06103fe1fb5 100644
 -  LIBRARY DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
 -  ARCHIVE DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
 -  RUNTIME DESTINATION "bin" COMPONENT unified-memory-framework)
-diff --git a/sycl/tools/sycl-ls/CMakeLists.txt b/sycl/tools/sycl-ls/CMakeLists.txt
-index b90bd972d367..86edc0888b19 100644
---- a/sycl/tools/sycl-ls/CMakeLists.txt
-+++ b/sycl/tools/sycl-ls/CMakeLists.txt
-@@ -14,7 +14,6 @@ target_compile_definitions(sycl-ls PRIVATE SYCL_DISABLE_IMAGE_ASPECT_WARNING)
+--- intel-dpcpp-6.2.0.orig/sycl/tools/sycl-ls/CMakeLists.txt
++++ intel-dpcpp-6.2.0/sycl/tools/sycl-ls/CMakeLists.txt
+@@ -14,7 +14,6 @@ target_compile_definitions(sycl-ls PRIVA
  target_link_libraries(sycl-ls
    PRIVATE
      ${sycl_lib}
@@ -100,6 +89,3 @@ index b90bd972d367..86edc0888b19 100644
      UnifiedRuntime-Headers
  )
  if (WIN32)
--- 
-2.43.0
-

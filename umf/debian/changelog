@@ -1,3 +1,15 @@
+intel-umf (1.0.0+really0.11.0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
+
+  * Downgrade version to satisfy Unified Runtime dependency.
+
+ -- Will French <will.french@canonical.com>  Fri, 22 Aug 2025 09:03:42 -0500
+
+intel-umf (1.0.0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
+
+  * Bump upstream version to 1.0.0.
+
+ -- Will French <will.french@canonical.com>  Thu, 21 Aug 2025 16:50:01 -0500
+
 intel-umf (0.10.0-0ubuntu1~25.04~ppa4) plucky; urgency=medium
 
   * Add watch file. 

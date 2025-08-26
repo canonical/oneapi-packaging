@@ -2,16 +2,11 @@ From 6b6857c07162d1723cdc355cfb8dfe2a79659f92 Mon Sep 17 00:00:00 2001
 From: Hector Cao <hector.cao@canonical.com>
 Date: Wed, 25 Jun 2025 21:50:41 +0000
 Subject: [PATCH] does not copy level zero loader headers around
-
+Last-Update: 2025-08-22
 ---
- vendor/unified-runtime/cmake/FetchLevelZero.cmake | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/vendor/unified-runtime/cmake/FetchLevelZero.cmake b/vendor/unified-runtime/cmake/FetchLevelZero.cmake
-index 6d0e10d..e30f1f1 100644
---- a/vendor/unified-runtime/cmake/FetchLevelZero.cmake
-+++ b/vendor/unified-runtime/cmake/FetchLevelZero.cmake
-@@ -89,8 +89,8 @@ target_link_libraries(LevelZeroLoader
+--- intel-dpcpp-6.2.0.orig/unified-runtime/cmake/FetchLevelZero.cmake
++++ intel-dpcpp-6.2.0/unified-runtime/cmake/FetchLevelZero.cmake
+@@ -98,8 +98,8 @@ target_link_libraries(LevelZeroLoader
      INTERFACE "${LEVEL_ZERO_LIB_NAME}"
  )
  
@@ -22,6 +17,3 @@ index 6d0e10d..e30f1f1 100644
  add_library(LevelZeroLoader-Headers INTERFACE)
  target_include_directories(LevelZeroLoader-Headers
      INTERFACE "$<BUILD_INTERFACE:${LEVEL_ZERO_INCLUDE_DIR};${LEVEL_ZERO_INCLUDE_DIR}/level_zero>"
--- 
-2.43.0
-

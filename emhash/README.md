@@ -3,7 +3,8 @@
 To update and build this package:
 
 ```shell
-debian/build-orig-tarball.sh
-cd ../emhash-0.0+git20250614.b7ff314/
+uscan --download-version=1.0.0
+cd ../emhash-1.0.0/
+vim debian/changelog # edit changelog if necessary
 sbuild -c plucky-amd64 --dist=plucky --build-path=""
 ```
