@@ -26,7 +26,8 @@ Build-Depends:
     emhash-dev,
     libumf-dev,
     intel-vc-intrinsics-dev,
-    libparallel-hashmap-dev
+    libparallel-hashmap-dev,
+    libze-intel-gpu-exp-dev
 Build-Conflicts: oprofile
 Standards-Version: 4.7.0
 Homepage: https://github.com/intel/llvm
