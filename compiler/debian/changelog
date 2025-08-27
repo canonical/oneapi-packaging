@@ -1,3 +1,9 @@
+intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa2) plucky; urgency=medium
+
+  * Use experimental headers from PPA.
+
+ -- Will French <will.french@canonical.com>  Wed, 27 Aug 2025 09:38:30 -0500
+
 intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa1) plucky; urgency=medium
 
   * New upstream release.
