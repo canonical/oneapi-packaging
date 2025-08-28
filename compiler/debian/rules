@@ -30,8 +30,9 @@ override_dh_auto_configure:
 		--cmake-opt="-DCLANG_DEFAULT_LINKER=ld" \
 		--cmake-opt="-DCLANG_DEFAULT_RTLIB=libgcc" \
 		--cmake-opt="-DLLVM_ENABLE_RTTI=ON" \
-		--cmake-opt="-DLLVM_BUILD_LLVM_DYLIB:BOOL=OFF" \
+		--cmake-opt="-DLLVM_BUILD_LLVM_DYLIB:BOOL=ON" \
 		--cmake-opt="-DSYCL_UR_USE_FETCH_CONTENT=OFF" \
+		--cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=/usr/share/intel-vc-intrinsics-src/src" \
 		--cmake-opt="-DFETCHCONTENT_FULLY_DISCONNECTED=ON" \
 		--cmake-opt="-DUR_OPENCL_INCLUDE_DIR=/usr/include/" \
 		--cmake-opt="-DUR_USE_EXTERNAL_UMF=ON" \

@@ -25,7 +25,7 @@ Build-Depends:
     pkgconf,
     emhash-dev,
     libumf-dev,
-    intel-vc-intrinsics-dev,
+    intel-vc-intrinsics-src,
     libparallel-hashmap-dev,
     libze-intel-gpu-exp-dev
 Build-Conflicts: oprofile
