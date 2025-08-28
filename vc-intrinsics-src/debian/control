@@ -1,0 +1,20 @@
+Source: intel-vc-intrinsics-src
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.1
+Homepage: https://github.com/intel/vc-intrinsics
+
+Package: intel-vc-intrinsics-src
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Intel Vector Compute Intrinsics -- source files
+ Vector Compute Intrinsics project contains a set of new intrinsics
+ on top of core LLVM IR instructions that represent SIMD semantics of
+ a program targeting GPU.
+ .
+ This package is intended to be used for in-tree builds of LLVM-based
+ compiler projects, where tight coupling with LLVM version is required
+ and the upstream project may rebase from an upstream LLVM version that
+ differs from the version in the Ubuntu archive.
