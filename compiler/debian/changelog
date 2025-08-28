@@ -1,3 +1,10 @@
+intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa4) plucky; urgency=medium
+
+  * Switch LLVM/Clang version from 20 to 21.
+  * Build vc-intrinsics in-tree to re-enable LLVM_BUILD_LLVM_DYLIB.
+
+ -- Will French <will.french@canonical.com>  Thu, 28 Aug 2025 15:01:10 -0500
+
 intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa3) plucky; urgency=medium
 
   * Disable LLVM_BUILD_LLVM_DYLIB to fix circular dependency.
