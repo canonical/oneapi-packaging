@@ -1,3 +1,9 @@
+intel-vc-intrinsics-src (0.22.0-0ubuntu1~25.10~ppa4) plucky; urgency=medium
+
+  * Fix typo in install path.
+
+ -- Will French <will.french@canonical.com>  Thu, 28 Aug 2025 13:57:21 -0500
+
 intel-vc-intrinsics-src (0.22.0-0ubuntu1~25.10~ppa3) plucky; urgency=medium
 
   * Include CMakeLists.txt.
