@@ -37,8 +37,12 @@ Architecture: amd64
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- libsycl-dev,
+ binutils,
+ intel-opencl-icd,
  libclang-dpcpp-common-21-dev,
+ libstdc++-14-dev,
+ libsycl-dev,
+ libze-intel-gpu1,
  llvm-dpcpp
 Replaces: clang-dpcpp-20
 Breaks: clang-dpcpp-20
@@ -74,7 +78,6 @@ Description: Clang library for the DPC++ compiler - Development package
  support for the SYCL* language.
  .
  This package contains the Clang header files.
-
 
 Package: libsycl8
 Architecture: amd64
