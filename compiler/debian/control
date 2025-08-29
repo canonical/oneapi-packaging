@@ -40,6 +40,8 @@ Depends:
  libsycl-dev,
  libclang-dpcpp-common-21-dev,
  llvm-dpcpp
+Replaces: clang-dpcpp-20
+Breaks: clang-dpcpp-20
 Description: Intel DPC++ compiler
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
@@ -52,6 +54,8 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libclang-dpcpp-common-21-dev
+Replaces: libclang-dpcpp20
+Breaks: libclang-dpcpp20
 Description: Clang library for the DPC++ compiler
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
@@ -63,6 +67,8 @@ Architecture: amd64
 Section: libdevel
 Depends:
  ${misc:Depends}
+Replaces: libclang-dpcpp-common-20-dev
+Breaks: libclang-dpcpp-common-20-dev
 Description: Clang library for the DPC++ compiler - Development package
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.

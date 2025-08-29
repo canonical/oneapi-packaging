@@ -1,3 +1,9 @@
+intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa5) plucky; urgency=medium
+
+  * Transition packages from previous release.
+
+ -- Will French <will.french@canonical.com>  Fri, 29 Aug 2025 15:14:59 -0500
+
 intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa4) plucky; urgency=medium
 
   * Switch LLVM/Clang version from 20 to 21.
