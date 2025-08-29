@@ -189,7 +189,7 @@ $ debuild -us -uc -b
 Alternatively, to build with `sbuild` (set up instructions can be found [here](https://wiki.ubuntu.com/SimpleSbuild)):
 
 ```
-cd oneapi-packaging/intel-dpcpp-6.1.0
+cd oneapi-packaging/intel-dpcpp-6.2.0
 sudo apt build-dep ./
 # Needed to support the PPA, assumes you have already created a plucky schroot
 sbuild-apt plucky-amd64 apt-get install ca-certificates
