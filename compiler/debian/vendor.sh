@@ -30,7 +30,9 @@ cd ../..
 
 # Vendor compute runtime level-zero headers for these reasons:
 #   - The compiler requires a very specific version of the headers
-#   - ...
+#   - Headers enable experimental features not included in the level-zero API
+#     and are only meant to be consumed by the DPC++ compiler at build-time
+#   - More background and discussion: https://github.com/intel/llvm/issues/20318
 
 # perform a sparse checkout since we only need a handful of headers
 mkdir -p vendor/compute-runtime
