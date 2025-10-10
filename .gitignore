@@ -12,10 +12,7 @@
 .pc
 # upstream source
 intel-dpcpp-*
-unified-runtime-*
-unified-runtime/vendor
 emhash-*
 vc-intrinsics-0*
 intel-umf*
-onedpl_2022.9.0*
-intel-compute-runtime-exp-headers-2*
+onedpl-*
