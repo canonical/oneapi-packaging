@@ -8,3 +8,11 @@ cd ../onedpl-2022.9.0
 vim debian/changelog # edit manually if needed
 sbuild -c plucky-amd64 --dist=plucky --build-path=""
 ```
+
+## Validation with autopkgtest
+
+Tests can be run locally with autopkgtest:
+
+```
+autopkgtest -B -- null
+```

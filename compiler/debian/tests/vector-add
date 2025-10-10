@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\033[1;34m>>> [${0}] Starting build phase - buffer implementation\033[0m"
+( cd "$(dirname "$0")/003-vector-add" && mkdir buffers && cd buffers && cmake .. && make cpu-gpu )
+
+echo -e "\033[1;34m>>> [${0}] Starting run phase - buffer implementation\033[0m"
+"$(dirname "$0")"/003-vector-add/buffers/vector-add-buffers
+
+echo -e "\033[1;34m>>> [${0}] Starting build phase - USM implementation\033[0m"
+( cd "$(dirname "$0")/003-vector-add" && mkdir usm && cd usm && cmake .. -DUSM=1 && make cpu-gpu )
+
+echo -e "\033[1;34m>>> [${0}] Starting run phase - USM implementation\033[0m"
+"$(dirname "$0")"/003-vector-add/usm/vector-add-usm
+
