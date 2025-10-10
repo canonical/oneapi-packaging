@@ -13,7 +13,13 @@ The packages are currently built for and validated against Ubuntu 25.04 (Plucky)
 
 ## 1. (Optional) Enable Intel GPU support
 
-To run SYCL* applications with Intel GPU support, please refer to Canonical's [Intel Graphics Preview](https://github.com/canonical/intel-graphics-preview) for steps to install the latest drivers and support libraries on Ubuntu.
+To run SYCL* applications with Intel GPU support, ensure you have permissions to the device by adding yourself to the `render` Unix group:
+
+```shell
+sudo usermod -a -G render $USER
+```
+
+You need to log out and log back for this change to take effect.
 
 ## 2. Add the PPA to apt sources
 
@@ -27,7 +33,7 @@ sudo apt update
 ### 3.1 DPC++ compiler
 
 ```bash
-sudo apt install clang-dpcpp-20
+sudo apt install clang-dpcpp-21
 ```
 
 ### 3.2 oneDPL library

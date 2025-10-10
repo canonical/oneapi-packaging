@@ -15,20 +15,40 @@ fi
 echo "vendoring for package ${PKG_VERSION}"
 
 cd ${PKG_DIR}/
-#python3 ./buildbot/configure.py
 
 rm -rf vendor
 mkdir -p vendor
 
-git clone -b v0.11.8 --depth=1 https://github.com/oneapi-src/unified-runtime.git vendor/unified-runtime
-git clone https://github.com/ktprime/emhash vendor/emhash
-git -C vendor/emhash/ reset --hard b7ff3147a5b206d6fccd52cd3d63cdbfc4acf8fd
-git clone -b v2.0.0 --depth=1 https://github.com/greg7mdp/parallel-hashmap.git  vendor/parallel-hashmap
-git clone -b boost-1.88.0 --depth=1 https://github.com/boostorg/mp11.git vendor/mp11-boost
-git clone -b dpcpp_staging --depth=1 https://github.com/intel/vc-intrinsics.git vendor/vc-intrinsics
-git clone -b 24.39.31294.12 https://github.com/intel/compute-runtime.git vendor/compute-runtime/
+# Vendor vc-intrinsics for these reasons:
+#   - We need the source for in-tree build of the compiler
+#   - The intel-vc-intrinsics debian package only includes headers
+#   - The intel-vc-intrinsics debian package depends on an old version of llvm
+git clone -b v0.22.0 --depth=1 https://github.com/intel/vc-intrinsics.git vendor/vc-intrinsics
+cd vendor/vc-intrinsics
+rm -rf .git .github .gitignore
+cd ../..
 
-tar -C vendor --exclude-vcs --sort=name \
-    --owner=0 --group=0 --numeric-owner --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime\
-,delete=ctime \
-    -zcf ../intel-dpcpp_$PKG_VERSION.orig-vendor.tar.gz .
+# Vendor compute runtime level-zero headers for these reasons:
+#   - The compiler requires a very specific version of the headers
+#   - Headers enable experimental features not included in the level-zero API
+#     and are only meant to be consumed by the DPC++ compiler at build-time
+#   - More background and discussion: https://github.com/intel/llvm/issues/20318
+
+# perform a sparse checkout since we only need a handful of headers
+mkdir -p vendor/compute-runtime
+cd vendor/compute-runtime
+GIT_TAG="25.05.32567.17"
+git init
+git checkout -b main
+git remote add origin https://github.com/intel/compute-runtime.git
+git config core.sparsecheckout true
+echo "level_zero/include" >> .git/info/sparse-checkout
+git fetch --depth=1 origin "refs/tags/${GIT_TAG}:refs/tags/${GIT_TAG}"
+git checkout "${GIT_TAG}"
+rm -rf .git level_zero/include/{CMakeLists.txt,.clang-tidy}
+cd ../..
+
+tar --sort=name --owner=0 --group=0 --numeric-owner --clamp-mtime \
+    --mtime="2024-01-01 00:00:00" \
+    -cf ../intel-dpcpp_$PKG_VERSION.orig-vendor.tar vendor
+gzip -n -9 ../intel-dpcpp_$PKG_VERSION.orig-vendor.tar

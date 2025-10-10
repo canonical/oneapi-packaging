@@ -1,0 +1,8 @@
+install/lib/clang/21/include/*.h /usr/lib/llvm-dpcpp-21/lib/clang/21/include/
+install/lib/clang/21/include/module.modulemap /usr/lib/llvm-dpcpp-21/lib/clang/21/include/
+install/lib/clang/21/include/ppc_wrappers/ /usr/lib/llvm-dpcpp-21/lib/clang/21/include/ppc_wrappers/
+install/lib/clang/21/include/openmp_wrappers/ /usr/lib/llvm-dpcpp-21/lib/clang/21/include/openmp_wrappers/
+install/lib/clang/21/include/cuda_wrappers/ /usr/lib/llvm-dpcpp-21/lib/clang/21/include/cuda_wrappers/
+install/lib/clang/21/include/llvm_libc_wrappers/*.h /usr/lib/llvm-dpcpp-21/lib/clang/21/include/llvm_libc_wrappers/
+install/lib/clang/21/include/llvm_offload_wrappers/ /usr/lib/llvm-dpcpp-21/lib/clang/21/include/llvm_offload_wrappers/
+install/lib/clang/21/include/zos_wrappers/ /usr/lib/llvm-dpcpp-21/lib/clang/21/include/zos_wrappers/
