@@ -1,0 +1,3 @@
+Tests: reduce-segment, binary-search, dpl-sortdouble
+Depends: @
+Restrictions: allow-stderr

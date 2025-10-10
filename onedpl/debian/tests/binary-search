@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\033[1;34m>>> [${0}] Starting build phase\033[0m"
+clang++-dpcpp -fsycl "$(dirname "$0")/002-binary-search/binary_search.cpp" -w -o binary_search
+
+echo -e "\033[1;34m>>> [${0}] Starting run phase\033[0m"
+./binary_search
+

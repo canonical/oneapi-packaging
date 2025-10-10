@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\033[1;34m>>> [${0}] Starting build phase\033[0m"
+clang++-dpcpp -fsycl "$(dirname "$0")/001-sycl-neo-device/sycl-neo-device.cpp" -o sycl-neo-device
+
+echo -e "\033[1;34m>>> [${0}] Starting run phase\033[0m"
+./sycl-neo-device
+

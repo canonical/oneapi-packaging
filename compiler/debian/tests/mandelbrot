@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\033[1;34m>>> [${0}] Starting build phase\033[0m"
+( cd "$(dirname "$0")/002-mandelbrot" && cmake . && make )
+
+echo -e "\033[1;34m>>> [${0}] Standard run\033[0m"
+"$(dirname "$0")"/002-mandelbrot/src/mandelbrot
+
+echo -e "\033[1;34m>>> [${0}] Unified shared memory (USM) run\033[0m"
+"$(dirname "$0")"/002-mandelbrot/src/mandelbrot_usm
