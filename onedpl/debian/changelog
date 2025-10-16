@@ -1,3 +1,18 @@
+onedpl (2022.9.0-0ubuntu1~25.10~ppa10) questing; urgency=medium
+
+  * Bump version to force include orig tarball in upload.
+
+ -- Will French <will.french@canonical.com>  Thu, 16 Oct 2025 15:14:01 -0500
+
+onedpl (2022.9.0-0ubuntu1~25.10~ppa9) questing; urgency=medium
+
+  * Build for questing. Note that we originally began building for
+    questing but switched to plucky without updating the version string
+    pattern properly, so ~ppa9 is a bit misleading as this is actually
+    the first build for questing.
+
+ -- Will French <will.french@canonical.com>  Thu, 16 Oct 2025 14:55:08 -0500
+
 onedpl (2022.9.0-0ubuntu1~25.10~ppa8) plucky; urgency=medium
 
   * Use orig tarball from original 2022.9.0 upload. We switched to using
