@@ -1,3 +1,9 @@
+intel-umf (1.0.0+really0.11.0-0ubuntu1~25.10~ppa1) questing; urgency=medium
+
+  * Build for questing.
+
+ -- Will French <will.french@canonical.com>  Thu, 16 Oct 2025 15:48:19 -0500
+
 intel-umf (1.0.0+really0.11.0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
 
   * Downgrade version to satisfy Unified Runtime dependency.
