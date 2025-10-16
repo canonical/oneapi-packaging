@@ -6,5 +6,5 @@ To update and build this package:
 uscan --download-version=1.0.0
 cd ../emhash-1.0.0/
 vim debian/changelog # edit changelog if necessary
-sbuild -c plucky-amd64 --dist=plucky --build-path=""
+sbuild -c questing-amd64 --dist=questing --build-path=""
 ```
