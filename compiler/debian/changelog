@@ -1,3 +1,13 @@
+intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa9) questing; urgency=medium
+
+  *  Build for questing. Note that originally the package targeted
+     questing before switching over to plucky, but the version string
+     pattern was not updated. Thus, the version string here is a simple
+     bump of the ppaX suffix even though this is the initial build for
+     questing.
+
+ -- Will French <will.french@canonical.com>  Thu, 16 Oct 2025 16:55:59 -0500
+
 intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa8) plucky; urgency=medium
 
   * Add autopkgtests.

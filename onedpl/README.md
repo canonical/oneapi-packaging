@@ -40,8 +40,21 @@ dput ppa:kobuk-team/oneapi ../onedpl_2022.9.0-0ubuntu1~25.10~ppa9_source.changes
 
 ## Validation with autopkgtest
 
-Tests can be run locally with autopkgtest:
+Tests can be run locally with autopkgtest. First install the dependencies:
 
+```bash
+sudo apt install dpkg-dev clang-dpcpp-21
 ```
+
+Add your user to the `render` group (without this you will see nasty errors that generate core dumps):
+
+```bash
+sudo usermod -a -G render $USER
+```
+
+Log out, log back in, and finally run `autopkgtest`:
+
+```bash
+cd oneapi-packaging/compiler
 autopkgtest -B -- null
 ```
