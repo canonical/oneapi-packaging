@@ -4,7 +4,7 @@ This repo contains Debian package definitions for components from the [oneAPI Ba
 
 - [ppa:kobuk-team/oneapi](https://launchpad.net/~kobuk-team/+archive/ubuntu/oneapi)
 
-The packages are currently built for and validated against Ubuntu 25.04 (Plucky) only.
+The latest packages are built for and validated against Ubuntu 25.10 (Questing Quokka).
 
 1. [(Optional) Enable Intel GPU support](#1-optional-enable-intel-gpu-support)
 2. [Add the PPA to apt sources](#2-add-the-ppa-to-apt-sources)
