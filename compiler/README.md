@@ -18,7 +18,7 @@ This avoids running `lintian` for now as it takes a very long time to run. The f
 Tests can be run locally with autopkgtest. First install the dependencies:
 
 ```bash
-sudo apt install dpkg-dev cmake libstb-dev ocl-icd-opencl-dev clang-dpcpp-21
+sudo apt install autopkgtest dpkg-dev cmake libstb-dev ocl-icd-opencl-dev clang-dpcpp-21
 ```
 
 Add your user to the `render` group (without this you will see nasty errors that generate core dumps):
