@@ -3,19 +3,10 @@
 To update and build:
 
 ```bash
-uscan --download-version=2022.9.0
+uscan --rename --repack --download-version=2022.9.0
 cd ../onedpl-2022.9.0
 vim debian/changelog # edit manually if needed
 ```
-
-If this is a new upstream version or you are building for a new series for the first time, you need to rename the .tar.xz source file and delete the sym link, as the sym link is not handled properly for `dpkg-buildpackage` and `dput` (TODO: research how to overcome this manual step). For example:
-
-```bash
-rm onedpl_2022.9.0.orig.tar.xz
-mv onedpl-2022.9.0.tar.xz onedpl_2022.9.0.orig.tar.xz
-```
-
-Also verify in your *_source.changes file that `dpkg-buildpackage` has included the orig tarball for the upload correctly. If it's not, the upload will likely fail and you will need to bump your version string and re-upload with the orig tarball included this time.
 
 Build the binary package:
 

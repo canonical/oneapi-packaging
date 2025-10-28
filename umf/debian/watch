@@ -1,8 +1,4 @@
 version=4
-# Note, the uversionmangle is a hack to append -really0.11.0
-# to the upstream version to match the version in debian/changelog.
-# This hack should be removed once we package a new upstream version.
-opts="mode=git,pgpmode=none,uversionmangle=s/.*/1.0.0+really$0/" \
-https://github.com/oneapi-src/unified-memory-framework.git refs/tags/v(\d+\.\d+\.\d+) debian uupdate
-
-
+opts="repack,filenamemangle=s%(?:.*?)?v(\d[\d.]*)\.tar\.gz%unified-memory-framework-$1.tar.gz%" \
+   https://github.com/oneapi-src/unified-memory-framework/tags?after=v1.0.0-rc1 \
+   (?:.*?/)?v(\d[\d.]*)\.tar\.gz debian uupdate

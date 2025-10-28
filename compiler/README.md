@@ -3,7 +3,7 @@
 ## Build the debian package
 
 ```
-uscan --download-version=6.2.0
+uscan --rename --repack --download-version=6.2.0
 cd ../intel-dpcpp-6.2.0/
 vim debian/changelog # edit manually if needed
 sudo apt build-dep ./
