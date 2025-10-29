@@ -1,49 +1,11 @@
-onedpl (2022.9.0-0ubuntu1~25.10~ppa8) plucky; urgency=medium
-
-  * Use orig tarball from original 2022.9.0 upload. We switched to using
-    uscan for generating the orig tarball, which results in a different
-    orig tarball, causing the LP upload to fail.
-
- -- Will French <will.french@canonical.com>  Fri, 10 Oct 2025 10:08:04 -0500
-
-onedpl (2022.9.0-0ubuntu1~25.10~ppa7) plucky; urgency=medium
-
-  * Add autopkgtests.
-
- -- Will French <will.french@canonical.com>  Fri, 10 Oct 2025 09:57:58 -0500
-
-onedpl (2022.9.0-0ubuntu1~25.10~ppa6) plucky; urgency=medium
-
-  * Add watch file. 
-
- -- Will French <will.french@canonical.com>  Mon, 18 Aug 2025 15:32:58 -0500
-
-onedpl (2022.9.0-0ubuntu1~25.10~ppa5) plucky; urgency=medium
-
-  * Update cmake file install path to standard location.
-
- -- Will French <will.french@canonical.com>  Thu, 03 Jul 2025 08:53:02 -0500
-
-onedpl (2022.9.0-0ubuntu1~25.10~ppa4) plucky; urgency=medium
-
-  * Install cmake files.
-
- -- Will French <will.french@canonical.com>  Wed, 02 Jul 2025 09:36:05 -0500
-
-onedpl (2022.9.0-0ubuntu1~25.10~ppa3) plucky; urgency=medium
-
-  * Force include orig tarball in dpkg-buildpackage. 
-
- -- Will French <will.french@canonical.com>  Tue, 01 Jul 2025 17:13:45 -0500
-
-onedpl (2022.9.0-0ubuntu1~25.10~ppa2) plucky; urgency=medium
-
-  * Prepare package for upload to PPA.
-
- -- Will French <will.french@canonical.com>  Tue, 01 Jul 2025 17:01:17 -0500
-
 onedpl (2022.9.0-0ubuntu1~25.10~ppa1) questing; urgency=medium
 
-  * Initial release
+  * Build for questing.
 
- -- Shane McKee <shane.mckee@canonical.com>  Mon, 16 Jun 2025 09:52:31 -0700
+ -- Will French <will.french@canonical.com>  Tue, 28 Oct 2025 06:36:36 -0500
+
+onedpl (2022.9.0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
+
+  * Initial release.
+
+ -- Will French <will.french@canonical.com>  Thu, 16 Oct 2025 15:14:01 -0500

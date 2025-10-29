@@ -3,8 +3,8 @@
 To update and build:
 
 ```bash
-uscan --download-version=1.0.0+really0.11.0
-cd intel-umf-1.0.0+really0.11.0/
+uscan --rename --repack --download-version=0.11.0
+cd intel-umf-0.11.0/
 vim debian/changelog # edit manually if needed
-sbuild -c plucky-amd64 --dist=plucky --build-path=""
+sbuild -c questing-amd64 --dist=questing --build-path=""
 ```

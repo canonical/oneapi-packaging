@@ -2,9 +2,9 @@
 
 This repo contains Debian package definitions for components from the [oneAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html) published to the following PPA:
 
-- [ppa:kobuk-team/oneapi](https://launchpad.net/~kobuk-team/+archive/ubuntu/oneapi)
+- [ppa:kobuk-team/oneapi-release](https://launchpad.net/~kobuk-team/+archive/ubuntu/oneapi-release)
 
-The packages are currently built for and validated against Ubuntu 25.04 (Plucky) only.
+The latest packages are built for and validated against Ubuntu 25.10 (Questing Quokka).
 
 1. [(Optional) Enable Intel GPU support](#1-optional-enable-intel-gpu-support)
 2. [Add the PPA to apt sources](#2-add-the-ppa-to-apt-sources)
@@ -24,7 +24,7 @@ You need to log out and log back for this change to take effect.
 ## 2. Add the PPA to apt sources
 
 ```bash
-sudo add-apt-repository ppa:kobuk-team/oneapi
+sudo add-apt-repository ppa:kobuk-team/oneapi-release
 sudo apt update
 ```
 

@@ -1,5 +1,4 @@
 version=4
-opts="mode=git,pgpmode=none" \
-https://github.com/uxlfoundation/oneDPL.git refs/tags/oneDPL-(\d+\.\d+\.\d+)-release debian uupdate
-
-
+opts="repack,filenamemangle=s%(?:.*?)?v(\d[\d.]*)\.tar\.gz%oneDPL-$1.tar.gz%" \
+   https://github.com/uxlfoundation/oneDPL/tags \
+   (?:.*?/)?oneDPL-(\d+\.\d+\.\d+)-release\.tar\.gz debian uupdate

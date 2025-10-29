@@ -1,23 +1,11 @@
+emhash (1.0.0-0ubuntu1~25.10~ppa1) questing; urgency=medium
+
+  * Build for questing.
+
+ -- Will French <will.french@canonical.com>  Wed, 22 Oct 2025 16:21:25 +0100
+
 emhash (1.0.0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
-
-  * New upstream release.
-
- -- Will French <will.french@canonical.com>  Fri, 22 Aug 2025 10:28:33 -0500
-
-emhash (0.0+git20250614.b7ff314-0ubuntu1~25.04~ppa3) plucky; urgency=medium
-
-  * Bump version to enable new upload to LP.
-
- -- Will French <will.french@canonical.com>  Fri, 01 Aug 2025 11:24:24 -0500
-
-emhash (0.0+git20250614.b7ff314-0ubuntu1~25.04~ppa2) plucky; urgency=medium
-
-  * Change binary package name: -headers to -dev 
-
- -- Will French <will.french@canonical.com>  Fri, 01 Aug 2025 10:52:19 -0500
-
-emhash (0.0+git20250614.b7ff314-0ubuntu1~25.04~ppa1) plucky; urgency=medium
 
   * Initial release.
 
- -- Will French <will.french@canonical.com>  Thu, 31 Jul 2025 15:22:04 -0500
+ -- Will French <will.french@canonical.com>  Thu, 16 Oct 2025 16:43:57 -0500
