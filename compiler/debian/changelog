@@ -1,3 +1,9 @@
+intel-dpcpp (6.2.0-0ubuntu1~26.04~ppa1) resolute; urgency=medium
+
+  * Build for resolute.
+
+ -- Will French <will.french@canonical.com>  Wed, 29 Oct 2025 13:15:21 -0500
+
 intel-dpcpp (6.2.0-0ubuntu1~25.10~ppa1) questing; urgency=medium
 
   * Build for questing.

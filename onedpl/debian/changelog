@@ -1,3 +1,9 @@
+onedpl (2022.9.0-0ubuntu1~26.04~ppa1) resolute; urgency=medium
+
+  * Build for resolute.
+
+ -- Will French <will.french@canonical.com>  Wed, 29 Oct 2025 13:26:25 -0500
+
 onedpl (2022.9.0-0ubuntu1~25.10~ppa1) questing; urgency=medium
 
   * Build for questing.
