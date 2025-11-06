@@ -1,3 +1,10 @@
+intel-dpcpp (6.2.0-0ubuntu1~26.04~ppa2) resolute; urgency=medium
+
+  * Support new version of OpenCL.
+  * https://github.com/intel/llvm/issues/20511
+
+ -- Will French <will.french@canonical.com>  Thu, 06 Nov 2025 08:50:44 +0000
+
 intel-dpcpp (6.2.0-0ubuntu1~26.04~ppa1) resolute; urgency=medium
 
   * Build for resolute.
