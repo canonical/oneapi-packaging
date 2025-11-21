@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+DEPSDIR := $(CURDIR)/obj-x86_64-linux-gnu/deps
+LLVMDIR := /usr/lib/llvm-dpcpp-21/bin
+
+# The SYCL DPC++ compiler in Ubuntu is not currently built with
+# LTO support enabled.
+# If we need to enable this feature in the future, see:
+# https://github.com/intel/llvm/blob/sycl/llvm/docs/GoldPlugin.rst
+export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
+export DEB_CXXFLAGS_MAINT_APPEND = -fsycl -fsycl-targets=spir64_x86_64
+#export DEB_CXXFLAGS_MAINT_APPEND = -fsycl -fsycl-targets=spir64_x86_64,spir64_gen
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	mkdir -p "${DEPSDIR}"
+	cp -r "${CURDIR}/vendor/generic-sycl-components/." "${DEPSDIR}/onemath_sycl_blas-src"
+	cp -r "${CURDIR}/vendor/portfft-src/." "${DEPSDIR}/portfft-src"
+	dh_auto_configure -- \
+		-DCMAKE_INSTALL_PREFIX=/install \
+		-DCMAKE_CXX_COMPILER=clang++-dpcpp \
+		-DCMAKE_C_COMPILER=clang-dpcpp \
+		-DENABLE_GENERIC_BLAS_BACKEND=True \
+		-DGENERIC_BLAS_TUNING_TARGET=INTEL_GPU \
+		-DENABLE_PORTFFT_BACKEND=True \
+		-DENABLE_MKLCPU_BACKEND=False \
+		-DENABLE_MKLGPU_BACKEND=False \
+		-DBUILD_FUNCTIONAL_TESTS=False \
+		-DBUILD_EXAMPLES=False
+
+override_dh_dwz:
+	# dwz does not support DWARF 5 debug sections (e.g. .debug_addr)
