@@ -21,7 +21,6 @@ override_dh_auto_configure:
 	python3 $(CURDIR)/buildbot/configure.py \
 		--l0-headers /usr/include/level_zero/ \
 		--l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
-		--disable-jit \
 		--cmake-opt="-DLLVM_ENABLE_LTO=OFF" \
 		--cmake-opt="-DCMAKE_BUILD_TYPE=Release" \
 		--cmake-opt="-DCMAKE_INSTALL_PREFIX=${CURDIR}/debian/tmp/install/" \
