@@ -1,3 +1,10 @@
+intel-dpcpp (6.2.0-0ubuntu1~26.04~ppa3) resolute; urgency=medium
+
+  * d/llvm-dpcpp.install: install opencl-aot, see:
+    https://github.com/intel/llvm/issues/20745#issuecomment-3572764207
+
+ -- Will French <will.french@canonical.com>  Mon, 24 Nov 2025 17:24:31 -0600
+
 intel-dpcpp (6.2.0-0ubuntu1~26.04~ppa2) resolute; urgency=medium
 
   * Support new version of OpenCL.
