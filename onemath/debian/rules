@@ -1,15 +1,12 @@
 #!/usr/bin/make -f
 
 DEPSDIR := $(CURDIR)/obj-x86_64-linux-gnu/deps
-LLVMDIR := /usr/lib/llvm-dpcpp-21/bin
 
 # The SYCL DPC++ compiler in Ubuntu is not currently built with
 # LTO support enabled.
 # If we need to enable this feature in the future, see:
 # https://github.com/intel/llvm/blob/sycl/llvm/docs/GoldPlugin.rst
 export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
-export DEB_CXXFLAGS_MAINT_APPEND = -fsycl -fsycl-targets=spir64_x86_64
-#export DEB_CXXFLAGS_MAINT_APPEND = -fsycl -fsycl-targets=spir64_x86_64,spir64_gen
 
 %:
 	dh $@
