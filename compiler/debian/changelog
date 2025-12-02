@@ -1,3 +1,9 @@
+intel-dpcpp (6.2.0-0ubuntu1~26.04~ppa6) resolute; urgency=medium
+
+  * d/tests: add test for lto compiler feature.
+
+ -- Will French <will.french@canonical.com>  Tue, 02 Dec 2025 16:37:29 -0600
+
 intel-dpcpp (6.2.0-0ubuntu1~26.04~ppa5) resolute; urgency=medium
 
   * d/rules, d/control: enable LTO support for compiler.

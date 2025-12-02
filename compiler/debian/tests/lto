@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Taken from:
+# https://github.com/intel/llvm/blob/sycl/llvm/docs/GoldPlugin.rst
+#
+
+set -e
+
+echo -e "\033[1;34m>>> [${0}] Creating bitcode file using clang-dpcpp\033[0m"
+clang-dpcpp -flto "$(dirname "$0")/005-lto/a.c" -c -o a.o
+
+echo -e "\033[1;34m>>> [${0}] Creating archive with LLVM bitcode using llvm-ar\033[0m"
+/usr/lib/llvm-dpcpp-21/bin/llvm-ar rcs a.a a.o
+
+echo -e "\033[1;34m>>> [${0}] Creating native object file using clang-dpcpp\033[0m"
+clang-dpcpp "$(dirname "$0")/005-lto/b.c" -c -o b.o
+
+echo -e "\033[1;34m>>> [${0}] Link with LLVMgold plugin using clang-dpcpp\033[0m"
+clang-dpcpp -flto a.a b.o -o main
+
+echo -e "\033[1;34m>>> [${0}] Run resulting binary\033[0m"
+./main
