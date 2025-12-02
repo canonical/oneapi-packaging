@@ -1,0 +1,4 @@
+# Requesting guidance from upstream on how to generate man
+# pages for DPC++ compiler commands and sycl-ls:
+# https://github.com/intel/llvm/issues/20796
+no-manual-page
