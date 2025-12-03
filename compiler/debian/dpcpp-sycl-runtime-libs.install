@@ -1,2 +1,2 @@
-install/lib/libur_* 	/usr/lib/llvm-dpcpp-21/lib/
 install/lib/libxpti* 	/usr/lib/llvm-dpcpp-21/lib/
+install/lib/LLVMgold* 	/usr/lib/llvm-dpcpp-21/lib/

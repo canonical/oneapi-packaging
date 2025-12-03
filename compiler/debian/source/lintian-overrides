@@ -1,3 +1,7 @@
+# Reported here https://bugs.llvm.org/show_bug.cgi?id=32962
+# No activity, silent it to avoid false positive in automation
+license-problem-convert-utf-code
+
 # triggered by binary data files in llvm/test
 binary-with-bad-dynamic-table
 unpack-message-for-orig

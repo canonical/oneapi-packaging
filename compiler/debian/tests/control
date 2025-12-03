@@ -1,6 +1,7 @@
-Tests: sycl-neo-device, mandelbrot, vector-add, matrix-mul
+Tests: sycl-neo-device, mandelbrot, vector-add, matrix-mul, lto
 # cmake required by mandelbrot and vector-add tests
 # libstb-dev required by mandelbrot test
 # ocl-icd-opencl-dev required by mandebrot test
-Depends: @, cmake, libstb-dev, ocl-icd-opencl-dev
+# binutils-gold required by lto test
+Depends: @, cmake, libstb-dev, ocl-icd-opencl-dev, binutils-gold
 Restrictions: allow-stderr

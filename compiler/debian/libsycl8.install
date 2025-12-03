@@ -1,1 +1,1 @@
-install/lib/libsycl.so.8* /usr/lib/llvm-dpcpp-21/lib/
+install/lib/libsycl.so.8* /usr/lib/x86_64-linux-gnu/

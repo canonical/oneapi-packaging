@@ -2,6 +2,7 @@
 
 PKG_VERSION := $(shell dpkg-parsechangelog | awk '/^Version:/ {print $$2}')
 LLVM_VERSION := 21
+PARALLEL := $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 
 # TODO: Enbable build with debug symbols
 # Removing these lines causes the build to require large RAM and disk space
@@ -21,8 +22,8 @@ override_dh_auto_configure:
 	python3 $(CURDIR)/buildbot/configure.py \
 		--l0-headers /usr/include/level_zero/ \
 		--l0-loader /usr/lib/x86_64-linux-gnu/libze_loader.so \
-		--disable-jit \
-		--cmake-opt="-DLLVM_ENABLE_LTO=OFF" \
+		--cmake-opt="-DLLVM_USE_LINKER=gold" \
+		--cmake-opt="-DLLVM_BINUTILS_INCDIR=/usr/include/" \
 		--cmake-opt="-DCMAKE_BUILD_TYPE=Release" \
 		--cmake-opt="-DCMAKE_INSTALL_PREFIX=${CURDIR}/debian/tmp/install/" \
 		--cmake-opt="-DBOOTSTRAP_CMAKE_BUILD_TYPE=RelWithDebInfo" \
@@ -42,7 +43,7 @@ override_dh_auto_configure:
 		--cmake-opt="-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/" \
 
 override_dh_auto_build:
-	python3 ${CURDIR}/buildbot/compile.py -j`nproc`
+	python3 ${CURDIR}/buildbot/compile.py -j${PARALLEL}
 
 override_dh_auto_install:
 	# Install binaries to debian/tmp/usr
@@ -52,6 +53,15 @@ override_dh_auto_install:
 #       For now, this disables building .ddeb packages
 override_dh_strip:
 	dh_strip --no-automatic-dbgsym
+
+override_dh_missing:
+	# Installation tree is massive and includes thousands of superflous artifacts (mostly header files)
+	# that we exclude for now as we do not expect user demand for these artifacts.
+	dh_missing --list-missing
+
+override_dh_makeshlibs:
+	# exclude libs that are private/internal to the compiler
+	dh_makeshlibs -Xusr/lib/llvm-dpcpp-21/lib
 
 override_dh_clean:
 	rm -rf build
