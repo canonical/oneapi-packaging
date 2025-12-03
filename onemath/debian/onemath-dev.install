@@ -1,0 +1,7 @@
+install/lib/libonemath.so /usr/lib/x86_64-linux-gnu/
+install/lib/libonemath_blas_generic.so /usr/lib/x86_64-linux-gnu/
+install/lib/libonemath_dft_portfft.so /usr/lib/x86_64-linux-gnu/
+install/include/* usr/include
+install/src/* usr/share/onemath/source/
+install/*.cmake usr/lib/x86_64-linux-gnu/cmake/onemath/
+install/lib/cmake/oneMath/*.cmake usr/lib/x86_64-linux-gnu/cmake/onemath/
