@@ -1,3 +1,9 @@
+onemath (0.9-0ubuntu1~26.04~ppa1) resolute; urgency=medium
+
+  * Build for resolute.
+
+ -- Will French <will.french@canonical.com>  Wed, 03 Dec 2025 08:34:41 -0600
+
 onemath (0.9-0ubuntu1~25.10~ppa2) questing; urgency=medium
 
   * d/rules: link with lto.
