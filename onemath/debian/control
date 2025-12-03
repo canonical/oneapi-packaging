@@ -4,7 +4,9 @@ Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Build-Depends: debhelper-compat (= 13),
  cmake,
- clang-dpcpp-21
+ clang-dpcpp-21,
+ libsycl-dev,
+ libclang-dpcpp-common-21-dev
 Standards-Version: 4.6.2
 Homepage: https://github.com/uxlfoundation/oneMath
 
@@ -13,9 +15,9 @@ Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
- libcycl8,
- dpcpp-sycl-runtime-libs,
- libonemath-dev
+ libsycl8,
+ libur-adapter-level-zero0,
+ libur-adapter-opencl0
 Description: oneAPI Math Library (oneMath)
  oneMath is an open-source implementation of the oneMath specification. 
  It can work with multiple devices using multiple libraries (backends)
@@ -29,9 +31,9 @@ Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
- libcycl8,
- dpcpp-sycl-runtime-libs,
- libonemath-dev
+ libsycl8,
+ libur-adapter-level-zero0,
+ libur-adapter-opencl0
 Description: oneAPI Math Library (oneMath)
  oneMath is an open-source implementation of the oneMath specification. 
  It can work with multiple devices using multiple libraries (backends)
@@ -45,9 +47,9 @@ Architecture: amd64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
- libcycl8,
- dpcpp-sycl-runtime-libs,
- libonemath-dev
+ libsycl8,
+ libur-adapter-level-zero0,
+ libur-adapter-opencl0
 Description: oneAPI Math Library (oneMath)
  oneMath is an open-source implementation of the oneMath specification. 
  It can work with multiple devices using multiple libraries (backends)
@@ -60,9 +62,9 @@ Package: onemath-dev
 Architecture: amd64
 Depends:
  ${misc:Depends},
- ${shlibs:Depends},
- libcycl8,
- dpcpp-sycl-runtime-libs
+ libonemath0 (= ${binary:Version}),
+ libonemath-blas-generic0 (= ${binary:Version}),
+ libonemath-dft-portfft0 (= ${binary:Version})
 Description: oneAPI Math Library (oneMath)
  oneMath is an open-source implementation of the oneMath specification. 
  It can work with multiple devices using multiple libraries (backends)

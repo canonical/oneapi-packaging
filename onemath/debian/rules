@@ -2,12 +2,6 @@
 
 DEPSDIR := $(CURDIR)/obj-x86_64-linux-gnu/deps
 
-# The SYCL DPC++ compiler in Ubuntu is not currently built with
-# LTO support enabled.
-# If we need to enable this feature in the future, see:
-# https://github.com/intel/llvm/blob/sycl/llvm/docs/GoldPlugin.rst
-export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
-
 %:
 	dh $@
 
@@ -19,6 +13,8 @@ override_dh_auto_configure:
 		-DCMAKE_INSTALL_PREFIX=/install \
 		-DCMAKE_CXX_COMPILER=clang++-dpcpp \
 		-DCMAKE_C_COMPILER=clang-dpcpp \
+		-DCMAKE_AR=/usr/lib/llvm-dpcpp-21/bin/llvm-ar \
+		-DSYCL_LIBRARY=/usr/lib/x86_64-linux-gnu/libsycl.so.8 \
 		-DENABLE_GENERIC_BLAS_BACKEND=True \
 		-DGENERIC_BLAS_TUNING_TARGET=INTEL_GPU \
 		-DENABLE_PORTFFT_BACKEND=True \
