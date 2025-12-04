@@ -42,4 +42,4 @@ usr/include/oneapi/dnnl/dnnl_ukernel_types.h
 usr/include/oneapi/dnnl/dnnl_version.h
 usr/include/oneapi/dnnl/dnnl_version_hash.h
 usr/lib/*/cmake/dnnl
-usr/lib/*/libdnnl.so
+usr/lib/*/libdnnl-sycl.so

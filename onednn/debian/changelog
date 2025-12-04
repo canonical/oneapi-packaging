@@ -1,3 +1,38 @@
+onednn (3.9.1-0ubuntu1~25.10~ppa5) questing; urgency=medium
+
+  * d/rules: remove keepalive hack from build since issue was related to high
+    memory usage and not LP health status checking.
+
+ -- Will French <will.french@canonical.com>  Mon, 08 Dec 2025 08:18:36 -0600
+
+onednn (3.9.1-0ubuntu1~25.10~ppa4) questing; urgency=medium
+
+  * Disable LTO to attempt a successful LP build.
+
+ -- Will French <will.french@canonical.com>  Sun, 07 Dec 2025 16:34:31 -0600
+
+onednn (3.9.1-0ubuntu1~25.10~ppa3) questing; urgency=medium
+
+  * d/rules: add keepalive to build to prevent LP from killing
+  long-running linking step.
+
+ -- Will French <will.french@canonical.com>  Sat, 06 Dec 2025 15:50:22 -0600
+
+onednn (3.9.1-0ubuntu1~25.10~ppa1) questing; urgency=medium
+
+  * d/rules: Build with DPC++ toolchain and SYCL backends.
+  * d/control: Add DPC++ toolchain and SYCL build dependencies.
+  * d/watch: strip +ds from orig tarball name.
+  * d/control: rename binary package names with sycl to distinguish
+  from existing binary packages in archive.
+  * d/*.symbols: allow dh_makeshlibs to handle symbols file generation.
+  * d/*.install: use new package and SO name.
+  * d/rules: disable tests in build since they require an Intel GPU.
+  * d/rules: build with dnnl-sycl SONAME.
+  * d/rules: disable dh_dwz since DWARF debug sections not supported.
+
+ -- Will French <will.french@canonical.com>  Wed, 03 Dec 2025 16:51:01 -0600
+
 onednn (3.9.1+ds-2) unstable; urgency=medium
 
   * d/tests: add more examples to compile.

@@ -5,10 +5,14 @@ Note, debian and Ubuntu ship their own [onednn source package](https://launchpad
 ## Update and build:
 
 ```bash
-uscan --rename --repack --download-version=0.9
-cd ../onednn-3.1.12
-vim debian/changelog # edit manually if needed
+uscan --download-version=3.9.1
+cd ..
+tar xvf onednn_3.9.1.orig.tar.xz
+cd uxlfoundation-oneDNN-*
+cp -r ../onednn/debian .
 ```
+
+Note, the `debian/watch` file uses version 5 which is not supported on Noble, so you may need to run the `uscan` command on a machine running a newer Ubuntu release.
 
 Build the binary package:
 
