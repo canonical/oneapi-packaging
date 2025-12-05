@@ -24,14 +24,14 @@ mkdir -p vendor
 #   - Upstream downloads both dependencies in CMake via FetchContent, which is
 #     not allowed in Launchpad
 
-git clone --depth=1 https://github.com/uxlfoundation/generic-sycl-components.git vendor/generic-sycl-components
+git clone https://github.com/uxlfoundation/generic-sycl-components.git vendor/generic-sycl-components
 cd vendor/generic-sycl-components
 GIT_COMMIT_HASH="9924112" # for reproducibility, upstream pulls from tip of main
 git checkout "${GIT_COMMIT_HASH}"
 rm -rf .git .github
 cd ../..
 
-git clone --depth=1 https://github.com/codeplaysoftware/portFFT vendor/portfft-src
+git clone https://github.com/codeplaysoftware/portFFT vendor/portfft-src
 cd vendor/portfft-src
 GIT_COMMIT_HASH="f29d8e7" # consistent with upstream
 git checkout "${GIT_COMMIT_HASH}"
