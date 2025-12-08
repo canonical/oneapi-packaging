@@ -11,7 +11,8 @@
 **/debian/files
 .pc
 # upstream source
-intel-dpcpp-*
-emhash-*
-intel-umf*
-onedpl-*
+intel-dpcpp-*/
+emhash-*/
+intel-umf-*/
+onedpl-*/
+onemath-*/

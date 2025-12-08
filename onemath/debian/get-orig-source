@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Script usage:
+# get-orig-source --upstream-version <version>
+
+# $1 should hold the value --upstream-version
+# $2 should hold the upstream version
+UPSTREAM_VERSION=$2
+
+PKG_SOURCE_NAME=onemath
+PKG_FOLDER=${PKG_SOURCE_NAME}-${UPSTREAM_VERSION}
+
+uupdate -f --verbose "$@"
+
+# vendoring go dependencies
+set -e
+
+${PWD}/../${PKG_FOLDER}/debian/vendor.sh ${UPSTREAM_VERSION}

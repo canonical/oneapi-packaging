@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+DEPSDIR := $(CURDIR)/obj-x86_64-linux-gnu/deps
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	mkdir -p "${DEPSDIR}"
+	cp -r "${CURDIR}/vendor/generic-sycl-components/." "${DEPSDIR}/onemath_sycl_blas-src"
+	cp -r "${CURDIR}/vendor/portfft-src/." "${DEPSDIR}/portfft-src"
+	dh_auto_configure -- \
+		-DCMAKE_INSTALL_PREFIX=/install \
+		-DCMAKE_CXX_COMPILER=clang++-dpcpp \
+		-DCMAKE_C_COMPILER=clang-dpcpp \
+		-DCMAKE_AR=/usr/lib/llvm-dpcpp-21/bin/llvm-ar \
+		-DSYCL_LIBRARY=/usr/lib/x86_64-linux-gnu/libsycl.so.8 \
+		-DENABLE_GENERIC_BLAS_BACKEND=True \
+		-DGENERIC_BLAS_TUNING_TARGET=INTEL_GPU \
+		-DENABLE_PORTFFT_BACKEND=True \
+		-DENABLE_MKLCPU_BACKEND=False \
+		-DENABLE_MKLGPU_BACKEND=False \
+		-DBUILD_FUNCTIONAL_TESTS=False \
+		-DBUILD_EXAMPLES=False
+
+override_dh_dwz:
+	# dwz does not support DWARF 5 debug sections (e.g. .debug_addr)

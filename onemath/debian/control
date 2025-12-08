@@ -1,0 +1,75 @@
+Source: onemath
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ clang-dpcpp-21,
+ libsycl-dev,
+ libclang-dpcpp-common-21-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/uxlfoundation/oneMath
+
+Package: libonemath0
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libsycl8,
+ libur-adapter-level-zero0,
+ libur-adapter-opencl0
+Description: oneAPI Math Library (oneMath)
+ oneMath is an open-source implementation of the oneMath specification. 
+ It can work with multiple devices using multiple libraries (backends)
+ underneath. The oneMath project was previously referred to as oneMKL 
+ Interfaces.
+ .
+ This package ships the libonemath runtime library.
+
+Package: libonemath-blas-generic0
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libsycl8,
+ libur-adapter-level-zero0,
+ libur-adapter-opencl0
+Description: oneAPI Math Library (oneMath)
+ oneMath is an open-source implementation of the oneMath specification. 
+ It can work with multiple devices using multiple libraries (backends)
+ underneath. The oneMath project was previously referred to as oneMKL 
+ Interfaces.
+ .
+ This package ships the generic SYCL BLAS runtime library.
+
+Package: libonemath-dft-portfft0
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libsycl8,
+ libur-adapter-level-zero0,
+ libur-adapter-opencl0
+Description: oneAPI Math Library (oneMath)
+ oneMath is an open-source implementation of the oneMath specification. 
+ It can work with multiple devices using multiple libraries (backends)
+ underneath. The oneMath project was previously referred to as oneMKL 
+ Interfaces.
+ .
+ This package ships the portFFT runtime library.
+
+Package: onemath-dev
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ libonemath0 (= ${binary:Version}),
+ libonemath-blas-generic0 (= ${binary:Version}),
+ libonemath-dft-portfft0 (= ${binary:Version})
+Description: oneAPI Math Library (oneMath)
+ oneMath is an open-source implementation of the oneMath specification. 
+ It can work with multiple devices using multiple libraries (backends)
+ underneath. The oneMath project was previously referred to as oneMKL 
+ Interfaces.
+ .
+ This package ships header files, sym links, and cmake files for
+ developers using oneMath.

@@ -1,0 +1,18 @@
+onemath (0.9-0ubuntu1~25.10~ppa3) questing; urgency=medium
+
+  * vendor.sh: do not perform shallow clone.
+
+ -- Will French <will.french@canonical.com>  Fri, 05 Dec 2025 09:56:26 -0600
+
+onemath (0.9-0ubuntu1~25.10~ppa2) questing; urgency=medium
+
+  * d/rules: link with lto.
+  * d/control: fix dependencies.
+
+ -- Will French <will.french@canonical.com>  Tue, 02 Dec 2025 20:15:53 -0600
+
+onemath (0.9-0ubuntu1~25.10~ppa1) questing; urgency=medium
+
+  * Initial release.
+
+ -- Will French <will.french@canonical.com>  Wed, 19 Nov 2025 15:52:01 -0600
