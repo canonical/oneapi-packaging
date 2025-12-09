@@ -14,13 +14,15 @@ cp -r ../onednn/debian .
 
 Note, the `debian/watch` file uses version 5 which is not supported on Noble, so you may need to run the `uscan` command on a machine running a newer Ubuntu release.
 
-Build the binary package:
+## Build the binary package with sbuild
+
+Docs for setting up `sbuild` and a `questing-amd64` schroot can be found [here](https://github.com/canonical/partner-eng-docs/blob/main/packaging/debian/sbuild.md). The command below adds the oneapi-dev PPA to the apt sources inside the schroot and uses an unusual URL that enables apt-cacher-ng to cache packages from the PPA. Those details can be found in [this section](https://github.com/canonical/partner-eng-docs/blob/main/packaging/debian/sbuild.md#using-the-schroot).
 
 ```bash
 sbuild -c questing-amd64 --dist=questing --build-path="" --extra-repository="deb [trusted=yes] http://HTTPS///ppa.launchpadcontent.net/kobuk-team/oneapi-dev/ubuntu questing main"
 ```
 
-Build the source package:
+## Build the source package with dpkg-buildpackage
 
 ```bash
 dpkg-buildpackage -S -d
