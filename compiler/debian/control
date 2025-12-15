@@ -146,7 +146,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  libur-loader0 (= ${binary:Version})
-Description: oneAPI Unified Runtime
+Description: oneAPI Unified Runtime loader - Devel package
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
@@ -158,7 +158,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  libur-loader0
-Description: oneAPI Unified Runtime
+Description: oneAPI Unified Runtime level-zero adapter
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
@@ -170,7 +170,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  libur-adapter-level-zero0 (= ${binary:Version})
-Description: oneAPI Unified Runtime
+Description: oneAPI Unified Runtime level-zero adapter - Devel package
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
@@ -183,7 +183,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  libur-loader0
-Description: oneAPI Unified Runtime
+Description: oneAPI Unified Runtime level-zero adapter v2
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
@@ -195,7 +195,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  libur-adapter-level-zero-v2-0 (= ${binary:Version})
-Description: oneAPI Unified Runtime
+Description: oneAPI Unified Runtime level-zero adapter v2 - Devel package
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
@@ -208,7 +208,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  libur-loader0
-Description: oneAPI Unified Runtime
+Description: oneAPI Unified Runtime OpenCL adapter
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
@@ -220,7 +220,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  libur-adapter-level-zero0 (= ${binary:Version})
-Description: oneAPI Unified Runtime
+Description: oneAPI Unified Runtime OpenCL adapter - Devel package
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
