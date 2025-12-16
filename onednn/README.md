@@ -19,8 +19,10 @@ Note, the `debian/watch` file uses version 5 which is not supported on Noble, so
 Docs for setting up `sbuild` and a `questing-amd64` schroot can be found [here](https://github.com/canonical/partner-eng-docs/blob/main/packaging/debian/sbuild.md). The command below adds the oneapi-dev PPA to the apt sources inside the schroot and uses an unusual URL that enables apt-cacher-ng to cache packages from the PPA. Those details can be found in [this section](https://github.com/canonical/partner-eng-docs/blob/main/packaging/debian/sbuild.md#using-the-schroot).
 
 ```bash
-sbuild -c questing-amd64 --dist=questing --build-path="" --extra-repository="deb [trusted=yes] http://HTTPS///ppa.launchpadcontent.net/kobuk-team/oneapi-dev/ubuntu questing main"
+sbuild -c questing-amd64 --dist=questing --build-path="" --extra-repository="deb [trusted=yes] http://HTTPS///ppa.launchpadcontent.net/kobuk-team/oneapi-dev/ubuntu questing main" onednn
 ```
+
+Note, with `apt-cacher-ng` installed you may use the URL `http://HTTPS///ppa.launchpadcontent.net/kobuk-team/oneapi-dev/ubuntu questing main` instead. Fetching build depedencies from the same PPA can be time-consuming, so integrating `sbuild` and `apt-cacher-ng` is recommended. Alternatively, try prepending the `snapshot.` subdomain in the URL (`snapshot.ppa.launchpadcontent...`), as this may yield higher download speeds.
 
 ## Build the source package with dpkg-buildpackage
 
