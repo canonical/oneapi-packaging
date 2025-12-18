@@ -1,3 +1,29 @@
+onednn (3.9.1-0ubuntu1~25.10~ppa8) questing; urgency=medium
+
+  * d/rules: disable CPU-only ukernel experimental feature.
+  * d/patches/series: disable patch that changes SONAME as this
+    was introduced to signify breaking changes introduced by
+    the ukernel experimental feature in version 3.6 of oneDNN.
+  * d/control: drop 3.6 from binary package name. This was introduced
+    by debian maintainers when ABI changes were introduced through
+    the ukernel experimental feature in version 3.6 of oneDNN.
+
+ -- Will French <will.french@canonical.com>  Thu, 18 Dec 2025 13:55:43 -0600
+
+onednn (3.9.1-0ubuntu1~25.10~ppa7) questing; urgency=medium
+
+  * d/rules: sparse functionality already enabled in production build.
+  * d/rules: limit package support to Intel GPU only (no CPU support).
+
+ -- Will French <will.french@canonical.com>  Sat, 13 Dec 2025 13:32:51 -0600
+
+onednn (3.9.1-0ubuntu1~25.10~ppa6) questing; urgency=medium
+
+  * d/rules: switch to TBB CPU runtime since SYCL CPU support requires
+    OpenCL CPU packages that are not in Ubuntu.
+
+ -- Will French <will.french@canonical.com>  Fri, 12 Dec 2025 16:55:57 -0600
+
 onednn (3.9.1-0ubuntu1~25.10~ppa5) questing; urgency=medium
 
   * d/rules: remove keepalive hack from build since issue was related to high

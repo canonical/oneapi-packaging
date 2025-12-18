@@ -1,5 +1,4 @@
 fix-ppc64-gemm-power8.patch
-soversion.patch
 system-spdlog.patch
 system-gtest.patch
 add-primitive-header-on-rv64.patch
