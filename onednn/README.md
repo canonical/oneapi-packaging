@@ -38,4 +38,23 @@ Upload to LP (double check which PPA you want to publish to, here we're publishi
 dput ppa:kobuk-team/oneapi-dev ../onednn_3.1.12-0ubuntu1~26.04~ppa1_source.changes
 ```
 
-## Validation with autopkgtest (TODO)
+## Validation with autopkgtest
+
+Tests can be run locally with autopkgtest. First install the dependencies:
+
+```bash
+sudo apt install autopkgtest dpkg-dev ocl-icd-opencl-dev clang-dpcpp-21 libtbb-dev libsycl-dev libclang-dpcpp-common-21-dev onednn-examples
+```
+
+Add your user to the `render` group (without this you will see nasty errors that generate core dumps):
+
+```bash
+sudo usermod -a -G render $USER
+```
+
+Log out, log back in, and finally run `autopkgtest`:
+
+```bash
+cd oneapi-packaging/onednn
+autopkgtest -B -- null
+```
