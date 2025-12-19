@@ -36,6 +36,9 @@ usr/include/oneapi/dnnl/dnnl_threadpool.h
 usr/include/oneapi/dnnl/dnnl_threadpool.hpp
 usr/include/oneapi/dnnl/dnnl_threadpool_iface.hpp
 usr/include/oneapi/dnnl/dnnl_types.h
+usr/include/oneapi/dnnl/dnnl_ukernel.h
+usr/include/oneapi/dnnl/dnnl_ukernel.hpp
+usr/include/oneapi/dnnl/dnnl_ukernel_types.h
 usr/include/oneapi/dnnl/dnnl_version.h
 usr/include/oneapi/dnnl/dnnl_version_hash.h
 usr/lib/*/cmake/dnnl

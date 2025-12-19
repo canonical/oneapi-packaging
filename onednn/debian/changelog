@@ -1,3 +1,27 @@
+onednn (3.10.2-0ubuntu1~25.10~ppa3) questing; urgency=medium
+
+  * d/onednn-examples.links: use source package name in path for
+    consistency.
+
+ -- Will French <will.french@canonical.com>  Thu, 18 Dec 2025 21:56:23 -0600
+
+onednn (3.10.2-0ubuntu1~25.10~ppa2) questing; urgency=medium
+
+  * d/onednn-examples.install: place arch-specific example files
+    in location recommended by Debian Policy Manual (section 12.6).
+  * d/onednn-example.links: sym link to examples directory per
+    policy in Debian Policy Manual (section 12.6).
+
+ -- Will French <will.french@canonical.com>  Thu, 18 Dec 2025 20:20:05 -0600
+
+onednn (3.10.2-0ubuntu1~25.10~ppa1) questing; urgency=medium
+
+  * chore: new upstream release.
+  * d/patches: remove patches that relevant to non-amd64 only.
+  * d/control: create new onednn-examples binary package.
+
+ -- Will French <will.french@canonical.com>  Thu, 18 Dec 2025 20:58:57 +0000
+
 onednn (3.9.1-0ubuntu1~25.10~ppa8) questing; urgency=medium
 
   * d/rules: disable CPU-only ukernel experimental feature.
