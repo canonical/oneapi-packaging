@@ -18,13 +18,28 @@ Standards-Version: 4.7.2
 Homepage: https://github.com/oneapi-src/oneDNN
 Rules-Requires-Root: no
 
+Package: onednn-examples
+Section: libdevel
+Architecture: amd64
+Depends: libdnnl-sycl-dev (= ${binary:Version}), ${misc:Depends}
+Description: oneAPI Deep Neural Network (oneDNN) Examples
+ oneAPI Deep Neural Network Library (oneDNN) is an open-source performance
+ library for deep learning applications. The library includes basic building
+ blocks for neural networks optimized for Intel Architecture Processors and
+ Intel Processor Graphics.
+ .
+ oneDNN is intended for deep learning applications and framework developers
+ interested in improving application performance on Intel CPUs and GPUs.
+ .
+ This package contains example programs for testing and development.
+
 Package: libdnnl-sycl-dev
 Section: libdevel
 Architecture: amd64
-Depends: libdnnl-sycl-3.6 (= ${binary:Version}), ${misc:Depends}
+Depends: libdnnl-sycl3 (= ${binary:Version}), ${misc:Depends}
 Breaks: libmkldnn-dev, libdnnl-dev
 Replaces: libmkldnn-dev, libdnnl-dev
-Description: oneAPI Deep Neural Network Library (oneDNN) with SYCL Support (dev)
+Description: oneAPI Deep Neural Network (oneDNN) with SYCL Support (dev)
  oneAPI Deep Neural Network Library (oneDNN) is an open-source performance
  library for deep learning applications. The library includes basic building
  blocks for neural networks optimized for Intel Architecture Processors and
@@ -36,7 +51,7 @@ Description: oneAPI Deep Neural Network Library (oneDNN) with SYCL Support (dev)
  This package contains the header files, and symbol links to the shared object.
  Some are specific to the SYCL runtime for GPU support.
 
-Package: libdnnl-sycl-3.6
+Package: libdnnl-sycl3
 Section: libs
 Architecture: amd64
 Multi-Arch: same
@@ -45,9 +60,9 @@ Depends: ${misc:Depends},
          libsycl8,
          libur-adapter-level-zero0,
          libur-adapter-opencl0,
-Breaks: libmkldnn1, libdnnl-3.6
-Replaces: libmkldnn1, libdnnl-3.6
-Description: oneAPI Deep Neural Network Library (oneDNN) with SYCL support (lib)
+Breaks: libmkldnn1, libdnnl3.6
+Replaces: libmkldnn1, libdnnl3.6
+Description: oneAPI Deep Neural Network (oneDNN) with SYCL support (lib)
  oneAPI Deep Neural Network Library (oneDNN) is an open-source performance
  library for deep learning applications. The library includes basic building
  blocks for neural networks optimized for Intel Architecture Processors and

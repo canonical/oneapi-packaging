@@ -6,12 +6,6 @@ export DEB_CXXFLAGS_MAINT_APPEND = -fdiagnostics-color=always #-fcolor-diagnosti
 export DEB_LDFLAGS_MAINT_APPEND  = -Wl,--as-needed
 #export CLICOLOR_FORCE=ON
 
-# ukernel is only implemented (and used by PyTorch) on amd64
-BUILD_UKERNEL=OFF
-ifeq ($(DEB_HOST_ARCH), amd64)
-BUILD_UKERNEL=ON
-endif
-
 %:
 	dh $@ -Scmake+ninja
 
@@ -22,13 +16,11 @@ override_dh_auto_configure:
 		-DCMAKE_C_COMPILER=clang-dpcpp \
 		-DCMAKE_AR=/usr/lib/llvm-dpcpp-21/bin/llvm-ar \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
-		-DDNNL_EXPERIMENTAL_SPARSE=ON \
-		-DDNNL_EXPERIMENTAL_UKERNEL=${BUILD_UKERNEL} \
 		-DONEDNN_BUILD_TESTS=OFF \
 		-DONEDNN_BUILD_EXAMPLES=OFF \
 		-DONEDNN_BUILD_DOC=OFF \
 		-DONEDNN_ARCH_OPT_FLAGS="" \
-		-DONEDNN_CPU_RUNTIME=SYCL \
+		-DONEDNN_CPU_RUNTIME=NONE \
 		-DONEDNN_GPU_RUNTIME=SYCL \
 		-DDNNL_LIBRARY_NAME=dnnl-sycl
 
