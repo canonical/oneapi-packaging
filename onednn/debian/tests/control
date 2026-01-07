@@ -1,192 +1,90 @@
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/bnorm_u8_via_binary_postops.cpp -ldnnl -lOpenCL -o bnorm_u8_via_binary_postops_tester; ./bnorm_u8_via_binary_postops_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/bnorm_u8_via_binary_postops.cpp examples/bnorm_u8_via_binary_postops.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/bnorm_u8_via_binary_postops.cpp -ldnnl-sycl -lOpenCL -ltbb -o bnorm_u8_via_binary_postops_tester; ./bnorm_u8_via_binary_postops_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-bnorm_u8_via_binary_postops.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-bnorm_u8_via_binary_postops.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_inference_f32.c -ldnnl -lOpenCL -o cnn_inference_f32_tester; ./cnn_inference_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/cnn_inference_f32.c examples/cnn_inference_f32.c; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/cnn_inference_f32.c -ldnnl-sycl -lOpenCL -ltbb -o cnn_inference_f32_tester; ./cnn_inference_f32_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cnn_inference_f32.c
+Architecture: amd64
+Features: test-name=clang++-dpcpp-cnn_inference_f32.c
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_inference_f32.cpp -ldnnl -lOpenCL -o cnn_inference_f32_tester; ./cnn_inference_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/cnn_inference_f32.cpp examples/cnn_inference_f32.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/cnn_inference_f32.cpp -ldnnl-sycl -lOpenCL -ltbb -o cnn_inference_f32_tester; ./cnn_inference_f32_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cnn_inference_f32.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-cnn_inference_f32.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_inference_int8.cpp -ldnnl -lOpenCL -o cnn_inference_int8_tester; ./cnn_inference_int8_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/cnn_inference_int8.cpp examples/cnn_inference_int8.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/cnn_inference_int8.cpp -ldnnl-sycl -lOpenCL -ltbb -o cnn_inference_int8_tester; ./cnn_inference_int8_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cnn_inference_int8.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-cnn_inference_int8.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_training_bf16.cpp -ldnnl -lOpenCL -o cnn_training_bf16_tester; ./cnn_training_bf16_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/cnn_training_bf16.cpp examples/cnn_training_bf16.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/cnn_training_bf16.cpp -ldnnl-sycl -lOpenCL -ltbb -o cnn_training_bf16_tester; ./cnn_training_bf16_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cnn_training_bf16.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-cnn_training_bf16.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_training_f32.cpp -ldnnl -lOpenCL -o cnn_training_f32_tester; ./cnn_training_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/cnn_training_f32.cpp examples/cnn_training_f32.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/cnn_training_f32.cpp -ldnnl-sycl -lOpenCL -ltbb -o cnn_training_f32_tester; ./cnn_training_f32_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cnn_training_f32.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-cnn_training_f32.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_matmul_coo.cpp -ldnnl -lOpenCL -o cpu_matmul_coo_tester; ./cpu_matmul_coo_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/getting_started.cpp examples/getting_started.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/getting_started.cpp -ldnnl-sycl -lOpenCL -ltbb -o getting_started_tester; ./getting_started_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cpu_matmul_coo.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-getting_started.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_matmul_csr.cpp -ldnnl -lOpenCL -o cpu_matmul_csr_tester; ./cpu_matmul_csr_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/matmul_perf.cpp examples/matmul_perf.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/matmul_perf.cpp -ldnnl-sycl -lOpenCL -ltbb -o matmul_perf_tester; ./matmul_perf_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cpu_matmul_csr.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-matmul_perf.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_matmul_weights_compression.cpp -ldnnl -lOpenCL -o cpu_matmul_weights_compression_tester; ./cpu_matmul_weights_compression_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/memory_format_propagation.cpp examples/memory_format_propagation.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/memory_format_propagation.cpp -ldnnl-sycl -lOpenCL -ltbb -o memory_format_propagation_tester; ./memory_format_propagation_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cpu_matmul_weights_compression.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-memory_format_propagation.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_cnn_training_f32.c -ldnnl -lOpenCL -o cpu_cnn_training_f32_tester; ./cpu_cnn_training_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/performance_profiling.cpp examples/performance_profiling.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/performance_profiling.cpp -ldnnl-sycl -lOpenCL -ltbb -o performance_profiling_tester; ./performance_profiling_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cpu_cnn_training_f32.c
+Architecture: amd64
+Features: test-name=clang++-dpcpp-performance_profiling.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_rnn_inference_f32.cpp -ldnnl -lOpenCL -o cpu_rnn_inference_f32_tester; ./cpu_rnn_inference_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/rnn_training_f32.cpp examples/rnn_training_f32.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/rnn_training_f32.cpp -ldnnl-sycl -lOpenCL -ltbb -o rnn_training_f32_tester; ./rnn_training_f32_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cpu_rnn_inference_f32.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-rnn_training_f32.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_rnn_inference_int8.cpp -ldnnl -lOpenCL -o cpu_rnn_inference_int8_tester; ./cpu_rnn_inference_int8_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/sycl_interop_buffer.cpp examples/sycl_interop_buffer.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/sycl_interop_buffer.cpp -ldnnl-sycl -lOpenCL -ltbb -o sycl_interop_buffer_tester; ./sycl_interop_buffer_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-cpu_rnn_inference_int8.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-sycl_interop_buffer.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/getting_started.cpp -ldnnl -lOpenCL -o getting_started_tester; ./getting_started_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/sycl_interop_usm.cpp examples/sycl_interop_usm.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/sycl_interop_usm.cpp -ldnnl-sycl -lOpenCL -ltbb -o sycl_interop_usm_tester; ./sycl_interop_usm_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-getting_started.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-sycl_interop_usm.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/memory_format_propagation.cpp -ldnnl -lOpenCL -o memory_format_propagation_tester; ./memory_format_propagation_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/graph/sycl_getting_started.cpp examples/graph/sycl_getting_started.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/graph/sycl_getting_started.cpp -ldnnl-sycl -lOpenCL -ltbb -o sycl_getting_started_tester; ./sycl_getting_started_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-memory_format_propagation.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-sycl_getting_started.cpp
 
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/performance_profiling.cpp -ldnnl -lOpenCL -o performance_profiling_tester; ./performance_profiling_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
+Test-Command: install -D -m 0644 /usr/lib/onednn/examples/graph/sycl_single_op_partition.cpp examples/graph/sycl_single_op_partition.cpp; clang++-dpcpp -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/ubuntu/oneapi-packaging/onednn=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/ubuntu/oneapi-packaging/onednn=/usr/src/onednn-3.10.2-0ubuntu1~25.10~ppa3 -Wdate-time -D_FORTIFY_SOURCE=3 -fsycl -I /usr/lib/onednn/examples -I /usr/lib/onednn/examples/graph -Wl,-Bsymbolic-functions -Wl,-z,relro examples/graph/sycl_single_op_partition.cpp -ldnnl-sycl -lOpenCL -ltbb -o sycl_single_op_partition_tester; ./sycl_single_op_partition_tester gpu
+Depends: @, onednn-examples, libtbb-dev, clang-dpcpp-21, libsycl-dev, libclang-dpcpp-common-21-dev, ocl-icd-opencl-dev
 Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-performance_profiling.cpp
-
-Test-Command: g++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/rnn_training_f32.cpp -ldnnl -lOpenCL -o rnn_training_f32_tester; ./rnn_training_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=g++-rnn_training_f32.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/bnorm_u8_via_binary_postops.cpp -ldnnl -lOpenCL -o bnorm_u8_via_binary_postops_tester; ./bnorm_u8_via_binary_postops_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-bnorm_u8_via_binary_postops.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_inference_f32.c -ldnnl -lOpenCL -o cnn_inference_f32_tester; ./cnn_inference_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cnn_inference_f32.c
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_inference_f32.cpp -ldnnl -lOpenCL -o cnn_inference_f32_tester; ./cnn_inference_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cnn_inference_f32.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_inference_int8.cpp -ldnnl -lOpenCL -o cnn_inference_int8_tester; ./cnn_inference_int8_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cnn_inference_int8.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_training_bf16.cpp -ldnnl -lOpenCL -o cnn_training_bf16_tester; ./cnn_training_bf16_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cnn_training_bf16.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cnn_training_f32.cpp -ldnnl -lOpenCL -o cnn_training_f32_tester; ./cnn_training_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cnn_training_f32.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_matmul_coo.cpp -ldnnl -lOpenCL -o cpu_matmul_coo_tester; ./cpu_matmul_coo_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cpu_matmul_coo.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_matmul_csr.cpp -ldnnl -lOpenCL -o cpu_matmul_csr_tester; ./cpu_matmul_csr_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cpu_matmul_csr.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_matmul_weights_compression.cpp -ldnnl -lOpenCL -o cpu_matmul_weights_compression_tester; ./cpu_matmul_weights_compression_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cpu_matmul_weights_compression.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_cnn_training_f32.c -ldnnl -lOpenCL -o cpu_cnn_training_f32_tester; ./cpu_cnn_training_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cpu_cnn_training_f32.c
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_rnn_inference_f32.cpp -ldnnl -lOpenCL -o cpu_rnn_inference_f32_tester; ./cpu_rnn_inference_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cpu_rnn_inference_f32.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/cpu_rnn_inference_int8.cpp -ldnnl -lOpenCL -o cpu_rnn_inference_int8_tester; ./cpu_rnn_inference_int8_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-cpu_rnn_inference_int8.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/getting_started.cpp -ldnnl -lOpenCL -o getting_started_tester; ./getting_started_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-getting_started.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/memory_format_propagation.cpp -ldnnl -lOpenCL -o memory_format_propagation_tester; ./memory_format_propagation_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-memory_format_propagation.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/performance_profiling.cpp -ldnnl -lOpenCL -o performance_profiling_tester; ./performance_profiling_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-performance_profiling.cpp
-
-Test-Command: clang++ $(dpkg-buildflags --get CXXFLAGS) $(dpkg-buildflags --get CPPFLAGS) $(dpkg-buildflags --get LDFLAGS) examples/rnn_training_f32.cpp -ldnnl -lOpenCL -o rnn_training_f32_tester; ./rnn_training_f32_tester
-Depends: @, gcc, g++, clang, libc6-dev, ocl-icd-opencl-dev,
-Restrictions: allow-stderr
-Architecture: amd64 arm64 ppc64el s390x
-Features: test-name=clang++-rnn_training_f32.cpp
+Architecture: amd64
+Features: test-name=clang++-dpcpp-sycl_single_op_partition.cpp
 
