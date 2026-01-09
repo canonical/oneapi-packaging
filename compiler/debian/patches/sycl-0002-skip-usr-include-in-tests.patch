@@ -1,0 +1,23 @@
+Description: Skip /usr/include in test include paths to fix #include_next
+ When OpenCL_INCLUDE_DIR or UR_OPENCL_INCLUDE_DIR is set to /usr/include,
+ adding it as an -isystem path breaks #include_next in libstdc++ headers.
+ The cstdlib header uses #include_next to find the C library's stdlib.h,
+ which requires /usr/include to appear AFTER the C++ headers in the search
+ path. Explicitly adding it with -isystem moves it to the front, breaking
+ this mechanism. Since /usr/include is already in clang's default search
+ path in the correct position, we simply skip it when building test flags.
+Author: Will French <will.french@canonical.com>
+Last-Update: 2026-01-09
+---
+--- a/sycl/test/lit.cfg.py	2026-01-09 10:12:08.278081602 -0600
++++ b/sycl/test/lit.cfg.py	2026-01-09 10:12:16.898712452 -0600
+@@ -128,7 +128,8 @@
+     config.opencl_include_dir,
+     config.sycl_include + "/sycl/",
+ ]:
+-    if include_dir:
++    # Skip /usr/include to avoid breaking #include_next in libstdc++ headers
++    if include_dir and include_dir != "/usr/include/" and include_dir != "/usr/include":
+         sycl_host_only_options += " -isystem %s" % include_dir
+ config.substitutions.append(("%fsycl-host-only", sycl_host_only_options))
+ 
