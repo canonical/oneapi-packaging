@@ -7,7 +7,7 @@ Build-Depends: debhelper-compat (= 13),
  libhwloc-dev,
  libgtest-dev,
  libze-dev,
-Standards-Version: 4.6.2
+Standards-Version: 4.7.2
 Homepage: https://github.com/oneapi-src/unified-memory-framework
 
 Package: libumf-dev
@@ -23,6 +23,7 @@ Description: Intel Unified Memory Framework development files
  characterized by different attributes, allowing certain allocation types to
  be isolated from others and allocated using different hardware resources as
  required.
+ This package contains the header files.
 
 Package: libumf0
 Architecture: amd64
@@ -36,3 +37,4 @@ Description: Intel Unified Memory Framework
  characterized by different attributes, allowing certain allocation types to
  be isolated from others and allocated using different hardware resources as
  required.
+ This package contains the library.
