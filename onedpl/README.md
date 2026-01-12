@@ -11,7 +11,7 @@ vim debian/changelog # edit manually if needed
 Build the binary package:
 
 ```bash
-sbuild -c questing-amd64 --dist=questing --build-path=""
+sbuild -c resolute-amd64 --dist=resolute --build-path=""
 ```
 
 Build the source package:
