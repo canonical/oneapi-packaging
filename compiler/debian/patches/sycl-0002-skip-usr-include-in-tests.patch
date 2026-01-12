@@ -7,6 +7,7 @@ Description: Skip /usr/include in test include paths to fix #include_next
  this mechanism. Since /usr/include is already in clang's default search
  path in the correct position, we simply skip it when building test flags.
 Author: Will French <will.french@canonical.com>
+Forwarded: not-needed
 Last-Update: 2026-01-09
 ---
 --- a/sycl/test/lit.cfg.py	2026-01-09 10:12:08.278081602 -0600

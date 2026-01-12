@@ -3,6 +3,7 @@ Description: Support new version of OpenCL.
  with resolute.
  https://github.com/intel/llvm/issues/20511
 Author: Will French <will.french@canonical.com>
+Forwarded: not-needed
 Last-Update: 2025-11-06
 ---
 --- intel-dpcpp-6.2.0.orig/unified-runtime/source/adapters/opencl/CMakeLists.txt

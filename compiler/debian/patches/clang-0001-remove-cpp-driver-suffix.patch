@@ -4,6 +4,7 @@ Description: Remove cpp driver suffix.
  mode CPP (preprocessor only). This will allow us to use the desired
  dpcpp suffix naming in the compiler sym links.
 Author: Will French <will.french@canonical.com>
+Forwarded: not-needed
 Last-Update: 2025-08-22
 ---
 --- intel-dpcpp-6.2.0.orig/clang/lib/Driver/ToolChain.cpp

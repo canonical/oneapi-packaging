@@ -1,4 +1,4 @@
-intel-dpcpp (6.2.0-0ubuntu1~26.04~ppa1) resolute; urgency=medium
+intel-dpcpp (6.2.0-0ubuntu1~26.04) resolute; urgency=medium
 
   * Initial release (LP: #2130186)
 

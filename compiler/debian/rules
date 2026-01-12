@@ -9,8 +9,8 @@ PARALLEL := $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 export DEB_CFLAGS_MAINT_STRIP = -g -O2
 export DEB_CXXFLAGS_MAINT_STRIP = -g -O2
 
-# Reduce memory usage during linking
-export DEB_BUILD_MAINT_OPTIONS=optimize=-lto
+# Disable LTO as LP runners do not have sufficient memory to build LTO
+export DEB_BUILD_MAINT_OPTIONS=optimize=-lto hardening=+bindnow
 
 include /usr/share/dpkg/buildflags.mk
 
@@ -47,11 +47,6 @@ override_dh_auto_build:
 	help2man --name="clang LLVM compiler for oneAPI" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/clang-${LLVM_VERSION} > clang-${LLVM_VERSION}.1
 	help2man --name="lists all devices and backends discovered by SYCL" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/sycl-ls > sycl-ls.1
 	help2man --name="SPIRV to IR wrapper" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/spirv-to-ir-wrapper > spirv-to-ir-wrapper.1
-
-override_dh_auto_test:
-	# Skip cross-compilation tests (AIX, WebAssembly, VE, z/OS, Windows, baremetal, etc.)
-	LIT_FILTER_OUT='Driver/(aarch64-fmv|aix-|baremetal|cl-offload|ve-toolchain|wasm-toolchain|zos-|sycl-offload-win-old-model|sycl-offload\.c|sycl-embed-ir|sycl-host-compiler-old-model|sycl-native-cpu-fsycl|clang-offload-bundler-bc-archive-support-linux-old-model)|basic_tests/device-selectors-exception|catchswitch-block-in-use\.ll|FileSystemTest/RealPath'
-		python3 ${CURDIR}/buildbot/check.py || echo "Some tests failed but continuing build"
 
 override_dh_auto_test:
 	# Skip cross-compilation tests (AIX, WebAssembly, VE, z/OS, Windows, baremetal, etc.)
