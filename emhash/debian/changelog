@@ -1,17 +1,5 @@
-emhash (1.0.0-0ubuntu1~26.04~ppa1) resolute; urgency=medium
+emhash (1.0.0-0ubuntu1~26.04) resolute; urgency=medium
 
-  * Build for resolute.
+  * Initial package upload (LP: #2130190).
 
- -- Will French <will.french@canonical.com>  Wed, 29 Oct 2025 13:21:17 -0500
-
-emhash (1.0.0-0ubuntu1~25.10~ppa1) questing; urgency=medium
-
-  * Build for questing.
-
- -- Will French <will.french@canonical.com>  Wed, 22 Oct 2025 16:21:25 +0100
-
-emhash (1.0.0-0ubuntu1~25.04~ppa1) plucky; urgency=medium
-
-  * Initial release.
-
- -- Will French <will.french@canonical.com>  Thu, 16 Oct 2025 16:43:57 -0500
+ -- Will French <will.french@canonical.com>  Mon, 12 Jan 2026 14:36:07 -0600
