@@ -34,7 +34,7 @@ dput ppa:kobuk-team/oneapi ../onedpl_2022.9.0-0ubuntu1~25.10~ppa9_source.changes
 Tests can be run locally with autopkgtest. First install the dependencies:
 
 ```bash
-sudo apt install dpkg-dev clang-dpcpp-21
+sudo apt install dpkg-dev clang-dpcpp-21 onedpl-headers
 ```
 
 Add your user to the `render` group (without this you will see nasty errors that generate core dumps):

@@ -15,10 +15,16 @@ This avoids running `lintian` for now as it takes a very long time to run. The f
 
 ## Validation with autopkgtest
 
-Tests can be run locally with autopkgtest. First install the dependencies:
+Tests can be run locally with autopkgtest. First install the dependencies for the tests:
 
 ```bash
 sudo apt install autopkgtest dpkg-dev cmake libstb-dev ocl-icd-opencl-dev clang-dpcpp-21
+```
+
+Since we are running `autopkgtest` with `-B` below, `autopkgtest` also requires the build dependencies for the compiler to be installed:
+
+```bash
+sudo apt install libur-loader-dev libur-adapter-level-zero-dev libur-adapter-level-zero-v2-dev libur-adapter-opencl-dev
 ```
 
 Add your user to the `render` group (without this you will see nasty errors that generate core dumps):
@@ -33,3 +39,5 @@ Log out, log back in, and finally run `autopkgtest`:
 cd oneapi-packaging/compiler
 autopkgtest -B -- null
 ```
+
+Note that `-B` means that `autopkgtest` needs the debian package to already be installed. Otherwise, it will try to first build the package and test against that.
