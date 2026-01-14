@@ -1,4 +1,5 @@
 libdnnl-sycl.so.3 libdnnl-sycl3 #MINVER#
+* Build-Depends-Package: libdnnl-sycl-dev
  (c++)"sdpa_primitive_desc_create(dnnl_primitive_desc**, dnnl_engine*, dnnl_memory_desc const*, dnnl_memory_desc const*, dnnl_memory_desc const*, dnnl_memory_desc const*, dnnl_memory_desc const*, dnnl_memory_desc const*, bool, long, int, dnnl_alg_kind_t, dnnl_primitive_attr const*, dnnl_primitive_attr const*, dnnl_primitive_attr const*)@Base" 3.10.2
  (c++)"dnnl_graph_partition_get_kind(dnnl_graph_partition const*, dnnl::impl::graph::partition_kind_t*)@Base" 3.10.2
  (c++)"dnnl_primitive_attr_set_rnn_tparams(dnnl_primitive_attr*, bool, long, float const*, float)@Base" 3.10.2
