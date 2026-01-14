@@ -1,4 +1,5 @@
 libur_adapter_level_zero_v2.so.0 libur-adapter-level-zero-v2-0 #MINVER#
+* Build-Depends-Package: libur-adapter-level-zero-v2-dev
  LIBUR_ADAPTER_LEVEL_ZERO_V2_0.0@LIBUR_ADAPTER_LEVEL_ZERO_V2_0.0 6.2.0
  (c++)"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)@Base" 6.2.0
  (c++)"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long)@Base" 6.2.0

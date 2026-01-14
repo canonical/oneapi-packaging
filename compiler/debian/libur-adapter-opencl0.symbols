@@ -1,4 +1,5 @@
 libur_adapter_opencl.so.0 libur-adapter-opencl0 #MINVER#
+* Build-Depends-Package: libur-adapter-opencl-dev
  LIBUR_ADAPTER_OPENCL_0.0@LIBUR_ADAPTER_OPENCL_0.0 6.2.0
  urGetBindlessImagesExpProcAddrTable@LIBUR_ADAPTER_OPENCL_0.0 6.2.0
  urGetCommandBufferExpProcAddrTable@LIBUR_ADAPTER_OPENCL_0.0 6.2.0

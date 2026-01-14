@@ -1,4 +1,5 @@
 libur_loader.so.0 libur-loader0 #MINVER#
+* Build-Depends-Package: libur-loader-dev
  LIBUR_LOADER_0.12@LIBUR_LOADER_0.12 6.2.0
  urAdapterGet@LIBUR_LOADER_0.12 6.2.0
  urAdapterGetInfo@LIBUR_LOADER_0.12 6.2.0
