@@ -1,3 +1,10 @@
+intel-umf (0.11.0-0ubuntu2~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130189).
+    - d/intel-umf0.symbols: Add symbols control file for libumf0.
+
+ -- Will French <will.french@canonical.com>  Wed, 14 Jan 2026 10:34:02 -0600
+
 intel-umf (0.11.0-0ubuntu1~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130189).
