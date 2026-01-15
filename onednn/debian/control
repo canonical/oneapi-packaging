@@ -5,7 +5,6 @@ Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Build-Depends: cmake,
                debhelper-compat (= 13),
                ninja-build,
-#              libarm-compute-dev [arm64],
                libtbb-dev,
                libspdlog-dev,
                libgtest-dev,

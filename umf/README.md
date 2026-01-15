@@ -4,7 +4,7 @@ To update and build:
 
 ```bash
 uscan --rename --repack --download-version=0.11.0
-cd intel-umf-0.11.0/
+cd ../intel-umf-0.11.0/
 vim debian/changelog # edit manually if needed
-sbuild -c questing-amd64 --dist=questing --build-path=""
+sbuild -c resolute-amd64 --dist=resolute --build-path=""
 ```

@@ -89,3 +89,13 @@ Last-Update: 2025-08-22
      UnifiedRuntime-Headers
  )
  if (WIN32)
+--- intel-dpcpp-6.2.0.orig/sycl/cmake/modules/AddSYCLUnitTest.cmake
++++ intel-dpcpp-6.2.0/sycl/cmake/modules/AddSYCLUnitTest.cmake
+@@ -72,7 +72,6 @@ macro(add_sycl_unittest test_dirname lin
+   target_link_libraries(${test_dirname}
+     PRIVATE
+       LLVMTestingSupport
+-      OpenCL-Headers
+       unified-runtime::mock
+       ${SYCL_LINK_LIBS}
+     )

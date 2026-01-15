@@ -11,7 +11,7 @@ vim debian/changelog # edit manually if needed
 Build the binary package:
 
 ```bash
-sbuild -c questing-amd64 --dist=questing --build-path=""
+sbuild -c resolute-amd64 --dist=resolute --build-path=""
 ```
 
 Build the source package:
@@ -34,7 +34,7 @@ dput ppa:kobuk-team/oneapi ../onedpl_2022.9.0-0ubuntu1~25.10~ppa9_source.changes
 Tests can be run locally with autopkgtest. First install the dependencies:
 
 ```bash
-sudo apt install dpkg-dev clang-dpcpp-21
+sudo apt install dpkg-dev clang-dpcpp-21 onedpl-headers
 ```
 
 Add your user to the `render` group (without this you will see nasty errors that generate core dumps):

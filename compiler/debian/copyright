@@ -24,6 +24,10 @@ License: APACHE-2-LLVM-EXCEPTIONS
  the License, but only in their entirety and only with respect to the Combined
  Software.
 
+Files: compiler-rt/lib/BlocksRuntime/*
+Copyright: 2008-2010 Apple, Inc.
+License: MIT
+
 Files: llvm/lib/Support/reg*
 Copyright: 1992, 1993, 1994 Henry Spencer
            1992, 1993, 1994 The Regents of the University of California
@@ -76,6 +80,14 @@ Files: clang/lib/Headers/cuda_wrappers/*
  clang/lib/Headers/avx512vlvp2intersectintrin.h
  clang/lib/Headers/avx512vp2intersectintrin.h
 Copyright: 2016-2020, Google Inc.
+License: MIT
+
+Files: vendor/vc-intrinsics/*
+Copyright: 2019-2025 Intel Corporation
+License: MIT
+
+Files: vendor/compute-runtime/*
+Copyright: 2018-2025 Intel Corporation
 License: MIT
 
 License: MIT

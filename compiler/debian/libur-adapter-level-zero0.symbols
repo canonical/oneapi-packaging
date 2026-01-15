@@ -1,0 +1,28 @@
+libur_adapter_level_zero.so.0 libur-adapter-level-zero0 #MINVER#
+* Build-Depends-Package: libur-adapter-level-zero-dev
+ LIBUR_ADAPTER_LEVEL_ZERO_0.0@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ (c++)"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)@Base" 6.2.0
+ (c++)"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long)@Base" 6.2.0
+ (c++)"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@Base" 6.2.0
+ (c++)"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)@Base" 6.2.0
+ urGetBindlessImagesExpProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetCommandBufferExpProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetContextProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetDeviceProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetEnqueueExpProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetEnqueueProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetEventProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetGlobalProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetKernelExpProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetKernelProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetMemProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetPhysicalMemProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetPlatformProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetProgramExpProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetProgramProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetQueueProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetSamplerProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetUSMExpProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetUSMProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetUsmP2PExpProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0
+ urGetVirtualMemProcAddrTable@LIBUR_ADAPTER_LEVEL_ZERO_0.0 6.2.0

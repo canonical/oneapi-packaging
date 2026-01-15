@@ -26,9 +26,10 @@ Build-Depends:
     emhash-dev,
     libparallel-hashmap-dev,
     binutils-dev,
-    binutils-gold
+    binutils-gold,
+    help2man
 Build-Conflicts: oprofile
-Standards-Version: 4.7.0
+Standards-Version: 4.7.2
 Homepage: https://github.com/intel/llvm
 
 Package: clang-dpcpp-21
@@ -58,6 +59,7 @@ Description: Intel DPC++ compiler
 
 Package: libclang-dpcpp21
 Architecture: amd64
+Section: libs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends}
@@ -85,6 +87,7 @@ Description: Clang library for the DPC++ compiler - Development package
 
 Package: libsycl8
 Architecture: amd64
+Section: libs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
@@ -97,6 +100,7 @@ Description: SYCL* language library
 
 Package: libsycl-dev
 Architecture: amd64
+Section: libdevel
 Depends:
  ${misc:Depends},
  libsycl8 (= ${binary:Version})
@@ -108,6 +112,7 @@ Description: SYCL* language library - Development package
 
 Package: dpcpp-sycl-runtime-libs
 Architecture: amd64
+Section: libs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
@@ -116,7 +121,7 @@ Description: DPC++ SYCL* runtime libraries
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
- This package delivers miscellaneous interal libraries for the DPC++ compiler.
+ This package delivers miscellaneous internal libraries for the DPC++ compiler.
 
 Package: llvm-dpcpp
 Architecture: amd64
@@ -131,6 +136,7 @@ Description: DPC++ LLVM tools
 
 Package: libur-loader0
 Architecture: amd64
+Section: libs
 Depends:
  ${misc:Depends},
  ${shlibs:Depends}
@@ -142,6 +148,7 @@ Description: oneAPI Unified Runtime loader
 
 Package: libur-loader-dev
 Architecture: amd64
+Section: libdevel
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -154,6 +161,7 @@ Description: oneAPI Unified Runtime loader - Devel package
 
 Package: libur-adapter-level-zero0
 Architecture: amd64
+Section: libs
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -166,6 +174,7 @@ Description: oneAPI Unified Runtime level-zero adapter
 
 Package: libur-adapter-level-zero-dev
 Architecture: amd64
+Section: libdevel
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -179,6 +188,7 @@ Description: oneAPI Unified Runtime level-zero adapter - Devel package
 
 Package: libur-adapter-level-zero-v2-0
 Architecture: amd64
+Section: libs
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -191,6 +201,7 @@ Description: oneAPI Unified Runtime level-zero adapter v2
 
 Package: libur-adapter-level-zero-v2-dev
 Architecture: amd64
+Section: libdevel
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -204,6 +215,7 @@ Description: oneAPI Unified Runtime level-zero adapter v2 - Devel package
 
 Package: libur-adapter-opencl0
 Architecture: amd64
+Section: libs
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -216,6 +228,7 @@ Description: oneAPI Unified Runtime OpenCL adapter
 
 Package: libur-adapter-opencl-dev
 Architecture: amd64
+Section: libdevel
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},

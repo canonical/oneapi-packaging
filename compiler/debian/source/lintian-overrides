@@ -7,3 +7,30 @@ binary-with-bad-dynamic-table
 unpack-message-for-orig
 elf-error
 source-contains-prebuilt-windows-binary
+
+# There are several reports that lintian is too picky with "source-is-missing"
+# especially for web files like html and js:
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1019980
+# https://lists.debian.org/debian-mentors/2020/08/msg00081.html
+# but also in certain case test cases that require prebuild
+# (partially explitily corrupted or otherwise modified)
+# binaries or other pre-build binaries for comparison reasons.
+# so doing this lintian override to suppress "source-is-missing"
+intel-dpcpp: source-is-missing [clang/test/*]
+intel-dpcpp: source-is-missing [lld/test/ELF/Inputs/*]
+intel-dpcpp: source-is-missing [lld/unittests/AsLibELF/Inputs/*]
+intel-dpcpp: source-is-missing [lldb/test/*]
+intel-dpcpp: source-is-missing [lldb/unittests/*]
+intel-dpcpp: source-is-missing [llvm/test/*]
+intel-dpcpp: source-is-missing [llvm/unittests/*]
+intel-dpcpp: source-is-missing [clang/www/related.html]
+
+# Some lintian versions (namely the ones without commit 27aea38cd0fe)
+# are known to trigger false positive messages of 'unpack-message-for-source'
+# because they assume that all files '*.a' are 'ar' archives,
+# which is not true
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=994716
+# https://salsa.debian.org/lintian/lintian/-/commit/27aea38cd0fe
+# https://salsa.debian.org/lintian/lintian/-/merge_requests/637
+# hence adding this lintian override to suppress these
+unpack-message-for-source

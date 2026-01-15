@@ -5,7 +5,7 @@ Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Build-Depends: debhelper-compat (= 13),
  cmake,
  libtbb-dev
-Standards-Version: 4.6.2
+Standards-Version: 4.7.2
 Homepage: https://github.com/uxlfoundation/oneDPL
 
 Package: onedpl-headers

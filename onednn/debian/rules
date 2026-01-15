@@ -33,6 +33,7 @@ execute_before_dh_auto_install:
 override_dh_auto_test:
 	# Intel GPU required for proper testing
 	# Testing will occur outside of packaging process
+	# using autopkgtest
 
 override_dh_missing:
 	dh_missing --fail-missing
