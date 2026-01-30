@@ -7,7 +7,7 @@ Note, debian and Ubuntu ship their own [onednn source package](https://launchpad
 ```bash
 uscan --download-version=3.10.2
 cd ..
-tar xvf onednn_3.10.2.orig.tar.xz
+tar xvf onednn-sycl_3.10.2.orig.tar.xz
 cd uxlfoundation-oneDNN-*
 cp -r ../onednn/debian .
 ```
