@@ -1,12 +1,5 @@
-onednn (3.10.2-0ubuntu2~26.04) resolute; urgency=medium
+onednn-sycl (3.10.2-0ubuntu3~26.04) resolute; urgency=medium
 
-  * Initial package upload (LP: #2136925).
-    - d/libdnnl-sycl3.symbols: add Build-Depends-Package field.
+  * Initial release. (LP: #2136925)
 
- -- Will French <will.french@canonical.com>  Wed, 14 Jan 2026 10:38:28 -0600
-
-onednn (3.10.2-0ubuntu1~26.04) resolute; urgency=medium
-
-  * Initial package upload (LP: #2136925).
-
- -- Will French <will.french@canonical.com>  Tue, 13 Jan 2026 01:35:00 +0000
+ -- Will French <will.french@canonical.com>  Tue, 20 Jan 2026 09:44:13 -0600

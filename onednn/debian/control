@@ -1,4 +1,4 @@
-Source: onednn
+Source: onednn-sycl
 Section: science
 Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
