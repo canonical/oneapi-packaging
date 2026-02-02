@@ -1,3 +1,10 @@
+emhash (1.0.0-0ubuntu2~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130190).
+    - d/copyright: add files flagged by licensecheck -r.
+
+ -- Will French <will.french@canonical.com>  Mon, 02 Feb 2026 14:44:26 -0600
+
 emhash (1.0.0-0ubuntu1~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130190).
