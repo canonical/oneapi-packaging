@@ -1,3 +1,10 @@
+intel-umf (0.11.0-0ubuntu3~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130189).
+    - d/copyright: add files flagged by licensecheck -r. 
+
+ -- Will French <will.french@canonical.com>  Mon, 02 Feb 2026 12:16:13 -0600
+
 intel-umf (0.11.0-0ubuntu2~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130189).
