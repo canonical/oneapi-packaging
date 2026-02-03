@@ -19,6 +19,7 @@ License: Apache-2.0
 Files: debian/*
 Copyright: 2018, 2019, Mo Zhou <lumin@debian.org>
  2018, 2019, Mo Zhou <cdluminate@gmail.com>
+ 2026 Canonical Ltd.
 License: Apache-2.0
 
 Files: third_party/ittnotify/*

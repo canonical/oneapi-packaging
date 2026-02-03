@@ -1,3 +1,10 @@
+onednn-sycl (3.10.2-0ubuntu4~26.04) resolute; urgency=medium
+
+  * Initial release. (LP: #2136925)
+    - d/copyright: add Canonical copyright for debian folder.
+
+ -- Will French <will.french@canonical.com>  Tue, 03 Feb 2026 10:59:01 -0600
+
 onednn-sycl (3.10.2-0ubuntu3~26.04) resolute; urgency=medium
 
   * Initial release. (LP: #2136925)
