@@ -5,6 +5,263 @@ Source: https://github.com/intel/llvm
 Files: *
 Copyright: 2003-2017 University of Illinois at Urbana-Champaign.
 License: APACHE-2-LLVM-EXCEPTIONS
+
+Files: compiler-rt/lib/BlocksRuntime/*
+Copyright: 2008-2010 Apple, Inc.
+License: MIT
+
+Files: llvm/lib/Support/reg*
+Copyright: 1992, 1993, 1994 Henry Spencer
+           1992, 1993, 1994 The Regents of the University of California
+License: BSD-3-clause
+
+Files: llvm/lib/Support/MD5.cpp llvm/include/llvm/Support/MD5.h
+Copyright: 2001 Alexander Peslyak <solar at openwall.com>
+License: solar-public-domain
+
+Files: llvm/test/YAMLParser/*
+Copyright: 2006 Kirill Simonov
+License: MIT
+
+Files: llvm/include/llvm/Support/xxhash.h
+ llvm/lib/Support/xxhash.cpp
+Copyright: 2012-2023 Yann Collet
+License: BSD-2-clause
+
+Files: clang/lib/Headers/cuda_wrappers/*
+ clang/lib/Headers/avx512vlvp2intersectintrin.h
+ clang/lib/Headers/avx512vp2intersectintrin.h
+Copyright: 2016-2020, Google Inc.
+License: MIT
+
+Files: libclc/amdgcn/lib/math/ldexp.cl
+ libclc/amdgpu/lib/math/sqrt.cl
+ libclc/clc/include/clc/math/clc_subnormal_config.h
+ libclc/clc/include/clc/math/math.h
+ libclc/clc/include/clc/math/tables.h
+ libclc/clc/include/clc/relational/clc_bitselect.h
+ libclc/clc/include/clc/relational/clc_bitselect.inc
+ libclc/clc/lib/generic/common/clc_degrees.cl
+ libclc/clc/lib/generic/common/clc_radians.cl
+ libclc/clc/lib/generic/common/clc_smoothstep.cl
+ libclc/clc/lib/generic/relational/clc_bitselect.cl
+ libclc/clc/lib/generic/relational/clc_bitselect.inc
+ libclc/clspv/lib/math/fma.cl
+ libclc/clspv/lib/subnormal_config.cl
+ libclc/generic/include/clc/common/degrees.h
+ libclc/generic/include/clc/common/degrees.inc
+ libclc/generic/include/clc/common/radians.h
+ libclc/generic/include/clc/common/radians.inc
+ libclc/generic/include/clc/common/smoothstep.h
+ libclc/generic/include/clc/common/smoothstep.inc
+ libclc/generic/include/clc/common/step.h
+ libclc/generic/include/clc/common/step.inc
+ libclc/generic/include/clc/geometric/distance.inc
+ libclc/generic/include/clc/geometric/fast_distance.h
+ libclc/generic/include/clc/geometric/fast_distance.inc
+ libclc/generic/include/clc/geometric/fast_length.h
+ libclc/generic/include/clc/geometric/fast_length.inc
+ libclc/generic/include/clc/geometric/fast_normalize.h
+ libclc/generic/include/clc/geometric/fast_normalize.inc
+ libclc/generic/include/clc/math/acosh.h
+ libclc/generic/include/clc/math/acospi.h
+ libclc/generic/include/clc/math/asinh.h
+ libclc/generic/include/clc/math/asinpi.h
+ libclc/generic/include/clc/math/atan2.h
+ libclc/generic/include/clc/math/atan2pi.h
+ libclc/generic/include/clc/math/atan.h
+ libclc/generic/include/clc/math/atanh.h
+ libclc/generic/include/clc/math/atanpi.h
+ libclc/generic/include/clc/math/cbrt.h
+ libclc/generic/include/clc/math/cosh.h
+ libclc/generic/include/clc/math/exp2.h
+ libclc/generic/include/clc/math/fract.h
+ libclc/generic/include/clc/math/fract.inc
+ libclc/generic/include/clc/math/half_rsqrt.h
+ libclc/generic/include/clc/math/half_sqrt.h
+ libclc/generic/include/clc/math/ldexp.h
+ libclc/generic/include/clc/math/ldexp.inc
+ libclc/generic/include/clc/math/log1p.h
+ libclc/generic/include/clc/math/log2.h
+ libclc/generic/include/clc/math/log.h
+ libclc/generic/include/clc/math/modf.h
+ libclc/generic/include/clc/math/modf.inc
+ libclc/generic/include/clc/math/native_log2.h
+ libclc/generic/include/clc/math/native_log.h
+ libclc/generic/include/clc/math/sinh.h
+ libclc/generic/include/clc/math/tanh.h
+ libclc/generic/include/clc/relational/bitselect.h
+ libclc/generic/include/clc/relational/bitselect.inc
+ libclc/generic/lib/common/degrees.cl
+ libclc/generic/lib/common/radians.cl
+ libclc/generic/lib/common/smoothstep.cl
+ libclc/generic/lib/common/step.cl
+ libclc/generic/lib/geometric/distance.cl
+ libclc/generic/lib/geometric/distance.inc
+ libclc/generic/lib/geometric/fast_distance.cl
+ libclc/generic/lib/geometric/fast_distance.inc
+ libclc/generic/lib/geometric/fast_length.cl
+ libclc/generic/lib/geometric/fast_normalize.cl
+ libclc/generic/lib/geometric/fast_normalize.inc
+ libclc/generic/lib/geometric/length.cl
+ libclc/generic/lib/geometric/normalize.cl
+ libclc/generic/lib/math/acos.cl
+ libclc/generic/lib/math/acosh.cl
+ libclc/generic/lib/math/acospi.cl
+ libclc/generic/lib/math/asin.cl
+ libclc/generic/lib/math/asinh.cl
+ libclc/generic/lib/math/asinpi.cl
+ libclc/generic/lib/math/atan2.cl
+ libclc/generic/lib/math/atan2pi.cl
+ libclc/generic/lib/math/atan.cl
+ libclc/generic/lib/math/atanh.cl
+ libclc/generic/lib/math/atanpi.cl
+ libclc/generic/lib/math/cbrt.cl
+ libclc/generic/lib/math/clc_fmod.cl
+ libclc/generic/lib/math/clc_ldexp.cl
+ libclc/generic/lib/math/clc_pown.cl
+ libclc/generic/lib/math/clc_powr.cl
+ libclc/generic/lib/math/clc_remainder.cl
+ libclc/generic/lib/math/clc_remquo.cl
+ libclc/generic/lib/math/clc_rootn.cl
+ libclc/generic/lib/math/cos.cl
+ libclc/generic/lib/math/cosh.cl
+ libclc/generic/lib/math/cospi.cl
+ libclc/generic/lib/math/ep_log.cl
+ libclc/generic/lib/math/ep_log.h
+ libclc/generic/lib/math/erfc.cl
+ libclc/generic/lib/math/erf.cl
+ libclc/generic/lib/math/exp2.cl
+ libclc/generic/lib/math/exp.cl
+ libclc/generic/lib/math/fract.cl
+ libclc/generic/lib/math/fract.inc
+ libclc/generic/lib/math/ldexp.cl
+ libclc/generic/lib/math/ldexp.inc
+ libclc/generic/lib/math/log10.cl
+ libclc/generic/lib/math/log1p.cl
+ libclc/generic/lib/math/log2.cl
+ libclc/generic/lib/math/log_base.h
+ libclc/generic/lib/math/modf.cl
+ libclc/generic/lib/math/modf.inc
+ libclc/generic/lib/math/native_log2.cl
+ libclc/generic/lib/math/native_log.cl
+ libclc/generic/lib/math/sin.cl
+ libclc/generic/lib/math/sincos_helpers.cl
+ libclc/generic/lib/math/sincospiF_piby4.h
+ libclc/generic/lib/math/sinh.cl
+ libclc/generic/lib/math/sinpi.cl
+ libclc/generic/lib/math/sqrt.cl
+ libclc/generic/lib/math/tanh.cl
+ libclc/generic/lib/relational/bitselect.cl
+ libclc/generic/lib/relational/bitselect.inc
+ libclc/libspirv/lib/generic/math/clc_exp10.cl
+ libclc/libspirv/lib/generic/math/clc_fma.cl
+ libclc/libspirv/lib/generic/math/clc_ldexp.cl
+ libclc/libspirv/lib/generic/math/clc_pow.cl
+ libclc/libspirv/lib/generic/math/clc_tan.cl
+ libclc/libspirv/lib/generic/math/clc_tanpi.cl
+ libclc/libspirv/lib/generic/math/exp_helper.cl
+ libclc/libspirv/lib/generic/math/exp_helper.h
+ libclc/libspirv/lib/generic/math/fract.cl
+ libclc/libspirv/lib/generic/math/log_base.h
+ libclc/libspirv/lib/generic/math/native_log2.cl
+ libclc/libspirv/lib/generic/math/native_log.cl
+ libclc/libspirv/lib/generic/math/sincosD_piby4.h
+ libclc/libspirv/lib/generic/math/sincos_helpers.cl
+ libclc/libspirv/lib/generic/math/sincos_helpers.h
+ libclc/libspirv/lib/generic/math/sincospiF_piby4.h
+ libclc/libspirv/lib/generic/math/tables.cl
+ libclc/libspirv/lib/generic/subnormal_config.cl
+ libclc/spirv/lib/subnormal_config.cl
+Copyright: 2014-2016 Advanced Micro Devices, Inc.
+License: MIT
+
+Files: libclc/generic/lib/math/fdim.inc
+ libclc/generic/lib/math/frexp.inc
+ libclc/generic/lib/math/ilogb.cl
+ libclc/generic/lib/math/lgamma.cl
+ libclc/generic/lib/math/lgamma_r.cl
+ libclc/generic/lib/math/lgamma_r.inc
+ libclc/generic/lib/math/tgamma.cl
+Copyright: 2014-2016 Advanced Micro Devices, Inc.
+           2016 Aaron Watry
+License: MIT
+
+Files: libclc/generic/lib/gen_convert.py
+Copyright: 2013 Victor Oliveira <victormatheus@gmail.com>
+           2013 Jesse Towner <jessetowner@lavabit.com>
+           2024 Romaric Jodin <rjodin@chromium.org>
+License: MIT
+
+Files: libclc/libspirv/lib/generic/gen_core_convert.py
+Copyright: 2013 Victor Oliveira <victormatheus@gmail.com>
+           2013 Jesse Towner <jessetowner@lavabit.com>
+License: MIT
+
+Files: lldb/test/API/functionalities/gdb_remote_client/TestJLink6Armv7RegisterDefinition.py
+ lldb/test/API/functionalities/gdb_remote_client/TestNestedRegDefinitions.py
+ lldb/test/API/functionalities/gdb_remote_client/TestRegDefinitionInParts.py
+Copyright: 2008-2017 Free Software Foundation, Inc.
+License: FSFAP
+
+Files: llvm-spirv/*
+Copyright: 2014-2016 Advanced Micro Devices, Inc.
+           2022-2024 The Khronos Group Inc.
+License: NCSA
+
+Files: llvm-spirv/lib/SPIRV/libSPIRV/NonSemantic.AuxData.h
+ llvm-spirv/lib/SPIRV/libSPIRV/OpenCL.std.h
+ llvm-spirv/lib/SPIRV/libSPIRV/spirv_internal.hpp
+Copyright: 2015-2023 The Khronos Group Inc.
+License: MIT-Khronos-old
+
+Files: polly/lib/External/isl/*
+Copyright: 2008-2009 Katholieke Universiteit Leuven
+           2006-2007 Universiteit Leiden
+           2019-2021 Cerebras Systems
+           2012-2014 Ecole Normale Superieure
+           2011-2021 Sven Verdoolaege
+           2014-2015 INRIA Rocquencourt
+           2010-2011 INRIA Saclay
+           2008-2009 Katholieke Universiteit Leuven
+           2015-2016 INRIA Paris
+           2002-2008 Michael J. Fromberger
+           2016-2017 Tobias Grosser
+License: MIT
+
+Files: third-party/unittest/google*
+Copyright: 2005-2013 Google Inc.
+License: BSD-3-clause
+
+Files: buildbot/*
+ devops/*
+ opencl/*
+ pstl/*
+ sycl/*
+ sycl-jit/*
+ unified-runtime/*
+ xpti/*
+ xptifw/*
+Copyright: 2020-2025, Intel Corporation
+License: Apache-2.0
+
+Files: xptifw/basic_test/external/BS_thread_pool.hpp
+Copyright: 2023 Barak Shoshany
+License: MIT
+
+Files: vendor/vc-intrinsics/*
+Copyright: 2019-2025 Intel Corporation
+License: MIT
+
+Files: vendor/compute-runtime/*
+Copyright: 2018-2025 Intel Corporation
+License: MIT
+
+Files: debian/*
+Copyright: 2025 Canonical Ltd.
+License: Apache-2.0
+
+License: APACHE-2-LLVM-EXCEPTIONS
  On Debian systems the full text of the Apache Software License 2.0 can be
  found in the `/usr/share/common-licenses/Apache-2.0' file.
  .
@@ -24,14 +281,27 @@ License: APACHE-2-LLVM-EXCEPTIONS
  the License, but only in their entirety and only with respect to the Combined
  Software.
 
-Files: compiler-rt/lib/BlocksRuntime/*
-Copyright: 2008-2010 Apple, Inc.
-License: MIT
-
-Files: llvm/lib/Support/reg*
-Copyright: 1992, 1993, 1994 Henry Spencer
-           1992, 1993, 1994 The Regents of the University of California
-License: BSD-3-clause
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+ 1. Redistributions of source code must retain the above copyright notice, 
+    this list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 License: BSD-3-clause
  Redistribution and use in source and binary forms, with or without
@@ -57,8 +327,6 @@ License: BSD-3-clause
  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Files: llvm/lib/Support/MD5.cpp llvm/include/llvm/Support/MD5.h
-Copyright: 2001 Alexander Peslyak <solar at openwall.com>
 License: solar-public-domain
  This software was written by Alexander Peslyak in 2001.  No copyright is
  claimed, and the software is hereby placed in the public domain.
@@ -71,24 +339,6 @@ License: solar-public-domain
  modification, are permitted.
  .
  * There's ABSOLUTELY NO WARRANTY, express or implied.
-
-Files: llvm/test/YAMLParser/*
-Copyright: 2006 Kirill Simonov
-License: MIT
-
-Files: clang/lib/Headers/cuda_wrappers/*
- clang/lib/Headers/avx512vlvp2intersectintrin.h
- clang/lib/Headers/avx512vp2intersectintrin.h
-Copyright: 2016-2020, Google Inc.
-License: MIT
-
-Files: vendor/vc-intrinsics/*
-Copyright: 2019-2025 Intel Corporation
-License: MIT
-
-Files: vendor/compute-runtime/*
-Copyright: 2018-2025 Intel Corporation
-License: MIT
 
 License: MIT
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -109,23 +359,6 @@ License: MIT
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
 
-Files: debian/*
-Copyright: 2025 Canonical Ltd.
-License: Apache-2.0
-
-Files: buildbot/*
- devops/*
- llvm-spirv/*
- opencl/*
- pstl/*
- sycl-jit/*
- sycl/*
- unified-runtime/*
- xpti/*
- xptifw/*
-Copyright: 2020-2025, Intel Corporation
-License: Apache-2.0
-
 License: Apache-2.0
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -142,3 +375,57 @@ Comment:
  On Debian systems, the full text of the Apache-2.0 license
  can be found in the file '/usr/share/common-licenses/Apache-2.0'.
 
+License: FSFAP
+ Copying and distribution of this file, with or without modification, are
+ permitted in any medium without royalty provided the copyright notice and
+ this notice are preserved. This file is offered as-is, without any warranty.
+ 
+License: NCSA
+ Permission is hereby granted, free of charge, to any person obtaining a copy 
+ of this software and associated documentation files (the "Software"), to deal 
+ with the Software without restriction, including without limitation the 
+ rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+ sell copies of the Software, and to permit persons to whom the Software is 
+ furnished to do so, subject to the following conditions:
+ .
+ * Redistributions of source code must retain the above copyright notice, 
+   this list of conditions and the following disclaimers.
+ .
+ * Redistributions in binary form must reproduce the above copyright 
+   notice, this list of conditions and the following disclaimers in the 
+   documentation and/or other materials provided with the distribution.
+ .
+ * Neither the names of Advanced Micro Devices, Inc., nor the names of its
+   contributors may be used to endorse or promote products derived from this
+   Software without specific prior written permission.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+ CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH 
+ THE SOFTWARE.
+
+License: MIT-Khronos-old
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and/or associated documentation files (the "Materials"),
+ to deal in the Materials without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Materials, and to permit persons to whom the
+ Materials are furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Materials.
+ .
+ MODIFICATIONS TO THIS FILE MAY MEAN IT NO LONGER ACCURATELY REFLECTS KHRONOS
+ STANDARDS. THE UNMODIFIED, NORMATIVE VERSIONS OF KHRONOS SPECIFICATIONS AND
+ HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/
+ .
+ THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM,OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS
+ IN THE MATERIALS.
