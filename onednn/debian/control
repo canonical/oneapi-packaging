@@ -17,7 +17,7 @@ Standards-Version: 4.7.2
 Homepage: https://github.com/oneapi-src/oneDNN
 Rules-Requires-Root: no
 
-Package: onednn-examples
+Package: onednn-sycl-examples
 Section: libdevel
 Architecture: amd64
 Depends: libdnnl-sycl-dev (= ${binary:Version}), ${misc:Depends}

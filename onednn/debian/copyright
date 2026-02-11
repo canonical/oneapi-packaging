@@ -3,6 +3,7 @@ Upstream-Name: oneDNN
 Source: https://github.com/oneapi-src/oneDNN
 Files-Excluded: third_party/spdlog/*
                 third_party/gtest/*
+                third_party/ngen/COPYRIGHT
 
 Files: *
 Copyright: Intel Corporation
