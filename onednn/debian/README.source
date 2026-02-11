@@ -1,0 +1,49 @@
+# Source package naming
+
+oneDNN built with GCC: onednn
+oneDNN built with DPC++: onednn-sycl
+
+The onednn-sycl source package is derived from the onednn source
+package in Debian and the Ubuntu archive. Although the source code for
+both onednn and onednn-sycl are both derived from the same upstream
+project, the two are kept separate for the following reasons:
+
+- The onednn-sycl package testing process is much different since it
+  requires dedicated hardware (Intel GPUs) only available outside of
+  Launchpad.
+- Maintainability would be more complicated and time-consuming. Builds
+  would take longer (they already take several hours), d/rules (and likely
+  other files) would require ugly if-else blocks, problems with one
+  toolchain blocking packaging work for the other, etc.
+- As of Ubuntu 26.04, `onednn-sycl` pacakges a more recent upstream version.
+  Syncing the versions would imply complete ownership of the GCC-version of
+  the packages in Ubuntu by Ubuntu maintainers, which is outside the scope
+  of the support commitment for this project.
+
+The -sycl suffix is based on the SYCL* language (i.e. extensions to C/C++)
+used by the DPC++ compiler (SYCL* is similar to CUDA in this way). The -sycl
+in the name of the binary packages is meant to distinguish from the GCC
+versions of the existing libs in the Ubuntu archive. The oneDNN docs refer
+to SYCL* frequently, making it the most natural choice for the source package
+naming as well. oneDNN is also part of https://github.com/uxlfoundation which
+emphasizes cross-platform acceleration support, putting "intel" in the
+name of the package would be counter to this mission. Some other related
+packages (intel-umf, intel-dpcpp), on the other hand, are more specific to
+Intel.
+
+# Binary package naming
+
+The GCC-based version of onednn in Debian use more fine-grained library
+naming (libdnnl3.6) than the binary package and library built and distributed
+from onednn-sycl (libdnnl3). The reason is that the version in Debian includes an
+experimental microkernel feature that introduced breaking changes since version
+3.6 of oneDNN [1]. The microkernel feature is considered a non-production feature
+by upstream without guarantees of non-breaking changes between minor versions.
+
+The microkernel feature is a CPU-only feature that is not supported for Intel
+GPUs. Thus, onednn-sycl removes this experimental feature from the build and
+includes only production-grade APIs that guarantee non-breaking changes only
+between minor releases. This is the reason for the difference in the binary
+package naming (libdnnl3.6 vs. libdnnl3).
+
+[1] https://github.com/uxlfoundation/oneDNN/issues/2514

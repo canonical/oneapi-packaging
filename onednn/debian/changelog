@@ -1,10 +1,16 @@
 onednn-sycl (3.10.2-0ubuntu5~26.04) resolute; urgency=medium
 
   * Initial release. (LP: #2136925)
-    - d/*.symbols: clean up symbols file, borrowing patterns from
-      symbols file in onednn in debian.
     - d/changelog: append changelog entries from onednn debian package
-      for posterity and clariy.
+      for posterity and better clarity.
+    - d/control: rename onednn-examples to onednn-sycl-examples.
+    - d/copyright: file-exclude spurious and incorrect COPYRIGHT
+      file from third_party/ngen.
+    - d/symbols: clean up symbols file, borrowing patterns from
+      symbols file in onednn in debian.
+    - d/tests: update test dependency name to onednn-sycl-examples.
+    - Add d/README.source file to explain lineage with onednn source
+      package and naming decisions.
 
  -- Will French <will.french@canonical.com>  Wed, 11 Feb 2026 11:05:12 -0600
 
