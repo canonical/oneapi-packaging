@@ -1,3 +1,22 @@
+emhash (1.0.0+dfsg-0ubuntu1~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130190).
+    - d/control: mention that emhash-dev is a header only library
+      in the binary package description.
+    - d/copyright: remove bench folder from orig tarball.
+    - d/copyright: prefer Expat over MIT based on lrc output.
+    - d/copyright: remove unused thirdparty files from orig tarball.
+    - d/copyright: misc fixes based on lrc and licensecheck reports.
+    - d/emhash-dev.install: install thirdparty header that is conditionally
+      included by root headers in project.
+    - d/rules: disable configure and build steps to avoid building benchmark
+      applications since these are not needed for packaging.
+    - d/rules: enable tests.
+    - d/watch: repack orig tarball with dfsg string in version string
+      to signify removal of most vendored files from upstream repo.
+
+ -- Will French <will.french@canonical.com>  Tue, 10 Feb 2026 15:59:02 -0600
+
 emhash (1.0.0-0ubuntu2~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130190).

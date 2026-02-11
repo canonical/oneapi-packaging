@@ -16,4 +16,5 @@ Depends:
  ${shlibs:Depends}
 Description: Fast and memory-efficient C++ flat hash map/set
  Header files for C++ providing fast and memory-efficient
- open-addressing with flat hash table/map.
+ open-addressing with flat hash table/map. This is a header-only
+ library.

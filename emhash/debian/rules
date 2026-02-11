@@ -2,3 +2,16 @@
 
 %:
 	dh $@
+
+override_dh_auto_configure:
+	# Skip configure - header-only library, no build needed
+
+override_dh_auto_build:
+	# Skip build - header-only library
+
+override_dh_auto_test:
+	mkdir -p test/build && \
+	cd test/build && \
+	cmake $(CURDIR)/test && \
+	$(MAKE) && \
+	./emhash_test
