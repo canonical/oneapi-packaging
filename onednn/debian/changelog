@@ -1,3 +1,10 @@
+onednn-sycl (3.11-0ubuntu1~26.04) resolute; urgency=medium
+
+  * Initial release. (LP: #2136925)
+    - New upstream release.
+
+ -- Will French <will.french@canonical.com>  Wed, 11 Feb 2026 15:45:37 -0600
+
 onednn-sycl (3.10.2-0ubuntu5~26.04) resolute; urgency=medium
 
   * Initial release. (LP: #2136925)
