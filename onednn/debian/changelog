@@ -1,7 +1,11 @@
-onednn-sycl (3.11-0ubuntu1~26.04) resolute; urgency=medium
+onednn-sycl (3.11+dfsg-0ubuntu1~26.04) resolute; urgency=medium
 
   * Initial release. (LP: #2136925)
     - New upstream release.
+    - d/symbols: update symbols for new release.
+    - d/watch: apply +dfsg repack suffix to orig tarball.
+    - Rename onednn-examples.{install,links} to
+      onednn-sycl-examples.{install,links}.
 
  -- Will French <will.french@canonical.com>  Wed, 11 Feb 2026 15:45:37 -0600
 

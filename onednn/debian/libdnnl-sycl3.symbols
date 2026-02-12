@@ -4,7 +4,6 @@ libdnnl-sycl.so.3 libdnnl-sycl3 #MINVER#
  (c++|regex|optional)"std::.*@Base" 3.10.2
  (c++|regex|optional)"dnnl::impl::.*@Base" 3.10.2
  (c++|regex|optional)"(typeinfo|vtable|guard variable|reference temporary|construction vtable|VTT for) .*@Base" 3.10.2
- (c++|regex|optional)"(void|bool|int|unsigned) std::.*@Base" 3.10.2
 # C++ symbols accidentally exported
  (c++|optional)"dnnl_graph_partition_get_kind(dnnl_graph_partition const*, dnnl::impl::graph::partition_kind_t*)@Base" 3.10.2
  (c++|optional)"dnnl_primitive_attr_set_rnn_tparams(dnnl_primitive_attr*, bool, long, float const*, float)@Base" 3.10.2
@@ -101,6 +100,7 @@ libdnnl-sycl.so.3 libdnnl-sycl3 #MINVER#
  dnnl_graph_set_compiled_partition_cache_capacity@Base 3.10.2
  dnnl_graph_set_constant_tensor_cache@Base 3.10.2
  dnnl_graph_set_constant_tensor_cache_capacity@Base 3.10.2
+ dnnl_graph_set_dump_mode@Base 3.11
  dnnl_graph_sycl_interop_allocator_create@Base 3.10.2
  dnnl_graph_sycl_interop_compiled_partition_execute@Base 3.10.2
  dnnl_graph_sycl_interop_make_engine_with_allocator@Base 3.10.2
@@ -115,7 +115,8 @@ libdnnl-sycl.so.3 libdnnl-sycl3 #MINVER#
  dnnl_group_normalization_forward_primitive_desc_create@Base 3.10.2
  dnnl_gru_backward_primitive_desc_create@Base 3.10.2
  dnnl_gru_forward_primitive_desc_create@Base 3.10.2
- dnnl_impl_gpu_mayiuse_ngen_kernels@Base 3.10.2
+ dnnl_impl_gpu_intel_get_isa_name@Base 3.11
+ dnnl_impl_gpu_intel_mayiuse_ngen_kernels@Base 3.11
  dnnl_impl_notify_profiling_complete@Base 3.10.2
  dnnl_impl_zero_pad@Base 3.10.2
  dnnl_inner_product_backward_data_primitive_desc_create@Base 3.10.2
@@ -212,6 +213,7 @@ libdnnl-sycl.so.3 libdnnl-sycl3 #MINVER#
  dnnl_primitive_attr_get_accumulation_mode@Base 3.10.2
  dnnl_primitive_attr_get_deterministic@Base 3.10.2
  dnnl_primitive_attr_get_dropout@Base 3.10.2
+ dnnl_primitive_attr_get_dropout_v2@Base 3.11
  dnnl_primitive_attr_get_fpmath_mode@Base 3.10.2
  dnnl_primitive_attr_get_fpmath_mode_v2@Base 3.10.2
  dnnl_primitive_attr_get_post_ops@Base 3.10.2
@@ -223,6 +225,7 @@ libdnnl-sycl.so.3 libdnnl-sycl3 #MINVER#
  dnnl_primitive_attr_set_accumulation_mode@Base 3.10.2
  dnnl_primitive_attr_set_deterministic@Base 3.10.2
  dnnl_primitive_attr_set_dropout@Base 3.10.2
+ dnnl_primitive_attr_set_dropout_v2@Base 3.11
  dnnl_primitive_attr_set_fpmath_mode@Base 3.10.2
  dnnl_primitive_attr_set_fpmath_mode_v2@Base 3.10.2
  dnnl_primitive_attr_set_post_ops@Base 3.10.2
@@ -234,6 +237,7 @@ libdnnl-sycl.so.3 libdnnl-sycl3 #MINVER#
  dnnl_primitive_attr_set_scales@Base 3.10.2
  dnnl_primitive_attr_set_scales_mask@Base 3.10.2
  dnnl_primitive_attr_set_scales_v2@Base 3.10.2
+ dnnl_primitive_attr_set_scales_v3@Base 3.11
  dnnl_primitive_attr_set_scratchpad_mode@Base 3.10.2
  dnnl_primitive_attr_set_zero_points@Base 3.10.2
  dnnl_primitive_attr_set_zero_points_mask@Base 3.10.2
@@ -252,6 +256,7 @@ libdnnl-sycl.so.3 libdnnl-sycl3 #MINVER#
  dnnl_primitive_get_cache_blob@Base 3.10.2
  dnnl_primitive_get_primitive_desc@Base 3.10.2
  dnnl_prop_kind2str@Base 3.10.2
+ dnnl_quantization_mode2str@Base 3.11
  dnnl_query_profiling_data@Base 3.10.2
  dnnl_reduction_primitive_desc_create@Base 3.10.2
  dnnl_reorder_primitive_desc_create@Base 3.10.2
