@@ -1,7 +1,0 @@
-# There are several reports that lintian is too picky with "source-is-missing"
-# especially for web files like html and js:
-# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1019980
-# https://lists.debian.org/debian-mentors/2020/08/msg00081.html
-# so doing this lintian override to suppress "source-is-missing"
-emhash: source-is-missing [bench/tsl_bench/*.html]
-emhash: source-is-missing [bench/tsl_bench/*.js]
