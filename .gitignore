@@ -12,7 +12,7 @@
 .pc
 # upstream source
 intel-dpcpp-*/
-emhash-*/
+ktprime-emhash-*/
 intel-umf-*/
 onedpl-*/
 onemath-*/
