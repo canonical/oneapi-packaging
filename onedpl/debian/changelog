@@ -1,3 +1,12 @@
+onedpl (2022.9.0-0ubuntu5~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130191)
+    - d/watch: upgrade to version 5.
+    - d/copyright: fix lintian messages and make it conform to
+      latest source code level.
+
+ -- Will French <will.french@canonical.com>  Fri, 13 Feb 2026 16:48:53 -0600
+
 onedpl (2022.9.0-0ubuntu4~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130191)
