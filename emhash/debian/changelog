@@ -1,3 +1,11 @@
+emhash (1.0.0+dfsg-0ubuntu3~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130190).
+    - Changes to d/watch in last version changed the orig tarball.
+      This version uses the orig tarball from LP.
+
+ -- Will French <will.french@canonical.com>  Fri, 13 Feb 2026 15:35:40 -0600
+
 emhash (1.0.0+dfsg-0ubuntu2~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130190).
