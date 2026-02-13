@@ -3,7 +3,7 @@
 To update and build:
 
 ```bash
-uscan --rename --repack --download-version=2022.9.0
+uscan --download-version=2022.9.0
 cd ../onedpl-2022.9.0
 vim debian/changelog # edit manually if needed
 ```
