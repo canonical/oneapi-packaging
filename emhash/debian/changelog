@@ -1,3 +1,12 @@
+emhash (1.0.0+dfsg-0ubuntu2~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130190).
+    - d/watch: upgrade to version 5.
+    - d/copyright: remove unused license.
+    - d/source: remove unneeded lintian overrides.
+
+ -- Will French <will.french@canonical.com>  Fri, 13 Feb 2026 14:46:19 -0600
+
 emhash (1.0.0+dfsg-0ubuntu1~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130190).
