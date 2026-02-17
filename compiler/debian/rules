@@ -2,6 +2,7 @@
 
 PKG_VERSION := $(shell dpkg-parsechangelog | awk '/^Version:/ {print $$2}')
 LLVM_VERSION := 21
+LLVM_VERSION_SUFFIX := dpcpp6.2.0
 PARALLEL := $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 
 # TODO: Enbable build with debug symbols
@@ -41,6 +42,7 @@ override_dh_auto_configure:
 		--cmake-opt="-DUR_COMPUTE_RUNTIME_REPO=${CURDIR}/vendor/compute-runtime/level_zero/include" \
 		--cmake-opt="-DOpenCL_INCLUDE_DIR=/usr/include/" \
 		--cmake-opt="-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/" \
+		--cmake-opt="-DLLVM_VERSION_SUFFIX=${LLVM_VERSION_SUFFIX}" \
 
 override_dh_auto_build:
 	python3 ${CURDIR}/buildbot/compile.py -j${PARALLEL}
