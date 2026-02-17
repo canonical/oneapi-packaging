@@ -7,7 +7,6 @@ install/include/ur_ddi.h /usr/lib/llvm-dpcpp-21/include/
 install/include/ur_print.h /usr/lib/llvm-dpcpp-21/include/
 install/include/ur_print.hpp /usr/lib/llvm-dpcpp-21/include/
 install/include/ur_api_funcs.def /usr/lib/llvm-dpcpp-21/include/
-install/lib/libsycl.so /usr/lib/llvm-dpcpp-21/lib/
 install/lib/libsycl-devicelib-host.a /usr/lib/llvm-dpcpp-21/lib/
 # Install CL/ headers
 # CL/sycl.hpp is deprecated, TODO : understand the impact of
