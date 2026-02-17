@@ -4,7 +4,6 @@ usr/lib/llvm-dpcpp-21/bin/clang-cpp usr/bin/clang-cpp-dpcpp
 usr/lib/llvm-dpcpp-21/bin/clang-cl usr/bin/clang-cl-dpcpp
 usr/lib/llvm-dpcpp-21/bin/spirv-to-ir-wrapper usr/bin/spirv-to-ir-wrapper
 usr/lib/llvm-dpcpp-21/bin/sycl-ls usr/bin/sycl-ls
-usr/share/man/man1/clang-21.1.gz usr/share/man/man1/clang-dpcpp.1.gz
-usr/share/man/man1/clang-21.1.gz usr/share/man/man1/clang++-dpcpp.1.gz
-usr/share/man/man1/clang-21.1.gz usr/share/man/man1/clang-cpp-dpcpp.1.gz
-usr/share/man/man1/clang-21.1.gz usr/share/man/man1/clang-cl-dpcpp.1.gz
+usr/share/man/man1/clang-dpcpp.1.gz usr/share/man/man1/clang++-dpcpp.1.gz
+usr/share/man/man1/clang-dpcpp.1.gz usr/share/man/man1/clang-cpp-dpcpp.1.gz
+usr/share/man/man1/clang-dpcpp.1.gz usr/share/man/man1/clang-cl-dpcpp.1.gz
