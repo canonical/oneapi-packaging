@@ -8,12 +8,16 @@ License: APACHE-2-LLVM-EXCEPTIONS
 
 Files: compiler-rt/lib/BlocksRuntime/*
 Copyright: 2008-2010 Apple, Inc.
-License: MIT
+License: Expat
 
 Files: llvm/lib/Support/reg*
 Copyright: 1992, 1993, 1994 Henry Spencer
            1992, 1993, 1994 The Regents of the University of California
-License: BSD-3-clause
+License: BSD-3-Clause
+
+Files: llvm/lib/Support/regstrlcpy.c
+Copyright: 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+License: ISC
 
 Files: llvm/lib/Support/MD5.cpp llvm/include/llvm/Support/MD5.h
 Copyright: 2001 Alexander Peslyak <solar at openwall.com>
@@ -21,18 +25,23 @@ License: solar-public-domain
 
 Files: llvm/test/YAMLParser/*
 Copyright: 2006 Kirill Simonov
-License: MIT
+License: Expat
 
 Files: llvm/include/llvm/Support/xxhash.h
  llvm/lib/Support/xxhash.cpp
 Copyright: 2012-2023 Yann Collet
-License: BSD-2-clause
+License: BSD-2-Clause
+
+Files: clang/lib/Headers/avxvnniintrin.h
+ clang/lib/Headers/keylockerintrin.h
+Copyright: None
+License: Expat
 
 Files: clang/lib/Headers/cuda_wrappers/*
  clang/lib/Headers/avx512vlvp2intersectintrin.h
  clang/lib/Headers/avx512vp2intersectintrin.h
 Copyright: 2016-2020, Google Inc.
-License: MIT
+License: Expat
 
 Files: libclc/amdgcn/lib/math/ldexp.cl
  libclc/amdgpu/lib/math/sqrt.cl
@@ -174,7 +183,7 @@ Files: libclc/amdgcn/lib/math/ldexp.cl
  libclc/libspirv/lib/generic/subnormal_config.cl
  libclc/spirv/lib/subnormal_config.cl
 Copyright: 2014-2016 Advanced Micro Devices, Inc.
-License: MIT
+License: Expat
 
 Files: libclc/generic/lib/math/fdim.inc
  libclc/generic/lib/math/frexp.inc
@@ -185,18 +194,18 @@ Files: libclc/generic/lib/math/fdim.inc
  libclc/generic/lib/math/tgamma.cl
 Copyright: 2014-2016 Advanced Micro Devices, Inc.
            2016 Aaron Watry
-License: MIT
+License: Expat
 
 Files: libclc/generic/lib/gen_convert.py
 Copyright: 2013 Victor Oliveira <victormatheus@gmail.com>
            2013 Jesse Towner <jessetowner@lavabit.com>
            2024 Romaric Jodin <rjodin@chromium.org>
-License: MIT
+License: Expat
 
 Files: libclc/libspirv/lib/generic/gen_core_convert.py
 Copyright: 2013 Victor Oliveira <victormatheus@gmail.com>
            2013 Jesse Towner <jessetowner@lavabit.com>
-License: MIT
+License: Expat
 
 Files: lldb/test/API/functionalities/gdb_remote_client/TestJLink6Armv7RegisterDefinition.py
  lldb/test/API/functionalities/gdb_remote_client/TestNestedRegDefinitions.py
@@ -227,11 +236,32 @@ Copyright: 2008-2009 Katholieke Universiteit Leuven
            2015-2016 INRIA Paris
            2002-2008 Michael J. Fromberger
            2016-2017 Tobias Grosser
-License: MIT
+License: Expat
+
+Files: polly/lib/External/isl/interface/template_cpp.cc
+ polly/lib/External/isl/interface/python.cc
+ polly/lib/External/isl/interface/plain_cpp.cc
+ polly/lib/External/isl/interface/generator.cc
+ polly/lib/External/isl/interface/extract_interface.cc
+ polly/lib/External/isl/interface/cpp.cc
+Copyright: 2020 Cerebras Systems
+           2011-2015 Sven Verdoolaege
+           2016-2017 Tobias Grosser
+License: BSD-2-Clause-Views
+
+Files: third-party/benchmark/*
+Copyright: 2015-2021 Google Inc.
+           2016 Ismael Jimenez Martinez
+           2017 Roman Lebedev
+License: Apache-2.0
 
 Files: third-party/unittest/google*
 Copyright: 2005-2013 Google Inc.
-License: BSD-3-clause
+License: BSD-3-Clause
+
+Files: third-party/unittest/googletest/include/gtest/internal/custom/raw-ostream.h
+Copyright: 2003-2017 University of Illinois at Urbana-Champaign.
+License: APACHE-2-LLVM-EXCEPTIONS
 
 Files: buildbot/*
  devops/*
@@ -247,19 +277,25 @@ License: Apache-2.0
 
 Files: xptifw/basic_test/external/BS_thread_pool.hpp
 Copyright: 2023 Barak Shoshany
-License: MIT
+License: Expat
 
 Files: vendor/vc-intrinsics/*
 Copyright: 2019-2025 Intel Corporation
-License: MIT
+License: Expat
 
 Files: vendor/compute-runtime/*
 Copyright: 2018-2025 Intel Corporation
-License: MIT
+License: Expat
 
 Files: debian/*
 Copyright: 2025 Canonical Ltd.
 License: Apache-2.0
+
+Files: debian/tests/002-mandelbrot/*
+ debian/tests/003-vector-add/*
+ debian/tests/004-matrix-mul/*
+Copyright: 2020 Intel Corporation
+License: Expat
 
 License: APACHE-2-LLVM-EXCEPTIONS
  On Debian systems the full text of the Apache Software License 2.0 can be
@@ -281,7 +317,7 @@ License: APACHE-2-LLVM-EXCEPTIONS
  the License, but only in their entirety and only with respect to the Combined
  Software.
 
-License: BSD-2-clause
+License: BSD-2-Clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
  .
@@ -303,7 +339,34 @@ License: BSD-2-clause
  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-License: BSD-3-clause
+License: BSD-2-Clause-Views
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+ 1. Redistributions of source code must retain the above copyright notice, 
+    this list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .
+ The views and conclusions contained in the software and documentation are
+ those of the authors and should not be interpreted as representing official
+ policies, either expressed or implied, of the copyright holders or
+ contributors.
+
+License: BSD-3-Clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
  .
@@ -340,7 +403,7 @@ License: solar-public-domain
  .
  * There's ABSOLUTELY NO WARRANTY, express or implied.
 
-License: MIT
+License: Expat
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
@@ -429,3 +492,16 @@ License: MIT-Khronos-old
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM,OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS
  IN THE MATERIALS.
+
+License: ISC
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
