@@ -1,3 +1,15 @@
+intel-dpcpp (6.2.0-0ubuntu4~26.04) resolute; urgency=medium
+
+  * Initial release (LP: #2130186)
+    - d/copyright: various license fixes flagged by lrc.
+    - d/install: remove duplicate libsycl development sym link.
+    - d/rules: Rename man page to clang-dpcpp to avoid conflicts with clang
+      man page from clang-21 binary package from vanilla LLVM.
+    - d/rules: Change libclang version suffix from git to dpcpp$ver.
+    - d/watch: Upgrade to version 5.
+
+ -- Will French <will.french@canonical.com>  Tue, 17 Feb 2026 11:30:18 -0600
+
 intel-dpcpp (6.2.0-0ubuntu3~26.04) resolute; urgency=medium
 
   * Initial release (LP: #2130186)
