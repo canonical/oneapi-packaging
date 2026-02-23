@@ -1,3 +1,12 @@
+intel-dpcpp (6.2.0-0ubuntu5~26.04) resolute; urgency=medium
+
+  * Initial release (LP: #2130186)
+    - d/copyright: fix declaration of licensing and copyright details
+      on a handful of files to ensure consistency with file headers
+      and vanilla LLVM.
+
+ -- Will French <will.french@canonical.com>  Mon, 23 Feb 2026 16:22:26 -0600
+
 intel-dpcpp (6.2.0-0ubuntu4~26.04) resolute; urgency=medium
 
   * Initial release (LP: #2130186)
