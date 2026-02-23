@@ -32,9 +32,8 @@ Files: llvm/include/llvm/Support/xxhash.h
 Copyright: 2012-2023 Yann Collet
 License: BSD-2-Clause
 
-Files: clang/lib/Headers/avxvnniintrin.h
- clang/lib/Headers/keylockerintrin.h
-Copyright: None
+Files: llvm/include/llvm/WindowsDriver/MSVCSetupApi.h
+Copyright: 2017 Microsoft Corporation
 License: Expat
 
 Files: clang/lib/Headers/cuda_wrappers/*
@@ -253,6 +252,7 @@ Files: third-party/benchmark/*
 Copyright: 2015-2021 Google Inc.
            2016 Ismael Jimenez Martinez
            2017 Roman Lebedev
+           and others, see third-party/benchmark/AUTHORS
 License: Apache-2.0
 
 Files: third-party/unittest/google*
@@ -275,7 +275,7 @@ Files: buildbot/*
 Copyright: 2020-2025, Intel Corporation
 License: Apache-2.0
 
-Files: xptifw/basic_test/external/BS_thread_pool.hpp
+Files: xptifw/basic_test/external/*
 Copyright: 2023 Barak Shoshany
 License: Expat
 
