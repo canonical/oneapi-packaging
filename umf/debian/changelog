@@ -1,3 +1,11 @@
+intel-umf (0.11.0-0ubuntu4~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130189).
+    - d/copyright: improve accuracy of license reporting.
+    - d/watch: upgrade to version 5.
+
+ -- Will French <will.french@canonical.com>  Tue, 24 Feb 2026 14:35:49 -0600
+
 intel-umf (0.11.0-0ubuntu3~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130189).
