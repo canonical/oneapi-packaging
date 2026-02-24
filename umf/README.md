@@ -3,7 +3,7 @@
 To update and build:
 
 ```bash
-uscan --rename --repack --download-version=0.11.0
+uscan --download-version=0.11.0
 cd ../intel-umf-0.11.0/
 vim debian/changelog # edit manually if needed
 sbuild -c resolute-amd64 --dist=resolute --build-path=""
