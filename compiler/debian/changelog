@@ -1,3 +1,14 @@
+intel-dpcpp (6.2.0-0ubuntu6~26.04) resolute; urgency=medium
+
+  * Initial release (LP: #2130186)
+    - d/watch: produce consistent parent folder name in orig tarball
+      using v5 d/watch.
+    - d/rules: drop minor and patch versions from libclang SONAME suffix.
+      The purpose is to avoid breaking tools that may link with libclang
+      when the DPC++ version is bumped in the future.
+
+ -- Will French <will.french@canonical.com>  Wed, 25 Feb 2026 14:07:42 -0600
+
 intel-dpcpp (6.2.0-0ubuntu5~26.04) resolute; urgency=medium
 
   * Initial release (LP: #2130186)
