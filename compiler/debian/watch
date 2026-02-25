@@ -4,5 +4,7 @@ Template: Github
 Owner: intel
 Project: llvm
 Source: https://api.github.com/repos/intel/llvm/git/matching-refs/tags/v
+Download-Url-Mangle: s%https://api.github.com/repos/([^/]+/[^/]+)/git/refs/tags/(.*)%https://github.com/$1/archive/refs/tags/$2.tar.gz%
+Filename-Mangle: s%.*/tags/v(.*)%llvm-$1.tar.gz%
 Repack: yes
 Update-Script: debian/get-orig-source
