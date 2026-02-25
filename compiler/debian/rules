@@ -2,7 +2,7 @@
 
 PKG_VERSION := $(shell dpkg-parsechangelog | awk '/^Version:/ {print $$2}')
 LLVM_VERSION := 21
-LLVM_VERSION_SUFFIX := dpcpp6.2.0
+LLVM_VERSION_SUFFIX := dpcpp6
 PARALLEL := $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 
 # TODO: Enbable build with debug symbols
