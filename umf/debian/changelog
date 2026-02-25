@@ -1,3 +1,11 @@
+intel-umf (0.11.0-0ubuntu5~26.04) resolute; urgency=medium
+
+  * Initial package upload (LP: #2130189).
+    - d/watch: produce consistent parent folder name in orig tarball
+      using v5 d/watch.
+
+ -- Will French <will.french@canonical.com>  Wed, 25 Feb 2026 10:46:59 -0600
+
 intel-umf (0.11.0-0ubuntu4~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130189).
