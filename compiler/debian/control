@@ -42,6 +42,7 @@ Depends:
  intel-ocloc,
  intel-opencl-icd,
  libclang-dpcpp21,
+ libclang-dpcpp-common-21-dev,
  libstdc++-14-dev,
  libsycl8,
  libsycl-dev,
