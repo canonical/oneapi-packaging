@@ -1,4 +1,4 @@
-install/lib/libsycl.so /usr/lib/x86_64-linux-gnu/
+install/lib/*.bc /usr/lib/llvm-dpcpp-21/lib/
 install/include/sycl/ /usr/lib/llvm-dpcpp-21/include/
 install/include/syclcompat/ /usr/lib/llvm-dpcpp-21/include/
 install/include/xpti/ /usr/lib/llvm-dpcpp-21/include/
