@@ -1,51 +1,23 @@
-intel-dpcpp (6.2.0-0ubuntu6~26.04) resolute; urgency=medium
+intel-dpcpp (6.2.0-0ubuntu1) resolute; urgency=medium
 
   * Initial release (LP: #2130186)
-    - d/watch: produce consistent parent folder name in orig tarball
-      using v5 d/watch.
-    - d/rules: drop minor and patch versions from libclang SONAME suffix.
-      The purpose is to avoid breaking tools that may link with libclang
-      when the DPC++ version is bumped in the future.
+    - d/watch:
+      - Upgrade to version 5.
+      - Produce consistent parent folder name in orig tarball using v5 d/watch.
+    - d/rules:
+      - Change libclang version suffix from git to dpcpp$ver.
+      - Rename man page to clang-dpcpp to avoid conflicts with clang
+        man page from clang-21 binary package from vanilla LLVM.
+      - Drop minor and patch versions from libclang SONAME suffix.
+        The purpose is to avoid breaking tools that may link with libclang
+        when the DPC++ version is bumped in the future.
+    - d/copyright:
+      - Add files flagged by licensecheck -r.
+      - Various license fixes flagged by lrc.
+      - Fix declaration of licensing and copyright details on a handful of
+        files to ensure consistency with file headers and vanilla LLVM.
+    - d/install:
+      - Remove duplicate libsycl development sym link.
+    - d/*.symbols: Add Build-Depends-Package field.
 
  -- Will French <will.french@canonical.com>  Wed, 25 Feb 2026 14:07:42 -0600
-
-intel-dpcpp (6.2.0-0ubuntu5~26.04) resolute; urgency=medium
-
-  * Initial release (LP: #2130186)
-    - d/copyright: fix declaration of licensing and copyright details
-      on a handful of files to ensure consistency with file headers
-      and vanilla LLVM.
-
- -- Will French <will.french@canonical.com>  Mon, 23 Feb 2026 16:22:26 -0600
-
-intel-dpcpp (6.2.0-0ubuntu4~26.04) resolute; urgency=medium
-
-  * Initial release (LP: #2130186)
-    - d/copyright: various license fixes flagged by lrc.
-    - d/install: remove duplicate libsycl development sym link.
-    - d/rules: Rename man page to clang-dpcpp to avoid conflicts with clang
-      man page from clang-21 binary package from vanilla LLVM.
-    - d/rules: Change libclang version suffix from git to dpcpp$ver.
-    - d/watch: Upgrade to version 5.
-
- -- Will French <will.french@canonical.com>  Tue, 17 Feb 2026 11:30:18 -0600
-
-intel-dpcpp (6.2.0-0ubuntu3~26.04) resolute; urgency=medium
-
-  * Initial release (LP: #2130186)
-    - d/copyright: add files flagged by licensecheck -r.
-
- -- Will French <will.french@canonical.com>  Mon, 02 Feb 2026 21:30:35 -0600
-
-intel-dpcpp (6.2.0-0ubuntu2~26.04) resolute; urgency=medium
-
-  * Initial release (LP: #2130186)
-    - d/*.symbols: add Build-Depends-Package field.
-
- -- Will French <will.french@canonical.com>  Wed, 14 Jan 2026 11:48:08 -0600
-
-intel-dpcpp (6.2.0-0ubuntu1~26.04) resolute; urgency=medium
-
-  * Initial release (LP: #2130186)
-
- -- Will French <will.french@canonical.com>  Thu, 08 Jan 2026 14:55:14 +0000
