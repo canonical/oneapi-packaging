@@ -1,7 +1,6 @@
 sycl-0001-ubuntu-sauce.patch
 sycl-0002-skip-usr-include-in-tests.patch
 ur-0001-fix-opencl-lib.patch
-clang-0001-remove-cpp-driver-suffix.patch
 ur-0002-does-not-copy-level-zero-loader-headers-around.patch
 ur-0003-support-resolute-opencl.patch
 ur-0004-fix-static-loader-when-building-in-tree.patch
