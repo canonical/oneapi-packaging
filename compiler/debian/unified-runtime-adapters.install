@@ -1,0 +1,6 @@
+install/lib/libur_adapter_level_zero.so.0* 	/usr/lib/llvm-dpcpp-21/lib/
+install/lib/libur_adapter_level_zero.so 	/usr/lib/llvm-dpcpp-21/lib/
+install/lib/libur_adapter_level_zero_v2.so.0* 	/usr/lib/llvm-dpcpp-21/lib/
+install/lib/libur_adapter_level_zero_v2.so 	/usr/lib/llvm-dpcpp-21/lib/
+install/lib/libur_adapter_opencl.so.0* 	/usr/lib/llvm-dpcpp-21/lib/
+install/lib/libur_adapter_opencl.so 	/usr/lib/llvm-dpcpp-21/lib/
