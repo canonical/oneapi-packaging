@@ -1,3 +1,2 @@
-clang-dpcpp.1
-sycl-ls.1
-spirv-to-ir-wrapper.1
+dpclang.1
+dpsycl-ls.1

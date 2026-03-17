@@ -47,8 +47,8 @@ override_dh_auto_configure:
 
 override_dh_auto_build:
 	python3 ${CURDIR}/buildbot/compile.py -j${PARALLEL}
-	help2man --name="clang LLVM compiler for oneAPI" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/clang-${LLVM_VERSION} > clang-dpcpp.1
-	help2man --name="lists all devices and backends discovered by SYCL" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/sycl-ls > sycl-ls.1
+	help2man --name="clang LLVM compiler for oneAPI" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/clang-${LLVM_VERSION} > dpclang.1
+	help2man --name="lists all devices and backends discovered by SYCL" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/sycl-ls > dpsycl-ls.1
 
 override_dh_auto_test:
 	# Skip cross-compilation tests (AIX, WebAssembly, VE, z/OS, Windows, baremetal, etc.)
@@ -82,7 +82,7 @@ override_dh_missing:
 
 override_dh_makeshlibs:
 	# exclude libs that are private/internal to the compiler
-	dh_makeshlibs -Xusr/lib/llvm-dpcpp-${LLVM_VERSION}/lib
+	dh_makeshlibs -Xusr/lib/dpclang-6/llvm/lib
 
 override_dh_clean:
 	rm -rf build
