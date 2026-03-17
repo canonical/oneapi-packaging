@@ -1,0 +1,76 @@
+From a41078f12d6856fa9f58057fb7fc7a96eb29c295 Mon Sep 17 00:00:00 2001
+From: Piotr Balcer <piotr.balcer@intel.com>
+Date: Tue, 10 Mar 2026 14:59:04 +0100
+Subject: [PATCH] [UR] fix static loader when building in-tree (#21477)
+
+---
+ unified-runtime/CMakeLists.txt | 55 ++++++++++++++++++----------------
+ 1 file changed, 30 insertions(+), 25 deletions(-)
+
+diff --git a/unified-runtime/CMakeLists.txt b/unified-runtime/CMakeLists.txt
+index 2248cfcb3db28..1803a89fb8618 100644
+--- a/unified-runtime/CMakeLists.txt
++++ b/unified-runtime/CMakeLists.txt
+@@ -379,32 +379,37 @@ if(UR_BUILD_TOOLS)
+     add_subdirectory(tools)
+ endif()
+ 
+-# Add the list of installed targets to the install. This includes the namespace
+-# which all installed targets will be prefixed with, e.g. for the headers
+-# target users will depend on ${PROJECT_NAME}::headers.
+-install(
+-    EXPORT ${PROJECT_NAME}-targets
+-    FILE ${PROJECT_NAME}-targets.cmake
+-    NAMESPACE ${PROJECT_NAME}::
+-    DESTINATION lib/cmake/${PROJECT_NAME})
+-
+-# Configure the package versions file for use in find_package when installed.
+-write_basic_package_version_file(
+-    ${PROJECT_BINARY_DIR}/cmake/${PROJECT_NAME}-config-version.cmake
+-    COMPATIBILITY SameMajorVersion)
+-# Configure the package file that is searched for by find_package when
+-# installed.
+-configure_package_config_file(
+-    ${PROJECT_SOURCE_DIR}/cmake/${PROJECT_NAME}-config.cmake.in
+-    ${PROJECT_BINARY_DIR}/cmake/${PROJECT_NAME}-config.cmake
+-    INSTALL_DESTINATION lib/cmake/${PROJECT_NAME})
+-
+-# Add the package files to the install.
+-install(
+-    FILES
+-        ${PROJECT_BINARY_DIR}/cmake/${PROJECT_NAME}-config.cmake
++# The export set and package config files are only needed when UR is built as
++# a standalone project. When built in-tree (LLVM/SYCL), the
++# parent project provides its own install rules.
++if(UR_STANDALONE_BUILD)
++    # Add the list of installed targets to the install. This includes the
++    # namespace which all installed targets will be prefixed with, e.g. for
++    # the headers target users will depend on ${PROJECT_NAME}::headers.
++    install(
++        EXPORT ${PROJECT_NAME}-targets
++        FILE ${PROJECT_NAME}-targets.cmake
++        NAMESPACE ${PROJECT_NAME}::
++        DESTINATION lib/cmake/${PROJECT_NAME})
++
++    # Configure the package versions file for use in find_package when installed.
++    write_basic_package_version_file(
+         ${PROJECT_BINARY_DIR}/cmake/${PROJECT_NAME}-config-version.cmake
+-    DESTINATION lib/cmake/${PROJECT_NAME})
++        COMPATIBILITY SameMajorVersion)
++    # Configure the package file that is searched for by find_package when
++    # installed.
++    configure_package_config_file(
++        ${PROJECT_SOURCE_DIR}/cmake/${PROJECT_NAME}-config.cmake.in
++        ${PROJECT_BINARY_DIR}/cmake/${PROJECT_NAME}-config.cmake
++        INSTALL_DESTINATION lib/cmake/${PROJECT_NAME})
++
++    # Add the package files to the install.
++    install(
++        FILES
++            ${PROJECT_BINARY_DIR}/cmake/${PROJECT_NAME}-config.cmake
++            ${PROJECT_BINARY_DIR}/cmake/${PROJECT_NAME}-config-version.cmake
++        DESTINATION lib/cmake/${PROJECT_NAME})
++endif()
+ 
+ set(API_JSON_FILE ${PROJECT_BINARY_DIR}/unified_runtime.json)
+ 
