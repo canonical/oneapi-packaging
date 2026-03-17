@@ -137,38 +137,12 @@ Description: DPC++ LLVM tools
  .
  This package delivers various tools and commands provided by LLVM.
 
-Package: libur-loader0
-Architecture: amd64
-Section: libs
-Depends:
- ${misc:Depends},
- ${shlibs:Depends}
-Description: oneAPI Unified Runtime loader
- DPC++ is a LLVM-based compiler project that implements compiler and runtime
- support for the SYCL* language.
- .
- This package delivers the Unified Runtime loader library.
-
-Package: libur-loader-dev
-Architecture: amd64
-Section: libdevel
-Depends:
- ${misc:Depends},
- ${shlibs:Depends},
- libur-loader0 (= ${binary:Version})
-Description: oneAPI Unified Runtime loader - Devel package
- DPC++ is a LLVM-based compiler project that implements compiler and runtime
- support for the SYCL* language.
- .
- This package delivers the Unified Runtime loader sym link for developers.
-
 Package: libur-adapter-level-zero0
 Architecture: amd64
 Section: libs
 Depends:
  ${misc:Depends},
- ${shlibs:Depends},
- libur-loader0
+ ${shlibs:Depends}
 Description: oneAPI Unified Runtime level-zero adapter
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
@@ -194,8 +168,7 @@ Architecture: amd64
 Section: libs
 Depends:
  ${misc:Depends},
- ${shlibs:Depends},
- libur-loader0
+ ${shlibs:Depends}
 Description: oneAPI Unified Runtime level-zero adapter v2
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
@@ -221,8 +194,7 @@ Architecture: amd64
 Section: libs
 Depends:
  ${misc:Depends},
- ${shlibs:Depends},
- libur-loader0
+ ${shlibs:Depends}
 Description: oneAPI Unified Runtime OpenCL adapter
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.

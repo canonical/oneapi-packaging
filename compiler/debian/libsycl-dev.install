@@ -2,13 +2,5 @@ install/lib/*.bc /usr/lib/llvm-dpcpp-21/lib/
 install/include/sycl/ /usr/lib/llvm-dpcpp-21/include/
 install/include/syclcompat/ /usr/lib/llvm-dpcpp-21/include/
 install/include/xpti/ /usr/lib/llvm-dpcpp-21/include/
-install/include/ur_api.h /usr/lib/llvm-dpcpp-21/include/
-install/include/ur_ddi.h /usr/lib/llvm-dpcpp-21/include/
-install/include/ur_print.h /usr/lib/llvm-dpcpp-21/include/
-install/include/ur_print.hpp /usr/lib/llvm-dpcpp-21/include/
-install/include/ur_api_funcs.def /usr/lib/llvm-dpcpp-21/include/
 install/lib/libsycl-devicelib-host.a /usr/lib/llvm-dpcpp-21/lib/
-# Install CL/ headers
-# CL/sycl.hpp is deprecated, TODO : understand the impact of
-# installing these headers
 install/include/CL/ /usr/lib/llvm-dpcpp-21/include/
