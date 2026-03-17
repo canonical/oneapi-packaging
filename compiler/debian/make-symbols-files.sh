@@ -24,10 +24,6 @@ VERSION=$(dpkg-parsechangelog -S Version | cut -f1 -d-)
 
 PACKAGES=(
   libsycl8
-  libur-loader0
-  libur-adapter-level-zero0
-  libur-adapter-level-zero-v2-0
-  libur-adapter-opencl0
 )
 
 for pkg in "${PACKAGES[@]}"; do
