@@ -48,7 +48,6 @@ override_dh_auto_build:
 	python3 ${CURDIR}/buildbot/compile.py -j${PARALLEL}
 	help2man --name="clang LLVM compiler for oneAPI" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/clang-${LLVM_VERSION} > clang-dpcpp.1
 	help2man --name="lists all devices and backends discovered by SYCL" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/sycl-ls > sycl-ls.1
-	help2man --name="SPIRV to IR wrapper" --version-string=${PKG_VERSION} ${CURDIR}/build/bin/spirv-to-ir-wrapper > spirv-to-ir-wrapper.1
 
 override_dh_auto_test:
 	# Skip cross-compilation tests (AIX, WebAssembly, VE, z/OS, Windows, baremetal, etc.)

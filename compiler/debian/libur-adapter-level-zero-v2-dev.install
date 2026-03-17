@@ -1,1 +1,1 @@
-install/lib/libur_adapter_level_zero_v2.so 	/usr/lib/x86_64-linux-gnu/
+install/lib/libur_adapter_level_zero_v2.so 	/usr/lib/llvm-dpcpp-21/lib/
