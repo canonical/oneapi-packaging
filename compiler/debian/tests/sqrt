@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# This tests whether we have packaged *.bc files to support
+# certain sycl operations (e.g. sqrt), and that they files are
+# accessible to the compiler.
+#
+
+set -e
+
+echo -e "\033[1;34m>>> [${0}] Starting build phase\033[0m"
+
+# Capture compiler output (both stdout and stderr)
+COMPILE_OUTPUT=$(dpclang++ -fsycl -fsycl-targets=spir64_gen,spir64 -Xs "-device pvc" "$(dirname "$0")/007-sqrt/sqrt.cpp" -o sqrt 2>&1)
+COMPILE_EXIT=$?
+
+# Display the output
+echo "$COMPILE_OUTPUT"
+
+# Check for undefined function warnings
+if echo "$COMPILE_OUTPUT" | grep -q "warning: Undefined function.*found in.*\.bc"; then
+    echo -e "\033[1;31mERROR: Compiler produced undefined function warning. The .bc files may be missing or inaccessible.\033[0m"
+    exit 1
+fi
+
+# Check if compilation itself failed
+if [ $COMPILE_EXIT -ne 0 ]; then
+    echo -e "\033[1;31mERROR: Compilation failed with exit code $COMPILE_EXIT\033[0m"
+    exit $COMPILE_EXIT
+fi
+
+echo -e "\033[1;34m>>> [${0}] Starting run phase\033[0m"
+./sqrt
