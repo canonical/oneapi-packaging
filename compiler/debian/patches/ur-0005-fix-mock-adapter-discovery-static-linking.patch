@@ -1,0 +1,30 @@
+From 97a84a3bd60dbbec36cc4209051843e28a343fb0 Mon Sep 17 00:00:00 2001
+From: Piotr Balcer <piotr.balcer@intel.com>
+Date: Thu, 19 Mar 2026 16:14:02 +0100
+Subject: [PATCH] [UR] Fix mock adapter discovery when statically linking
+ unittests (#21563)
+
+The mock adapter was hardcoded to always load from the applications /
+library path. In the case of a fully statically linked program, like a
+unittest, which resides in a different directory than the rest of UR
+libraries, this resulted in a failure to load the adapter.
+
+This patch fixes the issue by also attempting to load the mock adapter
+by its name, letting the dynamic loader resolve the full path.
+---
+ unified-runtime/source/loader/ur_adapter_registry.hpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/unified-runtime/source/loader/ur_adapter_registry.hpp b/unified-runtime/source/loader/ur_adapter_registry.hpp
+index cabed246a6da2..e4cc3029138a2 100644
+--- a/unified-runtime/source/loader/ur_adapter_registry.hpp
++++ b/unified-runtime/source/loader/ur_adapter_registry.hpp
+@@ -390,6 +390,8 @@ class AdapterRegistry {
+ 
+     std::vector<fs::path> loadPaths;
+     auto adapterNamePath = fs::path{mockAdapterName};
++    loadPaths.emplace_back(adapterNamePath);
++
+     auto loaderLibPathOpt = getLoaderLibPath();
+     if (loaderLibPathOpt.has_value()) {
+       const auto &loaderLibPath = loaderLibPathOpt.value();
