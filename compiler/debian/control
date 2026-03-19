@@ -84,7 +84,7 @@ Description: Clang library for the DPC++ compiler - Development package
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
  .
- This package contains the Clang and DPC++ Unified Runtime header files.
+ This package contains the Clang header files.
 
 Package: libsycl8
 Architecture: amd64
