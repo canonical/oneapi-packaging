@@ -4,3 +4,4 @@ ur-0001-fix-opencl-lib.patch
 ur-0002-does-not-copy-level-zero-loader-headers-around.patch
 ur-0003-support-resolute-opencl.patch
 ur-0004-fix-static-loader-when-building-in-tree.patch
+ur-0005-fix-mock-adapter-discovery-static-linking.patch
