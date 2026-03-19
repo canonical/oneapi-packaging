@@ -1,3 +1,98 @@
+intel-dpcpp (6.2.0-0ubuntu2~ppa1) resolute; urgency=medium
+
+  * d/control:
+    - Update binary package names based on recommendations from Intel.
+    https://github.com/canonical/oneapi-packaging/issues/36
+    - Add missing runtime dependencies for dpclang-6 binary package.
+    https://github.com/canonical/oneapi-packaging/issues/30
+    https://github.com/canonical/oneapi-packaging/issues/31
+    - Remove libur-loader0 binary package since it's now built as a static
+    lib.
+    https://github.com/canonical/oneapi-packaging/issues/33
+    - Remove libur-adapter* binary packages and consolidate into a single
+    unified-runtime-adapters binary package since these libs are no longer
+    in a public directory.
+    https://github.com/canonical/oneapi-packaging/issues/37
+  * d/*.{install,manpages,links}: update private compiler path from
+  /usr/lib/llvm-dpcpp-21 to /usr/lib/dpclang-6/llvm
+  https://github.com/canonical/oneapi-packaging/issues/34
+  * d/libur-loader*: remove libur-loader* binary packages since this lib is
+  now built statically.
+  https://github.com/canonical/oneapi-packaging/issues/33
+  * d/libur-adapter*: remove libur-adapter* binary packages since these are
+  no longer installed to a public directory.
+  https://github.com/canonical/oneapi-packaging/issues/37
+  * d/unified-runtime-adapters.install: consolidate unified runtime libs in
+  single binary package. These libs are all installed to a compiler-
+  private directory.
+  https://github.com/canonical/oneapi-packaging/issues/37
+  * d/rules:
+    - remove spirv-to-ir-wrapper man page since it is no longer
+    in a public directory.
+    https://github.com/canonical/oneapi-packaging/issues/35
+    - build unified runtime lib statically.
+    https://github.com/canonical/oneapi-packaging/issues/33
+    - update man page names because name of public symlinks have changed;
+    update excluded private compiler path for dh_makeshlibs.
+    https://github.com/canonical/oneapi-packaging/issues/34
+  * d/libsycl8.install:
+    - Install .spv files required for supporting -fsycl-device-lib-jit-link
+    option.
+    https://github.com/canonical/oneapi-packaging/issues/32
+    - Install versioned .so in private directory so it can find .spv
+    files at runtime.
+    https://github.com/canonical/oneapi-packaging/issues/32
+  * d/libsycl-dev.install:
+    - Install .bc files required during compilation.
+    https://github.com/canonical/oneapi-packaging/issues/32
+    - Remove unified runtime loader header files since the lib is now static
+    and not distributed through the packaging.
+    https://github.com/canonical/oneapi-packaging/issues/33
+  * d/libsycl8.links: sym link from public to private path.
+  https://github.com/canonical/oneapi-packaging/issues/32
+  * d/libsycl-dev.links: create development sym link manually since upstream
+  uses relative path.
+  https://github.com/canonical/oneapi-packaging/issues/32
+  * d/dpclang-6.links: remove spirv-to-ir-wrapper symlink since it is
+  compiler-private.
+  https://github.com/canonical/oneapi-packaging/issues/35
+  * d/patches/series:
+    - apply new patch for building libur as a static lib.
+    https://github.com/canonical/oneapi-packaging/issues/33
+    - drop clang-0001-remove-cpp-driver-suffix.patch because new clang*
+    symlink names do not collid with any suffix names from upstream.
+    https://github.com/canonical/oneapi-packaging/issues/34
+    - apply new patch for fixing mock in unit tests
+    https://github.com/canonical/oneapi-packaging/issues/33
+    - apply new patch for remove xptiFrameworkFinalize call
+    https://github.com/canonical/oneapi-packaging/issues/33
+  * d/patches/clang-0001-remove-cpp-driver-suffix.patch: drop patch
+  because new clang* symlink names do not collide with any suffix
+  names from upstream.
+  https://github.com/canonical/oneapi-packaging/issues/34
+  * d/patches/ur-0004-fix-static-loader-when-building-in-tree.patch:
+  Add patch to build unified runtime loader as a static lib since its API/ABI
+  are unstable.
+  https://github.com/canonical/oneapi-packaging/issues/33
+  * d/patches/ur-0005-fix-mock-adapter-discovery-static-linking.patch:
+  add patch to fix mock used in unit testing.
+  https://github.com/canonical/oneapi-packaging/issues/33
+  * d/patches/ur-0006-dont-call-xptiFrameworkFinalize-during-shutdown.patch:
+  Don't call xptiFrameworkFinalize during global shutdown as this causes
+  failures in unit tests when libur is built as a static lib.
+  https://github.com/canonical/oneapi-packaging/issues/33
+  * d/tests:
+    - update tests to use new symlink names for DPC++ compiler.
+    https://github.com/canonical/oneapi-packaging/issues/34
+    - add new tests for ensuring proper runtime dependency declaration in
+    d/control and accessibility of .bc files that enable certain compiler
+    features like sqrt operations.
+    https://github.com/canonical/oneapi-packaging/issues/38
+    - Bump minimum required version of CMake in a few tests to work with
+    the version of CMake in resolute.
+
+ -- Will French <will.french@canonical.com>  Mon, 16 Mar 2026 16:34:05 -0500
+
 intel-dpcpp (6.2.0-0ubuntu1) resolute; urgency=medium
 
   * Initial release (LP: #2130186)
