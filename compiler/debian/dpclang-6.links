@@ -7,7 +7,7 @@ usr/bin/dpclang-cpp-6 usr/bin/dpclang-cpp
 usr/lib/dpclang-6/llvm/bin/clang-cl usr/bin/dpclang-cl-6
 usr/bin/dpclang-cl-6 usr/bin/dpclang-cl
 usr/lib/dpclang-6/llvm/bin/sycl-ls usr/bin/dpsycl-ls-6
-usr/bin/dpsycl-ls usr/bin/dpsycl-ls
+usr/bin/dpsycl-ls-6 usr/bin/dpsycl-ls
 usr/share/man/man1/dpclang.1.gz usr/share/man/man1/dpclang-6.1.gz
 usr/share/man/man1/dpclang.1.gz usr/share/man/man1/dpclang++.1.gz
 usr/share/man/man1/dpclang.1.gz usr/share/man/man1/dpclang++-6.1.gz
