@@ -1,0 +1,26 @@
+From 5835d51ffd851901a1d839f8d74d5f052b97d46f Mon Sep 17 00:00:00 2001
+From: Nick Sarnie <nick.sarnie@intel.com>
+Date: Thu, 19 Mar 2026 08:18:23 -0700
+Subject: [PATCH] [UR] Don't call xptiFrameworkFinalize during global shutdown
+
+Signed-off-by: Nick Sarnie <nick.sarnie@intel.com>
+---
+ .../source/loader/layers/tracing/ur_tracing_layer.cpp           | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/unified-runtime/source/loader/layers/tracing/ur_tracing_layer.cpp b/unified-runtime/source/loader/layers/tracing/ur_tracing_layer.cpp
+index b8ffa1edba5b..850ff1bb019c 100644
+--- a/unified-runtime/source/loader/layers/tracing/ur_tracing_layer.cpp
++++ b/unified-runtime/source/loader/layers/tracing/ur_tracing_layer.cpp
+@@ -33,7 +33,7 @@ constexpr auto STREAM_VER_MINOR = UR_MINOR_VERSION(UR_API_VERSION_CURRENT);
+ // initialized on first use and finalized in the destructor.
+ struct XptiContextManager {
+   XptiContextManager() { xptiFrameworkInitialize(); }
+-  ~XptiContextManager() { xptiFrameworkFinalize(); }
++  ~XptiContextManager() { /* xptiFrameworkFinalize(); */ }
+ };
+ 
+ static std::shared_ptr<XptiContextManager> xptiContextManagerGet() {
+-- 
+2.39.1
+
