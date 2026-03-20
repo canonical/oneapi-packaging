@@ -1,3 +1,25 @@
+onednn-sycl (3.11+dfsg-0ubuntu2~ppa1) resolute; urgency=medium
+
+  * d/rules: use new names of DPC++ compiler commands, and new
+  path to compiler-private directory.
+  * d/control:
+    - Update DPC++ binary package name in Build-Depends from
+    clang-dpcpp-21 to dpclang-6.
+    - Drop libsycl-dev and libclang-dpcpp-common-21-dev from
+    Build-Depends because these are runtime dependencies for
+    dpclang-6.
+    - Drop libur-adapter* runtime dependencies because these
+    have been replaced with the unified-runtime-adapters binary
+    package, which is now listed as a runtime dependency instead.
+  * d/tests:
+    - Use new names of DPC++ compiler commands.
+    - Update DPC++ binary package name in Depends from
+    clang-dpcpp-21 to dpclang-6.
+    - Drop libsycl-dev and libclang-dpcpp-common-21-dev from
+    Depends because these are runtime dependencies for dpclang-6.
+
+ -- Will French <will.french@canonical.com>  Fri, 20 Mar 2026 12:44:37 -0500
+
 onednn-sycl (3.11+dfsg-0ubuntu1) resolute; urgency=medium
 
   * Initial release. (LP: #2136925)
