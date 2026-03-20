@@ -9,9 +9,7 @@ Build-Depends: cmake,
                libspdlog-dev,
                libgtest-dev,
                libsimde-dev (>= 0.7.0),
-               clang-dpcpp-21,
-               libsycl-dev,
-               libclang-dpcpp-common-21-dev,
+               dpclang-6,
                ocl-icd-opencl-dev
 Standards-Version: 4.7.2
 Homepage: https://github.com/oneapi-src/oneDNN
@@ -57,8 +55,7 @@ Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          libsycl8,
-         libur-adapter-level-zero0,
-         libur-adapter-opencl0,
+         unified-runtime-adapters,
 Breaks: libmkldnn1, libdnnl3.6
 Replaces: libmkldnn1, libdnnl3.6
 Description: oneAPI Deep Neural Network (oneDNN) with SYCL support (lib)
