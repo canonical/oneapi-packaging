@@ -3,7 +3,7 @@
 set -e
 
 echo -e "\033[1;34m>>> [${0}] Starting build phase\033[0m"
-clang++-dpcpp -fsycl "$(dirname "$0")/003-dpl-sortdouble/dpl_sortdouble.cpp" -w -o dpl_sortdouble
+dpclang++ -fsycl "$(dirname "$0")/003-dpl-sortdouble/dpl_sortdouble.cpp" -w -o dpl_sortdouble
 
 echo -e "\033[1;34m>>> [${0}] Starting run phase\033[0m"
 ./dpl_sortdouble

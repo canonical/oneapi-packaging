@@ -1,4 +1,4 @@
 Tests: reduce-segment, binary-search, dpl-sortdouble
 # tests all require the DPC++ compiler to build samples
-Depends: @, clang-dpcpp-21
+Depends: @, dpclang-6
 Restrictions: allow-stderr
