@@ -1,42 +1,21 @@
-onednn-sycl (3.11+dfsg-0ubuntu1~26.04) resolute; urgency=medium
+onednn-sycl (3.11+dfsg-0ubuntu1) resolute; urgency=medium
 
   * Initial release. (LP: #2136925)
-    - New upstream release.
-    - d/symbols: update symbols for new release.
-    - d/watch: apply +dfsg repack suffix to orig tarball.
-    - Rename onednn-examples.{install,links} to
-      onednn-sycl-examples.{install,links}.
-
- -- Will French <will.french@canonical.com>  Wed, 11 Feb 2026 15:45:37 -0600
-
-onednn-sycl (3.10.2-0ubuntu5~26.04) resolute; urgency=medium
-
-  * Initial release. (LP: #2136925)
-    - d/changelog: append changelog entries from onednn debian package
-      for posterity and better clarity.
-    - d/control: rename onednn-examples to onednn-sycl-examples.
-    - d/copyright: file-exclude spurious and incorrect COPYRIGHT
-      file from third_party/ngen.
     - d/symbols: clean up symbols file, borrowing patterns from
-      symbols file in onednn in debian.
+      symbols file in onednn in debian and update symbols for new release.
+    - d/watch: apply +dfsg repack suffix to orig tarball, add a Dversionmangle
+      line to solve a lintian tag and remove a comment line to avoid a lintian
+      false positive detection.
+    - Rename d/onednn-examples.{install,links} to
+      d/onednn-sycl-examples.{install,links}.
+    - d/control: rename onednn-examples to onednn-sycl-examples.
     - d/tests: update test dependency name to onednn-sycl-examples.
+    - d/copyright: file-exclude spurious and incorrect COPYRIGHT
+      file from third_party/ngen add Canonical copyright for debian folder.
     - Add d/README.source file to explain lineage with onednn source
       package and naming decisions.
 
- -- Will French <will.french@canonical.com>  Wed, 11 Feb 2026 11:05:12 -0600
-
-onednn-sycl (3.10.2-0ubuntu4~26.04) resolute; urgency=medium
-
-  * Initial release. (LP: #2136925)
-    - d/copyright: add Canonical copyright for debian folder.
-
- -- Will French <will.french@canonical.com>  Tue, 03 Feb 2026 10:59:01 -0600
-
-onednn-sycl (3.10.2-0ubuntu3~26.04) resolute; urgency=medium
-
-  * Initial release. (LP: #2136925)
-
- -- Will French <will.french@canonical.com>  Tue, 20 Jan 2026 09:44:13 -0600
+ -- Will French <will.french@canonical.com>  Wed, 11 Feb 2026 15:45:37 -0600
 
 onednn (3.9.1+ds-2) unstable; urgency=medium
 
