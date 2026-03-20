@@ -1,3 +1,15 @@
+intel-dpcpp (6.2.0-0ubuntu2~ppa2) resolute; urgency=medium
+
+  * d/ur-0007-use-canonical-path-to-resolve-loader-lib-path.patch:
+  add patch for fixing an issue where libsycl is not finding
+  the UR adapter libs in the compiler-private directory.
+  * d/patches/series: apply new patch for resolving loader lib
+  path.
+  * d/libsycl8.lintian-overrides: add lintian-override and explain
+  why ldconfig trigger is not needed for private library.
+
+ -- Will French <will.french@canonical.com>  Fri, 20 Mar 2026 07:34:22 -0500
+
 intel-dpcpp (6.2.0-0ubuntu2~ppa1) resolute; urgency=medium
 
   * d/control:
