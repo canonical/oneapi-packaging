@@ -12,9 +12,9 @@ export DEB_LDFLAGS_MAINT_APPEND  = -Wl,--as-needed
 # https://oneapi-src.github.io/oneDNN/dev_guide_build.html
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		-DCMAKE_CXX_COMPILER=clang++-dpcpp \
-		-DCMAKE_C_COMPILER=clang-dpcpp \
-		-DCMAKE_AR=/usr/lib/llvm-dpcpp-21/bin/llvm-ar \
+		-DCMAKE_CXX_COMPILER=dpclang++ \
+		-DCMAKE_C_COMPILER=dpclang \
+		-DCMAKE_AR=/usr/lib/dpclang-6/llvm/bin/llvm-ar \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DONEDNN_BUILD_TESTS=OFF \
 		-DONEDNN_BUILD_EXAMPLES=OFF \
