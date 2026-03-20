@@ -3,7 +3,7 @@
 set -e
 
 echo -e "\033[1;34m>>> [${0}] Starting build phase\033[0m"
-clang++-dpcpp -fsycl "$(dirname "$0")/001-reduce-segment/reduce_segment.cpp" -w -o reduce_segment
+dpclang++ -fsycl "$(dirname "$0")/001-reduce-segment/reduce_segment.cpp" -w -o reduce_segment
 
 echo -e "\033[1;34m>>> [${0}] Starting run phase\033[0m"
 ./reduce_segment
