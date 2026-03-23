@@ -6,3 +6,8 @@ install/lib/clang/21/include/cuda_wrappers/ /usr/lib/dpcpp-6/llvm/lib/clang/21/i
 install/lib/clang/21/include/llvm_libc_wrappers/*.h /usr/lib/dpcpp-6/llvm/lib/clang/21/include/llvm_libc_wrappers/
 install/lib/clang/21/include/llvm_offload_wrappers/ /usr/lib/dpcpp-6/llvm/lib/clang/21/include/llvm_offload_wrappers/
 install/lib/clang/21/include/zos_wrappers/ /usr/lib/dpcpp-6/llvm/lib/clang/21/include/zos_wrappers/
+install/include/ur_api.h /usr/lib/dpcpp-6/llvm/include/
+install/include/ur_ddi.h /usr/lib/dpcpp-6/llvm/include/
+install/include/ur_print.h /usr/lib/dpcpp-6/llvm/include/
+install/include/ur_print.hpp /usr/lib/dpcpp-6/llvm/include/
+install/include/ur_api_funcs.def /usr/lib/dpcpp-6/llvm/include/
