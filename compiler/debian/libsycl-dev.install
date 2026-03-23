@@ -1,9 +1,8 @@
 install/lib/*.bc /usr/lib/dpclang-6/llvm/lib/
 install/include/sycl/ /usr/lib/dpclang-6/llvm/include/
 install/include/syclcompat/ /usr/lib/dpclang-6/llvm/include/
-install/include/xpti/ /usr/lib/dpclang-6/llvm/include/
 install/lib/libsycl-devicelib-host.a /usr/lib/dpclang-6/llvm/lib/
-install/include/CL/ /usr/lib/dpclang-6/llvm/include/
+install/include/CL/sycl.hpp /usr/lib/dpclang-6/llvm/include/
 install/include/ur_api.h /usr/lib/dpclang-6/llvm/include/
 install/include/ur_ddi.h /usr/lib/dpclang-6/llvm/include/
 install/include/ur_print.h /usr/lib/dpclang-6/llvm/include/
