@@ -3,8 +3,3 @@ install/include/sycl/ /usr/lib/dpcpp-6/llvm/include/
 install/include/syclcompat/ /usr/lib/dpcpp-6/llvm/include/
 install/lib/libsycl-devicelib-host.a /usr/lib/dpcpp-6/llvm/lib/
 install/include/CL/sycl.hpp /usr/lib/dpcpp-6/llvm/include/
-install/include/ur_api.h /usr/lib/dpcpp-6/llvm/include/
-install/include/ur_ddi.h /usr/lib/dpcpp-6/llvm/include/
-install/include/ur_print.h /usr/lib/dpcpp-6/llvm/include/
-install/include/ur_print.hpp /usr/lib/dpcpp-6/llvm/include/
-install/include/ur_api_funcs.def /usr/lib/dpcpp-6/llvm/include/
