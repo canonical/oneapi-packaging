@@ -7,3 +7,5 @@ ur-0004-fix-static-loader-when-building-in-tree.patch
 ur-0005-fix-mock-adapter-discovery-static-linking.patch
 ur-0006-dont-call-xptiFrameworkFinalize-during-shutdown.patch
 ur-0007-use-canonical-path-to-resolve-loader-lib-path.patch
+dpcpp-0001-add-in-source-versioning.patch
+dpcpp-0002-add-self-macro-versioning.patch
