@@ -1,0 +1,136 @@
+From ca53f043e19100a4b73369b8d709fbb886037995 Mon Sep 17 00:00:00 2001
+From: "Khatavkar, Yashasvi" <yashasvi.khatavkar@intel.com>
+Date: Mon, 23 Mar 2026 11:18:21 -0700
+Subject: [PATCH] [SYCL] Add Self macro versioning
+
+---
+ clang/include/clang/Basic/Version.h     |  4 ++++
+ clang/lib/Basic/Version.cpp             | 13 +++++++++++++
+ clang/lib/Frontend/InitPreprocessor.cpp | 16 +++++++++++-----
+ clang/test/Preprocessor/init-aarch64.c  |  1 +
+ clang/test/Preprocessor/init.c          |  6 +++++-
+ 5 files changed, 34 insertions(+), 6 deletions(-)
+
+diff --git a/clang/include/clang/Basic/Version.h b/clang/include/clang/Basic/Version.h
+index eb2c56f33c66..a6eef331ef30 100644
+--- a/clang/include/clang/Basic/Version.h
++++ b/clang/include/clang/Basic/Version.h
+@@ -62,6 +62,10 @@ namespace clang {
+   /// number, the repository version, and the vendor tag.
+   std::string getClangFullCPPVersion();
+ 
++  /// Retrieves a string representing the complete DPC++ version suitable
++  /// for use in the CPP __VERSION__ macro, including repository information.
++  std::string getDPCPPFullCPPVersion();
++
+   /// Retrieves a string representing the SYCL standard version for use in
+   /// the CL_SYCL_LANGUAGE_VERSION and SYCL_LANGUAGE_VERSION macros.
+   llvm::SmallVector<std::pair<llvm::StringRef, llvm::StringRef>, 2>
+diff --git a/clang/lib/Basic/Version.cpp b/clang/lib/Basic/Version.cpp
+index 84be9bb1d992..aa9318ea56f8 100644
+--- a/clang/lib/Basic/Version.cpp
++++ b/clang/lib/Basic/Version.cpp
+@@ -124,6 +124,19 @@ std::string getClangFullCPPVersion() {
+ 
+   return buf;
+ }
++std::string getDPCPPFullCPPVersion() {
++  // Format: "DPC++ 6.3.0 git (https://github.com/intel/llvm.git ...)"
++  std::string buf;
++  llvm::raw_string_ostream OS(buf);
++  OS << "DPC++ " DPCPP_VERSION;
++
++  std::string repo = getClangFullRepositoryVersion();
++  if (!repo.empty()) {
++    OS << " " << repo;
++  }
++
++  return buf;
++}
+ 
+ llvm::SmallVector<std::pair<llvm::StringRef, llvm::StringRef>, 2>
+ getSYCLVersionMacros(const LangOptions &LangOpts) {
+diff --git a/clang/lib/Frontend/InitPreprocessor.cpp b/clang/lib/Frontend/InitPreprocessor.cpp
+index b01f33fd46ee..95750862a9b0 100644
+--- a/clang/lib/Frontend/InitPreprocessor.cpp
++++ b/clang/lib/Frontend/InitPreprocessor.cpp
+@@ -892,12 +892,18 @@ static void InitializePredefinedMacros(const TargetInfo &TI,
+   Builder.defineMacro("__clang_major__", TOSTR(CLANG_VERSION_MAJOR));
+   Builder.defineMacro("__clang_minor__", TOSTR(CLANG_VERSION_MINOR));
+   Builder.defineMacro("__clang_patchlevel__", TOSTR(CLANG_VERSION_PATCHLEVEL));
+-#undef TOSTR
+-#undef TOSTR2
+   Builder.defineMacro("__clang_version__",
+                       "\"" CLANG_VERSION_STRING " "
+                       + getClangFullRepositoryVersion() + "\"");
+ 
++  // DPC++ version macros - Intel's SYCL compiler
++  Builder.defineMacro("__DPCPP__", "1");
++  Builder.defineMacro("__dpcpp_major__", TOSTR(DPCPP_VERSION_MAJOR));
++  Builder.defineMacro("__dpcpp_minor__", TOSTR(DPCPP_VERSION_MINOR));
++  Builder.defineMacro("__dpcpp_patchlevel__", TOSTR(DPCPP_VERSION_PATCH));
++#undef TOSTR
++#undef TOSTR2
++
+   if (LangOpts.GNUCVersion != 0) {
+     // Major, minor, patch, are given two decimal places each, so 4.2.1 becomes
+     // 40201.
+@@ -960,9 +966,9 @@ static void InitializePredefinedMacros(const TargetInfo &TI,
+   Builder.defineMacro("__PRAGMA_REDEFINE_EXTNAME", "1");
+ 
+   // Previously this macro was set to a string aiming to achieve compatibility
+-  // with GCC 4.2.1. Now, just return the full Clang version
+-  Builder.defineMacro("__VERSION__", "\"" +
+-                      Twine(getClangFullCPPVersion()) + "\"");
++  // with GCC 4.2.1. Now, just return the full DPC++ version
++  Builder.defineMacro("__VERSION__",
++                      "\"" + Twine(getDPCPPFullCPPVersion()) + "\"");
+ 
+   // Initialize language-specific preprocessor defines.
+ 
+diff --git a/clang/test/Preprocessor/init-aarch64.c b/clang/test/Preprocessor/init-aarch64.c
+index 5f47de4b49b6..56269448bef9 100644
+--- a/clang/test/Preprocessor/init-aarch64.c
++++ b/clang/test/Preprocessor/init-aarch64.c
+@@ -78,6 +78,7 @@
+ // AARCH64-NEXT: #define __DBL_MIN__ 2.2250738585072014e-308
+ // AARCH64-NEXT: #define __DBL_NORM_MAX__ 1.7976931348623157e+308
+ // AARCH64-NEXT: #define __DECIMAL_DIG__ __LDBL_DECIMAL_DIG__
++// AARCH64-NEXT: #define __DPCPP__ 1
+ // AARCH64-NEXT: #define __ELF__ 1
+ // AARCH64-NEXT: #define __FINITE_MATH_ONLY__ 0
+ // AARCH64-NEXT: #define __FLT16_DECIMAL_DIG__ 5
+diff --git a/clang/test/Preprocessor/init.c b/clang/test/Preprocessor/init.c
+index 1ac325d44466..c761d2cab35c 100644
+--- a/clang/test/Preprocessor/init.c
++++ b/clang/test/Preprocessor/init.c
+@@ -1192,7 +1192,7 @@
+ // SPARC:#define __UINT_LEAST8_MAX__ 255
+ // SPARC:#define __UINT_LEAST8_TYPE__ unsigned char
+ // SPARC:#define __USER_LABEL_PREFIX__
+-// SPARC:#define __VERSION__ "{{.*}}Clang{{.*}}
++// SPARC:#define __VERSION__ "{{.*}}DPC++{{.*}}
+ // SPARC:#define __WCHAR_MAX__ 2147483647
+ // SPARC:#define __WCHAR_TYPE__ int
+ // SPARC:#define __WCHAR_WIDTH__ 32
+@@ -1702,6 +1702,7 @@
+ // WEBASSEMBLY-NEXT:#define __DBL_MIN__ 2.2250738585072014e-308
+ // WEBASSEMBLY-NEXT:#define __DBL_NORM_MAX__ 1.7976931348623157e+308
+ // WEBASSEMBLY-NEXT:#define __DECIMAL_DIG__ __LDBL_DECIMAL_DIG__
++// WEBASSEMBLY-NEXT:#define __DPCPP__ 1
+ // WEBASSEMBLY-NOT:#define __ELF__
+ // EMSCRIPTEN-THREADS-NEXT:#define __EMSCRIPTEN_PTHREADS__ 1
+ // EMSCRIPTEN-NEXT:#define __EMSCRIPTEN__ 1
+@@ -2064,6 +2065,9 @@
+ // WEBASSEMBLY-NEXT:#define __clang_patchlevel__ {{.*}}
+ // WEBASSEMBLY-NEXT:#define __clang_version__ "{{.*}}"
+ // WEBASSEMBLY-NEXT:#define __clang_wide_literal_encoding__ {{.*}}
++// WEBASSEMBLY-NEXT:#define __dpcpp_major__ 6
++// WEBASSEMBLY-NEXT:#define __dpcpp_minor__ 2
++// WEBASSEMBLY-NEXT:#define __dpcpp_patchlevel__ 0
+ // WEBASSEMBLY-NEXT:#define __llvm__ 1
+ // WEBASSEMBLY-WASI-NOT:#define __unix
+ // WEBASSEMBLY-WASI-NOT:#define __unix__
+-- 
+2.39.1
+
