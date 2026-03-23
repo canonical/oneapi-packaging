@@ -1,1 +1,1 @@
-usr/lib/dpclang-6/llvm/lib/libsycl.so.8.0.0-0 usr/lib/x86_64-linux-gnu/libsycl.so.8
+usr/lib/dpcpp-6/llvm/lib/libsycl.so.8.0.0-0 usr/lib/x86_64-linux-gnu/libsycl.so.8

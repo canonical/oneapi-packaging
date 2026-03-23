@@ -10,7 +10,7 @@ echo -e "\033[1;34m>>> [${0}] Creating bitcode file using dpclang\033[0m"
 dpclang -flto "$(dirname "$0")/005-lto/a.c" -c -o a.o
 
 echo -e "\033[1;34m>>> [${0}] Creating archive with LLVM bitcode using llvm-ar\033[0m"
-/usr/lib/dpclang-6/llvm/bin/llvm-ar rcs a.a a.o
+/usr/lib/dpcpp-6/llvm/bin/llvm-ar rcs a.a a.o
 
 echo -e "\033[1;34m>>> [${0}] Creating native object file using dpclang\033[0m"
 dpclang "$(dirname "$0")/005-lto/b.c" -c -o b.o

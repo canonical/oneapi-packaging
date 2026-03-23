@@ -82,7 +82,7 @@ override_dh_missing:
 
 override_dh_makeshlibs:
 	# exclude libs that are private/internal to the compiler
-	dh_makeshlibs -Xusr/lib/dpclang-6/llvm/lib
+	dh_makeshlibs -Xusr/lib/dpcpp-6/llvm/lib
 
 override_dh_clean:
 	rm -rf build

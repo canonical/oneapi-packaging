@@ -1,1 +1,1 @@
-install/lib/libclang.so.* 	/usr/lib/dpclang-6/llvm/lib/
+install/lib/libclang.so.* 	/usr/lib/dpcpp-6/llvm/lib/
