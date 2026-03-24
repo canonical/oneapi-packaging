@@ -1,0 +1,10 @@
+prefix=/usr/lib/dpcpp-6/llvm
+includedir=${prefix}/include
+libdir=${prefix}/lib
+sycl_version=8.0.0
+
+Name: sycl-dpcpp-6
+Description: DPC++ compiler SYCL runtime library
+Version: 6.2.0
+Libs: -L${libdir} -lsycl
+Cflags: -I${includedir}

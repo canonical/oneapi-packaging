@@ -3,3 +3,4 @@ install/include/sycl/ /usr/lib/dpcpp-6/llvm/include/
 install/include/syclcompat/ /usr/lib/dpcpp-6/llvm/include/
 install/lib/libsycl-devicelib-host.a /usr/lib/dpcpp-6/llvm/lib/
 install/include/CL/sycl.hpp /usr/lib/dpcpp-6/llvm/include/
+debian/sycl-dpcpp-6.pc /usr/lib/dpcpp-6/llvm/lib/pkgconfig/
