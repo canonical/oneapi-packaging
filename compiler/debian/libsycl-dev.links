@@ -1,2 +1,2 @@
-usr/lib/x86_64-linux-gnu/libsycl.so.8 usr/lib/x86_64-linux-gnu/libsycl.so
+usr/lib/x86_64-linux-gnu/libsycl.so.8 usr/lib/dpcpp-6/llvm/lib/libsycl.so
 usr/lib/dpcpp-6/llvm/lib/pkgconfig/sycl-dpcpp-6.pc usr/lib/x86_64-linux-gnu/pkgconfig/sycl-dpcpp-6.pc
