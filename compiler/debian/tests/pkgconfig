@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Test pkg-config integration for sycl-dpcpp-6
+#
+
+set -e
+
+echo -e "\033[1;34m>>> [${0}] Checking pkg-config --cflags sycl-dpcpp-6\033[0m"
+CFLAGS=$(pkg-config --cflags sycl-dpcpp-6)
+echo "CFLAGS: $CFLAGS"
+if [[ ! "$CFLAGS" =~ "-I/usr/lib/dpcpp-6/llvm/include" ]]; then
+    echo "ERROR: Expected CFLAGS to contain -I/usr/lib/dpcpp-6/llvm/include"
+    exit 1
+fi
+
+echo -e "\033[1;34m>>> [${0}] Checking pkg-config --libs sycl-dpcpp-6\033[0m"
+LIBS=$(pkg-config --libs sycl-dpcpp-6)
+echo "LIBS: $LIBS"
+if [[ ! "$LIBS" =~ "-L/usr/lib/dpcpp-6/llvm/lib" ]] || [[ ! "$LIBS" =~ "-lsycl" ]]; then
+    echo "ERROR: Expected LIBS to contain -L/usr/lib/dpcpp-6/llvm/lib -lsycl"
+    exit 1
+fi
+
+echo -e "\033[1;34m>>> [${0}] Checking pkg-config --modversion sycl-dpcpp-6\033[0m"
+VERSION=$(pkg-config --modversion sycl-dpcpp-6)
+echo "VERSION: $VERSION"
+if [[ "$VERSION" != "6.2.0" ]]; then
+    echo "ERROR: Expected version 6.2.0, got $VERSION"
+    exit 1
+fi
+
+echo -e "\033[1;34m>>> [${0}] Compiling test program with g++ using pkg-config\033[0m"
+g++ "$(dirname "$0")/008-pkgconfig/a.cpp" $(pkg-config --cflags sycl-dpcpp-6) $(pkg-config --libs sycl-dpcpp-6) -o pkgconfig-test
+
+echo -e "\033[1;34m>>> [${0}] Test completed successfully\033[0m"
