@@ -41,15 +41,15 @@ Depends:
  binutils-gold,
  intel-ocloc,
  intel-opencl-icd,
- libclang-dpcpp-6,
- libclang-dpcpp-6-dev,
+ libclang-dpcpp-6 (= ${binary:Version}),
+ libclang-dpcpp-6-dev (= ${binary:Version}),
  libstdc++-14-dev,
- libsycl8,
- libsycl-dev,
- dpclang-sycl-runtime-libs-6,
+ libsycl8 (= ${binary:Version}),
+ libsycl-dev (= ${binary:Version}),
+ dpclang-sycl-runtime-libs-6 (= ${binary:Version}),
  libze-intel-gpu1,
- llvm-dpcpp-6,
- unified-runtime-adapters
+ llvm-dpcpp-6 (= ${binary:Version}),
+ unified-runtime-adapters (= ${binary:Version})
 Replaces: clang-dpcpp-21
 Breaks: clang-dpcpp-21
 Description: Intel DPC++ compiler
@@ -77,7 +77,8 @@ Architecture: amd64
 Section: libdevel
 Depends:
  ${misc:Depends},
- libclang-dpcpp-6 (= ${binary:Version})
+ libclang-dpcpp-6 (= ${binary:Version}),
+ libsycl-dev (= ${binary:Version})
 Replaces: libclang-dpcpp-common-21-dev
 Breaks: libclang-dpcpp-common-21-dev
 Description: Clang library for the DPC++ compiler - Development package
@@ -92,7 +93,7 @@ Section: libs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- dpclang-sycl-runtime-libs-6
+ dpclang-sycl-runtime-libs-6 (= ${binary:Version})
 Description: SYCL* language library
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
@@ -117,7 +118,7 @@ Section: libs
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- libclang-dpcpp-6
+ libclang-dpcpp-6 (= ${binary:Version})
 Replaces: dpcpp-sycl-runtime-libs
 Breaks: dpcpp-sycl-runtime-libs
 Description: DPC++ SYCL* runtime libraries
