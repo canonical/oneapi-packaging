@@ -49,7 +49,7 @@ Depends:
  dpclang-sycl-runtime-libs-6 (= ${binary:Version}),
  libze-intel-gpu1,
  llvm-dpcpp-6 (= ${binary:Version}),
- unified-runtime-adapters (= ${binary:Version})
+ unified-runtime-adapters-dpcpp-6 (= ${binary:Version})
 Replaces: clang-dpcpp-21
 Breaks: clang-dpcpp-21
 Description: Intel DPC++ compiler
@@ -142,7 +142,7 @@ Description: DPC++ LLVM tools
  .
  This package delivers various tools and commands provided by LLVM.
 
-Package: unified-runtime-adapters
+Package: unified-runtime-adapters-dpcpp-6
 Architecture: amd64
 Section: libs
 Depends:
