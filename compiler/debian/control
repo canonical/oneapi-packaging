@@ -44,7 +44,7 @@ Depends:
  libclang-dpcpp-6 (= ${binary:Version}),
  libclang-dpcpp-6-dev (= ${binary:Version}),
  libstdc++-14-dev,
- libsycl8 (= ${binary:Version}),
+ libsycl8,
  sycl-dpcpp-6-dev (= ${binary:Version}),
  dpclang-sycl-runtime-libs-6 (= ${binary:Version}),
  libze-intel-gpu1,
@@ -105,7 +105,7 @@ Architecture: amd64
 Section: libdevel
 Depends:
  ${misc:Depends},
- libsycl8 (= ${binary:Version})
+ libsycl8
 Replaces: libsycl-dev
 Breaks: libsycl-dev
 Description: SYCL* language library - Development package
