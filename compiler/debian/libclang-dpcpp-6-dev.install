@@ -11,3 +11,4 @@ install/include/ur_ddi.h /usr/lib/dpcpp-6/llvm/include/
 install/include/ur_print.h /usr/lib/dpcpp-6/llvm/include/
 install/include/ur_print.hpp /usr/lib/dpcpp-6/llvm/include/
 install/include/ur_api_funcs.def /usr/lib/dpcpp-6/llvm/include/
+install/include/xpti/ /usr/lib/dpcpp-6/llvm/include/
