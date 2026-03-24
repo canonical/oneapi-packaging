@@ -45,7 +45,7 @@ Depends:
  libclang-dpcpp-6-dev (= ${binary:Version}),
  libstdc++-14-dev,
  libsycl8 (= ${binary:Version}),
- libsycl-dev (= ${binary:Version}),
+ sycl-dpcpp-6-dev (= ${binary:Version}),
  dpclang-sycl-runtime-libs-6 (= ${binary:Version}),
  libze-intel-gpu1,
  llvm-dpcpp-6 (= ${binary:Version}),
@@ -78,7 +78,7 @@ Section: libdevel
 Depends:
  ${misc:Depends},
  libclang-dpcpp-6 (= ${binary:Version}),
- libsycl-dev (= ${binary:Version})
+ sycl-dpcpp-6-dev (= ${binary:Version})
 Replaces: libclang-dpcpp-common-21-dev
 Breaks: libclang-dpcpp-common-21-dev
 Description: Clang library for the DPC++ compiler - Development package
@@ -100,12 +100,14 @@ Description: SYCL* language library
  .
  This package contains the SYCL* library.
 
-Package: libsycl-dev
+Package: sycl-dpcpp-6-dev
 Architecture: amd64
 Section: libdevel
 Depends:
  ${misc:Depends},
  libsycl8 (= ${binary:Version})
+Replaces: libsycl-dev
+Breaks: libsycl-dev
 Description: SYCL* language library - Development package
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.

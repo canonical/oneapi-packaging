@@ -1,5 +1,5 @@
 # libsycl is in a private directory and accessed via public symlink
-# in /usr/lib/x86_64-linux-gnu/ (provided by libsycl-dev). The ldconfig
-# trigger for the public symlink is handled automatically by dpkg.
-# The private library doesn't need its own trigger.
+# in /usr/lib/x86_64-linux-gnu/. The ldconfig trigger for the public
+# symlink is handled automatically by dpkg. The private library
+# doesn't need its own trigger.
 libsycl8: lacks-ldconfig-trigger usr/lib/dpcpp-6/llvm/lib/libsycl.so.8.0.0-0
