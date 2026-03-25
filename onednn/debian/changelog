@@ -1,3 +1,14 @@
+onednn-sycl (3.11+dfsg-0ubuntu2~ppa2) resolute; urgency=medium
+
+  * d/control: update binary package name from
+    unified-runtime-adapters to unified-runtime-adapters-dpcpp-6
+    in Depends since this binary package was renamed in the
+    dpclang-6 packaging.
+  * d/rules: update path to for compiler-private directory since
+    this was changed in the dpclang-6 packaging.
+
+ -- Will French <will.french@canonical.com>  Wed, 25 Mar 2026 10:24:09 -0500
+
 onednn-sycl (3.11+dfsg-0ubuntu2~ppa1) resolute; urgency=medium
 
   * d/rules: use new names of DPC++ compiler commands, and new
