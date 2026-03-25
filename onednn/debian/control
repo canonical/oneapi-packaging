@@ -55,7 +55,7 @@ Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          libsycl8,
-         unified-runtime-adapters,
+         unified-runtime-adapters-dpcpp-6,
 Breaks: libmkldnn1, libdnnl3.6
 Replaces: libmkldnn1, libdnnl3.6
 Description: oneAPI Deep Neural Network (oneDNN) with SYCL support (lib)
