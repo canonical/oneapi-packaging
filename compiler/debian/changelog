@@ -1,3 +1,68 @@
+intel-dpcpp (6.2.0-0ubuntu2~ppa3) resolute; urgency=medium
+
+  * d/libsycl-dev.install:
+    - Remove redundant openCL header files from opencl-c-headers.
+      Keep CL/sycl.hpp for backwards compatibility.
+    - Migrate unified runtime loader header files and XPTI header
+      files to libclang-dpcpp-6-dev binary package.
+    - Change name to sycl-dpcpp-6-dev.install.
+    https://github.com/canonical/oneapi-packaging/issues/42
+  * d/libsycl-dev.links:
+    - move libsycl.so development symlink to compiler-private
+      directory to avoid future conflicts where a user may want
+      multiple versions of dpclang and libsycl installed at the
+      same time.
+    - Change name to sycl-dpcpp-6-dev.links.
+    https://github.com/canonical/oneapi-packaging/issues/42
+  * d/*.{install,manpages,links}, d/rules, d/tests/lto: update
+    private compiler path from /usr/lib/dpclang-6/llvm to
+    /usr/lib/dpcpp-6/llvm to reflect the DPC++ product name.
+  * d/patches/series:
+    - apply patch for adding in source versioning to DPC++
+    https://github.com/intel/llvm/issues/21509
+    - apply patch for adding self-macro versioning to DPC++
+    https://github.com/intel/llvm/issues/21510
+  * d/patches/dpcpp-0001-add-in-source-versioning.patch: add
+    patch for adding in source versioning to DPC++.
+    https://github.com/intel/llvm/issues/21509
+  * d/patches/dpcpp-0002-add-self-macro-versioning.patch: add
+    patch for adding self-macro versioning to DPC++.
+    https://github.com/intel/llvm/issues/21510
+  * d/sycl-dpcpp-6.pc: add pkgconfig file for libsycl, needed
+    for users who want to link with libsycl directly.
+  * d/libsycl-dev.{install,links}: add sycl-dpcpp-6.pc pkgconfig
+    file to development package so it gets installed in the correct
+    location and is available for users who want to link with libsycl
+    directly.
+    https://github.com/canonical/oneapi-packaging/issues/42
+  * d/tests: add pkgconfig tests to verify that the pkgconfig file
+    is correctly installed and can be used to compile and link a
+    SYCL application with libsycl.
+    https://github.com/canonical/oneapi-packaging/issues/42
+  * d/control:
+    - add dependency between libclang-dpcpp-6-dev and libsycl-dev since
+      the clang development package now includes the unified runtime
+      loader headers that are needed for compiling SYCL applications.
+    - add strict version constraints for all binary packages derived
+      from the same intel-dpcpp source package.
+    - update binary package name from libsycl-dev to sycl-dpcpp-6-dev
+      to reflect its dependency on DPC++ and enable coinstallation of
+      different versions of DPC++/SYCL in the future.
+    - update binary package name from unified-runtime-adapters to
+      unified-runtime-adapters-dpcpp-6 to reflect its dependency on
+      DPC++ and enable coinstallation of different versions of
+      DPC++/SYCL in the future.
+    - remove binary version pinning for libsycl8 dependency since
+      libsycl8 may be used by multiple versions of DPC++.
+  * d/libsycl8.symbols: update Build-Depends-Package field since
+    libsycl-dev is now sycl-dpcpp-6-dev.
+  * d/unified-runtime-adapters.install: Change name to
+    unified-runtime-adapters-dpcpp-6.install.
+    https://github.com/canonical/oneapi-packaging/issues/42
+
+
+ -- Will French <will.french@canonical.com>  Mon, 23 Mar 2026 14:49:45 -0500
+
 intel-dpcpp (6.2.0-0ubuntu2~ppa2) resolute; urgency=medium
 
   * d/ur-0007-use-canonical-path-to-resolve-loader-lib-path.patch:
