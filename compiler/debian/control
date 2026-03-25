@@ -149,6 +149,24 @@ Section: libs
 Depends:
  ${misc:Depends},
  ${shlibs:Depends}
+Replaces:
+ libur-adapter-level-zero0,
+ libur-adapter-level-zero-dev,
+ libur-adapter-level-zero-v2-0,
+ libur-adapter-level-zero-v2-dev,
+ libur-adapter-opencl0,
+ libur-adapter-opencl-dev,
+ libur-loader0,
+ libur-loader-dev
+Breaks:
+ libur-adapter-level-zero0,
+ libur-adapter-level-zero-dev,
+ libur-adapter-level-zero-v2-0,
+ libur-adapter-level-zero-v2-dev,
+ libur-adapter-opencl0,
+ libur-adapter-opencl-dev,
+ libur-loader0,
+ libur-loader-dev
 Description: oneAPI Unified Runtime adapters
  DPC++ is a LLVM-based compiler project that implements compiler and runtime
  support for the SYCL* language.
