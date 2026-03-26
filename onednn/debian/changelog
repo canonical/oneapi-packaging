@@ -1,35 +1,25 @@
-onednn-sycl (3.11+dfsg-0ubuntu2~ppa2) resolute; urgency=medium
+onednn-sycl (3.11+dfsg-0ubuntu2) resolute; urgency=medium
 
-  * d/control: update binary package name from
-    unified-runtime-adapters to unified-runtime-adapters-dpcpp-6
-    in Depends since this binary package was renamed in the
-    dpclang-6 packaging.
-  * d/rules: update path to for compiler-private directory since
-    this was changed in the dpclang-6 packaging.
-
- -- Will French <will.french@canonical.com>  Wed, 25 Mar 2026 10:24:09 -0500
-
-onednn-sycl (3.11+dfsg-0ubuntu2~ppa1) resolute; urgency=medium
-
-  * d/rules: use new names of DPC++ compiler commands, and new
-  path to compiler-private directory.
   * d/control:
     - Update DPC++ binary package name in Build-Depends from
-    clang-dpcpp-21 to dpclang-6.
+      clang-dpcpp-21 to dpclang-6.
     - Drop libsycl-dev and libclang-dpcpp-common-21-dev from
-    Build-Depends because these are runtime dependencies for
-    dpclang-6.
+      Build-Depends because these are runtime dependencies for
+      dpclang-6.
     - Drop libur-adapter* runtime dependencies because these
-    have been replaced with the unified-runtime-adapters binary
-    package, which is now listed as a runtime dependency instead.
+      have been replaced with the unified-runtime-adapters-dpcpp-6
+      binary package, which is now listed as a runtime dependency
+      instead.
+  * d/rules: use new names of DPC++ compiler commands, and new
+    path to compiler-private directory.
   * d/tests:
     - Use new names of DPC++ compiler commands.
     - Update DPC++ binary package name in Depends from
-    clang-dpcpp-21 to dpclang-6.
+      clang-dpcpp-21 to dpclang-6.
     - Drop libsycl-dev and libclang-dpcpp-common-21-dev from
-    Depends because these are runtime dependencies for dpclang-6.
+      Depends because these are runtime dependencies for dpclang-6.
 
- -- Will French <will.french@canonical.com>  Fri, 20 Mar 2026 12:44:37 -0500
+ -- Will French <will.french@canonical.com>  Wed, 25 Mar 2026 17:17:44 -0500
 
 onednn-sycl (3.11+dfsg-0ubuntu1) resolute; urgency=medium
 
