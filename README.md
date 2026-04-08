@@ -1,15 +1,16 @@
 # oneAPI Packaging for Ubuntu :rocket:
 
-This repo contains Debian package definitions for components from the [oneAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html) published to the following PPA:
+This repo contains Debian package definitions for components from the [oneAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html). These packages are built from open source implementations, which may differ in functionality from the closed sourced versions available in Intel's official repositories (e.g. the compiler).
 
-- [ppa:kobuk-team/oneapi-release](https://launchpad.net/~kobuk-team/+archive/ubuntu/oneapi-release)
-
-The latest packages are built for and validated against Ubuntu 26.04 (Resolute Raccoon).
+The packages are now available directly from the Ubuntu archive beginning in Ubuntu 26.04 (Resolute Raccoon).
 
 1. [Enable Intel GPU support](#1-optional-enable-intel-gpu-support)
-2. [Add the PPA to apt sources](#2-add-the-ppa-to-apt-sources)
-3. [Install packages from the PPA](#3-install-packages-from-the-ppa)
-4. [Build and run SYCL* applications](#4-build-and-run-sycl-applications)
+2. [Install packages from the Ubuntu Archive](#2-install-packages-from-the-ubuntu-archive)
+3. [Build and run SYCL* applications](#3-build-and-run-sycl-applications)
+
+> [!IMPORTANT]
+>
+> This repo is intended for development of new package definitions. Once packages have landed in the Ubuntu archive, the source of truth for these packages is Launchpad.
 
 ## 1. Enable Intel GPU support
 
@@ -19,64 +20,76 @@ To run SYCL* applications with Intel GPU support, ensure you have permissions to
 sudo usermod -a -G render $USER
 ```
 
-You need to log out and log back for this change to take effect.
+You need to log out and log back in for this change to take effect.
 
-## 2. Add the PPA to apt sources
+## 2. Install packages from the Ubuntu Archive
 
-```bash
-sudo add-apt-repository ppa:kobuk-team/oneapi-release
-sudo apt update
-```
-
-## 3. Install packages from the PPA
-
-### 3.1 DPC++ compiler
+### 2.1 DPC++ compiler
 
 ```bash
-sudo apt install clang-dpcpp-21
+sudo apt install dpclang-6
 ```
 
-### 3.2 oneDPL library
+### 2.2 oneDPL library
 
 ```bash
 sudo apt install onedpl-headers
 ```
 
-### 3.3 oneDNN library
+### 2.3 oneDNN library
 
 ```bash
 sudo apt install libdnnl-sycl3
 ```
 
-## 4. Build and run SYCL* applications
+## 3. Build and run SYCL* applications
 
-Applications written in SYCL* C++ can be compiled using the `clang++-dpcpp` command. For example:
+Applications written in SYCL* C++ can be compiled using the `dpclang++` command. For example:
 
 ```bash
-clang++-dpcpp -fsycl sample.cpp -o simple-sycl-app
+dpclang++ -fsycl sample.cpp -o simple-sycl-app
 ./simple-sycl-app
 ```
 
-### 4.1 Build and run SYCL* applications with oneDNN
-
-First make sure to install all the required development packages:
+Alternatively, use `pkg-config` to discover details for `libsycl` at build-time:
 
 ```bash
-sudo apt install libdnnl-sycl-dev libtbb-dev ocl-icd-opencl-dev libsycl-dev libclang-dpcpp-common-21-dev
+$ pkg-config --cflags sycl-dpcpp-6
+-I/usr/lib/dpclang-6/llvm/include
+$ pkg-config --libs sycl-dpcpp-6
+-L/usr/lib/dpclang-6/llvm/lib -lsycl
+$ pkg-config --modversion sycl-dpcpp-6
+6.2.0
+```
+
+### 3.1 Build and run SYCL* applications with oneDNN
+
+In addition to `dpclang-6`, install the oneDNN-SYCL development package:
+
+```bash
+sudo apt install libdnnl-sycl-dev
+```
+
+Optionally, also install oneTBB and OpenCL development packages if they are needed by your application:
+
+```bash
+sudo apt install libtbb-dev ocl-icd-opencl-dev
 ```
 
 Now pass the library names in your compile command, for example:
 
 ```bash
-clang++-dpcpp -fsycl -ldnnl-sycl -lOpenCL -ltbb sample.cpp -o sample-onednn-sycl-app
+dpclang++ -fsycl -ldnnl-sycl -lOpenCL -ltbb sample.cpp -o sample-onednn-sycl-app
 ./simple-onednn-sycl-app
 ```
 
-There are also examples available from the `onednn-examples` binary package:
+CMake configuration files are delivered by the `libdnnl-sycl-dev` package to support applications built with CMake.
+
+Finally, there are also examples available from the `onednn-examples` binary package that can be used as a helpful reference for application developers:
 
 ```bash
 sudo apt install onednn-examples
 cp /usr/lib/onednn/examples/getting_started.cpp .
-clang++dpcpp -fsycl -I /usr/lib/onednn/examples -ldnnl-sycl -lOpenCL -ltbb getting_started.cpp -o getting-started
+dpclang++ -fsycl -I /usr/lib/onednn/examples -ldnnl-sycl -lOpenCL -ltbb getting_started.cpp -o getting-started
 ./getting-started gpu
 ```
