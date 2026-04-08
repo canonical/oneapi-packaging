@@ -1,13 +1,15 @@
 onedpl (2022.9.0-0ubuntu6) resolute; urgency=medium
 
-  * d/tests:
-    - Update binary package name for DPC++ compiler from
-    clang-dpcpp-21 to dpclang-6.
-    - Update DPC++ compiler name from clang++-dpcpp to
-    dpclang++.
-  * d/changelog: drop ~26.04 suffix from version as this
-  was intended to be dropped when the package migrated
-  from a PPA to the archive.
+  * Update names of binary packages and compiler commands due to
+    changes in intel-dpcpp packaging (LP: #2146468):
+    - d/tests:
+      - Update binary package name for DPC++ compiler from
+        clang-dpcpp-21 to dpclang-6.
+      - Update DPC++ compiler name from clang++-dpcpp to
+        dpclang++.
+    - d/changelog: drop ~26.04 suffix from version as this
+      was intended to be dropped when the package migrated
+      from a PPA to the archive.
 
  -- Will French <will.french@canonical.com>  Fri, 20 Mar 2026 13:13:24 -0500
 
