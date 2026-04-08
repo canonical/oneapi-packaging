@@ -1,35 +1,11 @@
-intel-umf (0.11.0-0ubuntu5~26.04) resolute; urgency=medium
-
-  * Initial package upload (LP: #2130189).
-    - d/watch: produce consistent parent folder name in orig tarball
-      using v5 d/watch.
-
- -- Will French <will.french@canonical.com>  Wed, 25 Feb 2026 10:46:59 -0600
-
-intel-umf (0.11.0-0ubuntu4~26.04) resolute; urgency=medium
-
-  * Initial package upload (LP: #2130189).
-    - d/copyright: improve accuracy of license reporting.
-    - d/watch: upgrade to version 5.
-
- -- Will French <will.french@canonical.com>  Tue, 24 Feb 2026 14:35:49 -0600
-
-intel-umf (0.11.0-0ubuntu3~26.04) resolute; urgency=medium
-
-  * Initial package upload (LP: #2130189).
-    - d/copyright: add files flagged by licensecheck -r. 
-
- -- Will French <will.french@canonical.com>  Mon, 02 Feb 2026 12:16:13 -0600
-
-intel-umf (0.11.0-0ubuntu2~26.04) resolute; urgency=medium
-
-  * Initial package upload (LP: #2130189).
-    - d/intel-umf0.symbols: Add symbols control file for libumf0.
-
- -- Will French <will.french@canonical.com>  Wed, 14 Jan 2026 10:34:02 -0600
-
 intel-umf (0.11.0-0ubuntu1~26.04) resolute; urgency=medium
 
   * Initial package upload (LP: #2130189).
+    - d/watch: upgrade to version 5.
+    - d/watch: produce consistent parent folder name in orig tarball
+      using v5 d/watch.
+    - d/copyright: add files flagged by licensecheck -r.
+    - d/copyright: improve accuracy of license reporting.
+    - d/intel-umf0.symbols: Add symbols control file for libumf0.
 
- -- Will French <will.french@canonical.com>  Mon, 12 Jan 2026 14:10:55 -0600
+ -- Will French <will.french@canonical.com>  Wed, 25 Feb 2026 10:46:59 -0600
