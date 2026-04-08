@@ -1,134 +1,137 @@
 intel-dpcpp (6.2.0-0ubuntu2) resolute; urgency=medium
 
-  * d/control:
-    - Update binary package names based on recommendations from Intel.
-    https://github.com/canonical/oneapi-packaging/issues/36
-    - Add missing runtime dependencies for dpclang-6 binary package.
-    https://github.com/canonical/oneapi-packaging/issues/30
-    https://github.com/canonical/oneapi-packaging/issues/31
-    - Remove libur-loader0 binary package since it's now built as a static
-    lib.
-    https://github.com/canonical/oneapi-packaging/issues/33
-    - Remove libur-adapter* binary packages and consolidate into a single
-    unified-runtime-adapters-dpcpp-6 binary package since these
-    libs are no longer in a public directory.
-    https://github.com/canonical/oneapi-packaging/issues/37
-    - Remove libur-loader* binary packages since this lib is
-    now built statically.
-    https://github.com/canonical/oneapi-packaging/issues/33
-    - Add dependency between libclang-dpcpp-6-dev and sycl-dpcpp-6-dev
-    since the clang development package now includes the unified runtime
-    loader headers that are needed for compiling SYCL applications.
-    - Add strict version constraints for all binary packages derived
-    from the same intel-dpcpp source package, with the exception of
-    libsycl8 since it may be used by multiple versions of DPC++.
-    - Add Replaces and Breaks fields where package names have changed
-    to ensure a smooth upgrade for users who have the previous package
-    names installed.
-  * d/rules:
-    - Remove spirv-to-ir-wrapper man page since it is no longer
-    in a public directory.
-    https://github.com/canonical/oneapi-packaging/issues/35
-    - Build unified runtime lib statically.
-    https://github.com/canonical/oneapi-packaging/issues/33
-    - Update man page names because name of public symlinks have changed;
-    update excluded private compiler path for dh_makeshlibs.
-    https://github.com/canonical/oneapi-packaging/issues/34
-  * d/*.{install,manpages,links}: update private compiler path from
-  /usr/lib/llvm-dpcpp-21 to /usr/lib/dpcpp-6/llvm
-  https://github.com/canonical/oneapi-packaging/issues/34
-  * d/dpclang-6.links:
-    - Update symlink names based on feedback from Intel.
-    https://github.com/canonical/oneapi-packaging/issues/34
-    - Remove spirv-to-ir-wrapper symlink since it is compiler-private.
-    https://github.com/canonical/oneapi-packaging/issues/35
-  * d/libsycl8.install:
-    - Install .spv files required for supporting -fsycl-device-lib-jit-link
-    option.
-    https://github.com/canonical/oneapi-packaging/issues/32
-    - Install versioned .so in private directory so it can find .spv
-    files at runtime.
-    https://github.com/canonical/oneapi-packaging/issues/32
-  * d/libsycl8.links: Sym link from public to private path.
-  https://github.com/canonical/oneapi-packaging/issues/32
-  * d/libsycl8.symbols: Update Build-Depends-Package field since
-  libsycl-dev is now sycl-dpcpp-6-dev.
-  * d/libsycl8.lintian-overrides: Add lintian-override and explain
-  why ldconfig trigger is not needed for private library.
-  * d/sycl-dpcpp-6-dev.install:
-    - Install .bc files required during compilation.
-    https://github.com/canonical/oneapi-packaging/issues/32
-    - Install sycl-dpcpp-6.pc pkgconfig file
-    https://github.com/canonical/oneapi-packaging/issues/42
-    - Remove redundant openCL header files from opencl-c-headers.
-    Keep CL/sycl.hpp for backwards compatibility.
-    - Migrate unified runtime loader header files and XPTI header
-    files to libclang-dpcpp-6-dev binary package.
-  * d/sycl-dpcpp-6-dev.links:
-    - Create development sym link manually since upstream
-    uses relative path.
-    https://github.com/canonical/oneapi-packaging/issues/32
-    https://github.com/canonical/oneapi-packaging/issues/35
-    - Move libsycl.so development symlink to compiler-private
-    directory to avoid future conflicts where a user may want
-    multiple versions of dpclang and libsycl installed at the
-    same time.
-    - Symlink to sycl-dpcpp-6.pc pkgconfig file
-    https://github.com/canonical/oneapi-packaging/issues/42
-  * d/sycl-dpcpp-6.pc: add pkgconfig file for libsycl, needed
-    for users who want to link with libsycl directly.
-  * d/p/series:
-    - Apply new patch for building libur as a static lib.
-    https://github.com/canonical/oneapi-packaging/issues/33
-    - Drop clang-0001-remove-cpp-driver-suffix.patch because new clang*
-    symlink names do not collid with any suffix names from upstream.
-    https://github.com/canonical/oneapi-packaging/issues/34
-    - Apply new patch for fixing mock in unit tests
-    https://github.com/canonical/oneapi-packaging/issues/33
-    - Apply new patch to remove xptiFrameworkFinalize call
-    https://github.com/canonical/oneapi-packaging/issues/33
-    - Apply new patch for resolving loader lib path.
-    - Apply patch for adding in source versioning to DPC++
-    https://github.com/intel/llvm/issues/21509
-    - Apply patch for adding self-macro versioning to DPC++
-    https://github.com/intel/llvm/issues/21510
-  * d/p/clang-0001-remove-cpp-driver-suffix.patch: drop patch
-  because new clang* symlink names do not collide with any suffix
-  names from upstream.
-  https://github.com/canonical/oneapi-packaging/issues/34
-  * d/p/ur-0004-fix-static-loader-when-building-in-tree.patch:
-  Build unified runtime loader as a static lib since its API/ABI
-  are unstable.
-  https://github.com/canonical/oneapi-packaging/issues/33
-  * d/p/ur-0005-fix-mock-adapter-discovery-static-linking.patch:
-  Fix mock used in unit testing.
-  https://github.com/canonical/oneapi-packaging/issues/33
-  * d/p/ur-0006-dont-call-xptiFrameworkFinalize-during-shutdown.patch:
-  Don't call xptiFrameworkFinalize during global shutdown as this causes
-  failures in unit tests when libur is built as a static lib.
-  https://github.com/canonical/oneapi-packaging/issues/33
-  * d/p/ur-0007-use-canonical-path-to-resolve-loader-lib-path.patch:
-  Fix an issue where libsycl is not finding the UR adapter libs in the
-  compiler-private directory.
-  * d/p/dpcpp-0001-add-in-source-versioning.patch:
-  Add in-source versioning to DPC++.
-  https://github.com/intel/llvm/issues/21509
-  * d/p/dpcpp-0002-add-self-macro-versioning.patch:
-  Add self-macro versioning to DPC++.
-  https://github.com/intel/llvm/issues/21510
-  * d/tests:
-    - Update tests to use new symlink names for DPC++ compiler.
-    https://github.com/canonical/oneapi-packaging/issues/34
-    - Add new tests for ensuring proper runtime dependency declaration in
-    d/control and accessibility of .bc files that enable certain compiler
-    features like sqrt operations.
-    https://github.com/canonical/oneapi-packaging/issues/38
-    - Bump minimum required version of CMake in a few tests to work with
-    the version of CMake in resolute.
-    - Add pkgconfig tests to verify that the pkgconfig file
-    is correctly installed and can be used to compile and link a
-    SYCL application with libsycl.
-    https://github.com/canonical/oneapi-packaging/issues/42
+  * Various improvements based on feedback from Intel (LP: #2146468):
+    - d/control:
+      - Update binary package names based on recommendations from Intel.
+        https://github.com/canonical/oneapi-packaging/issues/36
+      - Add missing runtime dependencies for dpclang-6 binary package.
+        https://github.com/canonical/oneapi-packaging/issues/30
+        https://github.com/canonical/oneapi-packaging/issues/31
+      - Remove libur-loader0 binary package since it's now built as a
+        static lib.
+        https://github.com/canonical/oneapi-packaging/issues/33
+      - Remove libur-adapter* binary packages and consolidate into a
+        single unified-runtime-adapters-dpcpp-6 binary package since
+        these libs are no longer in a public directory.
+        https://github.com/canonical/oneapi-packaging/issues/37
+      - Remove libur-loader* binary packages since this lib is
+        now built statically.
+        https://github.com/canonical/oneapi-packaging/issues/33
+      - Add dependency between libclang-dpcpp-6-dev and sycl-dpcpp-6-dev
+        since the clang development package now includes the unified runtime
+        loader headers that are needed for compiling SYCL applications.
+      - Add strict version constraints for all binary packages derived
+        from the same intel-dpcpp source package, with the exception of
+        libsycl8 since it may be used by multiple versions of DPC++.
+      - Add Replaces and Breaks fields where package names have changed
+        to ensure a smooth upgrade for users who have the previous package
+        names installed.
+    - d/rules:
+      - Remove spirv-to-ir-wrapper man page since it is no longer
+        in a public directory.
+        https://github.com/canonical/oneapi-packaging/issues/35
+      - Build unified runtime lib statically.
+        https://github.com/canonical/oneapi-packaging/issues/33
+      - Update man page names because name of public symlinks have changed;
+        update excluded private compiler path for dh_makeshlibs.
+        https://github.com/canonical/oneapi-packaging/issues/34
+    - d/*.{install,manpages,links}: update private compiler path from
+      /usr/lib/llvm-dpcpp-21 to /usr/lib/dpcpp-6/llvm
+      https://github.com/canonical/oneapi-packaging/issues/34
+    - d/dpclang-6.links:
+      - Update symlink names based on feedback from Intel.
+        https://github.com/canonical/oneapi-packaging/issues/34
+      - Remove spirv-to-ir-wrapper symlink since it is compiler-private.
+        https://github.com/canonical/oneapi-packaging/issues/35
+    - d/libsycl8.install:
+      - Install .spv files required for supporting
+        -fsycl-device-lib-jit-link option.
+        https://github.com/canonical/oneapi-packaging/issues/32
+      - Install versioned .so in private directory so it can find .spv
+        files at runtime.
+        https://github.com/canonical/oneapi-packaging/issues/32
+    - d/libsycl8.links: Sym link from public to private path.
+      https://github.com/canonical/oneapi-packaging/issues/32
+    - d/libsycl8.symbols: Update Build-Depends-Package field since
+      libsycl-dev is now sycl-dpcpp-6-dev.
+    - d/libsycl8.lintian-overrides: Add lintian-override and explain
+      why ldconfig trigger is not needed for private library.
+    - d/sycl-dpcpp-6-dev.install:
+      - Install .bc files required during compilation.
+        https://github.com/canonical/oneapi-packaging/issues/32
+      - Install sycl-dpcpp-6.pc pkgconfig file
+        https://github.com/canonical/oneapi-packaging/issues/42
+      - Remove redundant openCL header files from opencl-c-headers.
+        Keep CL/sycl.hpp for backwards compatibility.
+      - Migrate unified runtime loader header files and XPTI header
+        files to libclang-dpcpp-6-dev binary package.
+    - d/sycl-dpcpp-6-dev.links:
+      - Create development sym link manually since upstream
+        uses relative path.
+        https://github.com/canonical/oneapi-packaging/issues/32
+        https://github.com/canonical/oneapi-packaging/issues/35
+      - Move libsycl.so development symlink to compiler-private
+        directory to avoid future conflicts where a user may want
+        multiple versions of dpclang and libsycl installed at the
+        same time.
+      - Symlink to sycl-dpcpp-6.pc pkgconfig file
+        https://github.com/canonical/oneapi-packaging/issues/42
+    - d/sycl-dpcpp-6.pc: add pkgconfig file for libsycl, needed
+      for users who want to link with libsycl directly.
+    - d/p/series:
+      - Apply new patch for building libur as a static lib.
+        https://github.com/canonical/oneapi-packaging/issues/33
+      - Drop clang-0001-remove-cpp-driver-suffix.patch because new clang*
+        symlink names do not collid with any suffix names from upstream.
+        https://github.com/canonical/oneapi-packaging/issues/34
+      - Apply new patch for fixing mock in unit tests
+        https://github.com/canonical/oneapi-packaging/issues/33
+      - Apply new patch to remove xptiFrameworkFinalize call
+        https://github.com/canonical/oneapi-packaging/issues/33
+      - Apply new patch for resolving loader lib path.
+      - Apply patch for adding in source versioning to DPC++
+        https://github.com/intel/llvm/issues/21509
+      - Apply patch for adding self-macro versioning to DPC++
+        https://github.com/intel/llvm/issues/21510
+    - d/p/clang-0001-remove-cpp-driver-suffix.patch: drop patch
+      because new clang* symlink names do not collide with any suffix
+      names from upstream.
+      https://github.com/canonical/oneapi-packaging/issues/34
+    - d/p/ur-0004-fix-static-loader-when-building-in-tree.patch:
+      Build unified runtime loader as a static lib since its API/ABI
+      are unstable.
+      https://github.com/canonical/oneapi-packaging/issues/33
+    - d/p/ur-0005-fix-mock-adapter-discovery-static-linking.patch:
+      Fix mock used in unit testing.
+      https://github.com/canonical/oneapi-packaging/issues/33
+    - d/p/ur-0006-dont-call-xptiFrameworkFinalize-during-shutdown.patch:
+      Don't call xptiFrameworkFinalize during global shutdown as this
+      causes failures in unit tests when libur is built as a static lib.
+      https://github.com/canonical/oneapi-packaging/issues/33
+    - d/p/ur-0007-use-canonical-path-to-resolve-loader-lib-path.patch:
+      Fix an issue where libsycl is not finding the UR adapter libs in
+      the compiler-private directory.
+    - d/p/dpcpp-0001-add-in-source-versioning.patch:
+      Add in-source versioning to DPC++.
+      https://github.com/intel/llvm/issues/21509
+    - d/p/dpcpp-0002-add-self-macro-versioning.patch:
+      Add self-macro versioning to DPC++.
+      https://github.com/intel/llvm/issues/21510
+    - d/tests:
+      - Update tests to use new symlink names for DPC++ compiler.
+        https://github.com/canonical/oneapi-packaging/issues/34
+      - Add new tests for ensuring proper runtime dependency declaration in
+        d/control and accessibility of .bc files that enable certain compiler
+        features like sqrt operations.
+        https://github.com/canonical/oneapi-packaging/issues/38
+      - Bump minimum required version of CMake in a few tests to work with
+        the version of CMake in resolute.
+      - Add pkgconfig tests to verify that the pkgconfig file
+        is correctly installed and can be used to compile and link a
+        SYCL application with libsycl.
+        https://github.com/canonical/oneapi-packaging/issues/42
+    - d/s/lintian-overrides: Allow weak dependency between sycl-dpcpp-6-dev
+      and libsycl8.
 
  -- Will French <will.french@canonical.com>  Wed, 25 Mar 2026 13:33:45 -0500
 
