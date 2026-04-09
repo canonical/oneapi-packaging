@@ -1,11 +1,11 @@
 # oneAPI Packaging for Ubuntu :rocket:
 
-This repo contains Debian package definitions for components from the [oneAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html). These packages are built from open source implementations, which may differ in functionality from the closed sourced versions available in Intel's official repositories (e.g. the compiler).
+This repo contains Debian package definitions for components from the [oneAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit.html). These packages are built from open source implementations, which may differ in functionality from the closed sourced versions provided by Intel.
 
-The packages are now available directly from the Ubuntu archive beginning in Ubuntu 26.04 (Resolute Raccoon).
+The packages are available directly from the Ubuntu archive beginning in Ubuntu 26.04 (Resolute Raccoon).
 
 1. [Enable Intel GPU support](#1-optional-enable-intel-gpu-support)
-2. [Install packages from the Ubuntu Archive](#2-install-packages-from-the-ubuntu-archive)
+2. [Install packages from the Ubuntu archive](#2-install-packages-from-the-ubuntu-archive)
 3. [Build and run SYCL* applications](#3-build-and-run-sycl-applications)
 
 > [!IMPORTANT]
@@ -22,7 +22,7 @@ sudo usermod -a -G render $USER
 
 You need to log out and log back in for this change to take effect.
 
-## 2. Install packages from the Ubuntu Archive
+## 2. Install packages from the Ubuntu archive
 
 ### 2.1 DPC++ compiler
 
@@ -44,6 +44,8 @@ sudo apt install libdnnl-sycl3
 
 ## 3. Build and run SYCL* applications
 
+This section briefly describes the basics of getting started with these tools and libraries on Ubuntu. Please refer to Intel documentation for a more complete guide.
+
 Applications written in SYCL* C++ can be compiled using the `dpclang++` command. For example:
 
 ```bash
@@ -51,32 +53,18 @@ dpclang++ -fsycl sample.cpp -o simple-sycl-app
 ./simple-sycl-app
 ```
 
-Alternatively, use `pkg-config` to discover details for `libsycl` at build-time:
-
-```bash
-$ pkg-config --cflags sycl-dpcpp-6
--I/usr/lib/dpclang-6/llvm/include
-$ pkg-config --libs sycl-dpcpp-6
--L/usr/lib/dpclang-6/llvm/lib -lsycl
-$ pkg-config --modversion sycl-dpcpp-6
-6.2.0
-```
+This command will also work if `sample.cpp` contains references to header files from the oneDPL library, assuming you have the `onedpl-headers` package installed.
 
 ### 3.1 Build and run SYCL* applications with oneDNN
 
-In addition to `dpclang-6`, install the oneDNN-SYCL development package:
+To build with oneDNN support, install the oneDNN-SYCL development package and optionally other common development packages
 
 ```bash
 sudo apt install libdnnl-sycl-dev
+sudo apt install libtbb-dev ocl-icd-opencl-dev # optional
 ```
 
-Optionally, also install oneTBB and OpenCL development packages if they are needed by your application:
-
-```bash
-sudo apt install libtbb-dev ocl-icd-opencl-dev
-```
-
-Now pass the library names in your compile command, for example:
+Now pass the library names in your compile command (this example assumes your application also uses OpenCL and oneTBB), for example:
 
 ```bash
 dpclang++ -fsycl -ldnnl-sycl -lOpenCL -ltbb sample.cpp -o sample-onednn-sycl-app
@@ -85,7 +73,7 @@ dpclang++ -fsycl -ldnnl-sycl -lOpenCL -ltbb sample.cpp -o sample-onednn-sycl-app
 
 CMake configuration files are delivered by the `libdnnl-sycl-dev` package to support applications built with CMake.
 
-Finally, there are also examples available from the `onednn-examples` binary package that can be used as a helpful reference for application developers:
+Finally, there are examples available from the `onednn-examples` binary package that can be used as a helpful reference for application developers:
 
 ```bash
 sudo apt install onednn-examples
